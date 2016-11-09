@@ -1,0 +1,7 @@
+//@import "normalize";
+$icomoon-font-path: "../fonts/icomoon/fonts/" !default;
+
+@import "../../src/fonts/icomoon/variables";
+@import "../../src/fonts/icomoon/style.scss";
+@import "fonts";
+@import "global";

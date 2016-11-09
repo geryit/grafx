@@ -1,0 +1,72 @@
+{
+  "IcoMoonType": "selection",
+  "icons": [
+    {
+      "icon": {
+        "paths": [
+          "M743.727 647.396c15.929 15.55 31.479 31.099 46.649 46.27 70.921 70.921 141.843 141.464 212.385 212.385 33.375 33.375 26.548 86.471-14.033 109.227-26.927 15.17-59.544 10.24-82.679-12.895-58.785-58.406-117.191-117.191-175.597-175.597-27.686-27.686-55.372-55.372-83.437-83.437-107.71 72.818-224.142 94.815-349.298 59.923-96.332-26.927-172.942-83.437-228.693-166.495-110.744-165.736-84.954-383.052 53.855-519.206 151.704-148.67 383.81-154.738 543.099-27.686 158.91 127.052 210.11 369.019 77.748 557.511zM409.6 682.667c150.187 0 273.067-122.121 273.446-271.929 0-151.324-121.742-274.204-271.929-274.204-151.704 0-274.204 121.742-274.204 272.687-0.379 150.945 122.121 273.446 272.687 273.446z"
+        ],
+        "attrs": [
+          {}
+        ],
+        "isMulticolor": false,
+        "isMulticolor2": false,
+        "grid": 0,
+        "tags": [
+          "s"
+        ]
+      },
+      "attrs": [
+        {}
+      ],
+      "properties": {
+        "order": 3,
+        "id": 0,
+        "name": "s",
+        "prevSize": 32,
+        "code": 59648
+      },
+      "setIdx": 0,
+      "setId": 1,
+      "iconIdx": 0
+    }
+  ],
+  "height": 1024,
+  "metadata": {
+    "name": "icomoon"
+  },
+  "preferences": {
+    "showGlyphs": true,
+    "showCodes": true,
+    "showQuickUse": true,
+    "showQuickUse2": true,
+    "showSVGs": true,
+    "fontPref": {
+      "prefix": "icon-",
+      "metadata": {
+        "fontFamily": "icomoon",
+        "majorVersion": 1,
+        "minorVersion": 0
+      },
+      "metrics": {
+        "emSize": 1024,
+        "baseline": 6.25,
+        "whitespace": 50
+      },
+      "embed": false,
+      "noie8": true,
+      "ie7": false,
+      "cssVars": true,
+      "cssVarsFormat": "scss",
+      "showSelector": false
+    },
+    "imagePref": {
+      "prefix": "icon-",
+      "png": true,
+      "useClassSelector": true,
+      "color": 0,
+      "bgColor": 16777215
+    },
+    "historySize": 100
+  }
+}

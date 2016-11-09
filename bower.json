@@ -1,0 +1,21 @@
+{
+  "name": "chm",
+  "description": "",
+  "main": "",
+  "authors": [
+    ""
+  ],
+  "license": "",
+  "homepage": "",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.1.1"
+  }
+}
