@@ -18,5 +18,11 @@ get_header(); ?>
     </div>
 </slick>
 
+<div class="test">
+    <div class="test__inner">
+        <div class="test__left">left</div>
+        <div class="test__right">right</div>
+    </div>
+</div>
 
 <?php get_footer(); ?>
