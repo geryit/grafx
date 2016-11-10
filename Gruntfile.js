@@ -3,6 +3,7 @@ module.exports = function (grunt) {
     require('time-grunt')(grunt);
     var mozjpeg = require('imagemin-mozjpeg');
     grunt.initConfig({
+        pkg: grunt.file.readJSON('package.json'),
         watch: {
             options: {
                 spawn: false,
@@ -22,12 +23,12 @@ module.exports = function (grunt) {
                 ],
                 options: {
                     spawn: true,
-                    livereload: false
+                    livereload: false // no need to turn on livereload
                 }
             },
             css: {
                 files: [
-                    'assets/css/*.css'
+                    'dist/css/*.css'
                 ]
             },
             js: {
@@ -54,7 +55,7 @@ module.exports = function (grunt) {
             }
         },
         clean: {
-            assets: ['assets']
+            dist: ['dist']
         },
         sass: {
             dev: {
@@ -62,12 +63,12 @@ module.exports = function (grunt) {
                     sourceMap: true
                 },
                 files: {
-                    'assets/css/styles.css': 'src/scss/styles.scss'
+                    'dist/css/<%= pkg.name %>.css': 'src/scss/<%= pkg.name %>.scss'
                 }
             },
             dist: {
                 files: {
-                    'assets/css/styles.css': 'src/scss/styles.scss'
+                    'dist/css/<%= pkg.name %>.css': 'src/scss/<%= pkg.name %>.scss'
                 }
             }
         },
@@ -75,8 +76,8 @@ module.exports = function (grunt) {
         //     dist: {
         //         options: {
         //             ignoreSheets : [/fonts.googleapis/],
-        //             csspath      : 'assets/css',
-        //             stylesheets  : ['assets/css/styles.css'],
+        //             csspath      : 'dist/css',
+        //             stylesheets  : ['dist/css/styles.css'],
         //             timeout      : 1000,
         //         },
         //         files: [{
@@ -102,9 +103,9 @@ module.exports = function (grunt) {
             dist: {
                 files: [{
                     expand: true,
-                    cwd: 'assets/css/',
+                    cwd: 'dist/css/',
                     src: '{,*/}*.css',
-                    dest: 'assets/css/'
+                    dest: 'dist/css/'
                 }]
             }
         },
@@ -116,9 +117,13 @@ module.exports = function (grunt) {
                 files: [
                     {
                         src: [
-                            'bower_components/jquery/dist/jquery.slim.js'
+                            'bower_components/jquery/dist/jquery.slim.js',
+                            'bower_components/angular/angular.js',
+                            'bower_components/slick-carousel/slick/slick.js',
+                            'bower_components/angular-slick/dist/slick.js',
+                            'src/js/<%= pkg.name %>.js'
                         ],
-                        dest: 'assets/js/scripts.min.js'
+                        dest: 'dist/js/<%= pkg.name %>.min.js'
                     }
                 ]
             }
@@ -127,7 +132,7 @@ module.exports = function (grunt) {
         uglify: {
             dist: {
                 files: {
-                    'assets/js/main.min.js': ['assets/js/main.min.js']
+                    'dist/js/<%= pkg.name %>.min.js': ['dist/js/<%= pkg.name %>.min.js']
                 }
             }
 
@@ -144,7 +149,7 @@ module.exports = function (grunt) {
                     expand: true,                  // Enable dynamic expansion
                     cwd: 'src/img/',                   // Src matches are relative to this path
                     src: ['**/*.{png,jpg,gif,svg}'],   // Actual patterns to match
-                    dest: 'assets/img/'                  // Destination path prefix
+                    dest: 'dist/img/'                  // Destination path prefix
                 }]
             }
         },
@@ -153,29 +158,29 @@ module.exports = function (grunt) {
             //     expand: true,
             //     cwd: 'src/img',
             //     src: ['**'],
-            //     dest: 'assets/img'
+            //     dest: 'dist/img'
             // },
             video: {
                 expand: true,
                 cwd: 'src/video',
                 src: ['**'],
-                dest: 'assets/video'
+                dest: 'dist/video'
             },
             other: {
                 expand: true,
                 cwd: 'src/other',
                 src: ['**'],
-                dest: 'assets/other'
+                dest: 'dist/other'
             },
             fonts: {
                 expand: true,
                 cwd: 'src/fonts',
                 src: ['**'],
-                dest: 'assets/fonts'
+                dest: 'dist/fonts'
             },
             // css: {
             //     expand: true,
-            //     cwd: 'assets/css',
+            //     cwd: 'dist/css',
             //     src: ['*.css'],
             //     dest: '.tmp/'
             // }
@@ -187,7 +192,7 @@ module.exports = function (grunt) {
                 delete: true,
                 exclude: ['.git*', '*.scss', 'node_modules', 'bower_components', '.idea', '*.iml', '.DS_Store',
                     '.editorconfig', '.gitignore', '*.md', 'bower.json', 'package.json', 'npm-debug.log', 'Gruntfile.js',
-                    '.sass-cache', '/src', '.tmp'],
+                    '.sass-cache', '/src', '.tmp', '*.map'],
                 recursive: true
             },
             // stage: {
@@ -201,17 +206,17 @@ module.exports = function (grunt) {
             production: {
                 options: {
                     src: "./",
-                    dest: "/var/www/html/wp-content/themes/chm",
-                    host: "ubuntu@52.36.145.115",
+                    dest: "/home/ubuntu/grafxwp/wp-content/themes/grafx",
+                    host: "ubuntu@54.80.56.240",
                     delete: true // Careful this option could cause data loss, read the docs!
                 }
             }
         }
     });
-    grunt.registerTask('default', ['newer:clean', 'sass:dev', 'newer:concat',
+    grunt.registerTask('default', ['clean','sass:dev', 'newer:concat',
         'newer:imagemin', 'newer:copy']);
     grunt.registerTask('build', [
-        // 'clean',
+        'clean',
         'sass:dist',
         'newer:postcss',
         'newer:concat',

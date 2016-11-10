@@ -1,0 +1,120 @@
+.hSlider__body {
+    position: absolute;
+    z-index: 11;
+    left: 50%;
+    transform: translate(-50%);
+    color: #fff;
+    top: 50%;
+    margin: -50px 0 0 195px;
+}
+
+.hSlider__item {
+    position: relative;
+}
+
+.hSlider__r1 {
+    display: flex;
+    align-items: center;
+}
+
+.hSlider__play {
+    font-size: 36px;
+}
+
+.hSlider__title {
+    margin-left: 10px;
+    font-size: 45px;
+}
+
+.hSlider__date {
+    background: #efad17;
+    display: inline-block;
+    color: #37393a;
+    margin-top: 10px;
+    font-size: 20px;
+    padding: 5px 7px;
+}
+
+
+.hSlider__msg {
+    margin-top: 15px;
+    line-height: 1.4;
+}
+
+.hSlider__img {
+    width: 100%;
+}
+
+.slick-dots {
+    position: absolute;
+    bottom: 85px;
+    left: 50%;
+    transform: translate(-50%);
+    margin-top: 170px;
+    display: flex;
+    li{
+        width: 10px;
+        height: 10px;
+        background-color: #fff;
+        border-radius: 20px;
+        margin: 0 30px;
+        position: relative;
+        cursor: pointer;
+        &:hover, &.slick-active{
+            background-color: #efad17;
+        }
+        &:before{
+            content: '';
+            position: absolute;
+            width: 70px;
+            height: 1px;
+            background: rgba(255, 255, 255, .5);
+            top: 50%;
+            transform: translateY(-50%);
+            left: 10px;
+            pointer-events: none;
+        }
+        &:last-child:before{
+            display: none;
+        }
+    }
+    button{
+        display: none;  
+    }
+}
+
+
+.slick-arrow {
+    position: absolute;
+    z-index: 1;
+    bottom: 78px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: none;
+    border: 0;
+    font-family: 'icomoon' !important;
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 0;
+    outline: none;
+    cursor: pointer;
+    &:before{
+        font-size: 18px;
+    }
+    &:hover:before{
+        color: #efad17;
+    }
+    
+    &.slick-prev{
+        margin-left: -180px;
+        &:before{
+            content: "\e902";
+        }
+    }
+    &.slick-next{
+        margin-left: 180px;
+        &:before{
+            content: "\e903";
+        }
+    }
+
+}

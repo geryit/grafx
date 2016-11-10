@@ -8,7 +8,7 @@
 
     <link href="//www.google-analytics.com" rel="dns-prefetch">
     <link href="<?php echo get_template_directory_uri(); ?>/favicon.ico" rel="shortcut icon">
-    <link href="<?php echo get_template_directory_uri(); ?>/assets/img/touch.png"
+    <link href="<?php echo get_template_directory_uri(); ?>/dist/img/touch.png"
           rel="apple-touch-icon-precomposed">
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -18,14 +18,13 @@
     <?php wp_head(); ?>
 
 </head>
-<body <?php body_class(); ?>>
-
+<body <?php body_class(); ?> ng-app="grafxApp" ng-controller="grafxCtrl">
 <header class="header">
     <div class="container">
         <div class="header__inner">
             <div class="logo header__inner__logo">
                 <a class="logo__link">
-                    <img src="<?= get_template_directory_uri(); ?>/assets/img/logo.svg"
+                    <img src="<?= get_template_directory_uri(); ?>/dist/img/logo.svg"
                         class="logo__img" width="110" alt="">
                 </a>
             </div>
@@ -43,7 +42,7 @@
             </ul>
 
             <div class="search">
-                <a href="#" class="search__btn icon-s">
+                <a href="#" class="search__btn icon-search">
                 </a>
             </div>
 

@@ -1,7 +1,11 @@
 //@import "normalize";
 $icomoon-font-path: "../fonts/icomoon/fonts/" !default;
 
+@import "../../bower_components/slick-carousel/slick/slick.scss";
+
 @import "../../src/fonts/icomoon/variables";
 @import "../../src/fonts/icomoon/style.scss";
 @import "fonts";
 @import "global";
+@import "custom";
+

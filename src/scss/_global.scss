@@ -28,6 +28,7 @@ a{
     position: absolute;
     width: 100%;
     top: 50px;
+    z-index: 1;
     &__inner {
         display: flex;
         align-items: center;
@@ -40,15 +41,20 @@ a{
 .menu {
     display: flex;
     &__item {
-        margin-left: 20px;
+        margin-left: 45px;
     }
     &__link {
         color: #fff;
+        font-size: 15px;
     }
 }
 
 .search {
-    margin-left: 20px;
+    font-size: 22px;
+    margin-left: 50px;
+    &__btn {
+        color: #fff;
+    }
 }
 
 
