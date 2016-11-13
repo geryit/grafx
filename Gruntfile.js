@@ -36,16 +36,16 @@ module.exports = function (grunt) {
                 tasks: ['newer:concat']
             },
             img: {
-                files: 'src/img/**/*.*',
+                files: 'src/img/**/*',
                 tasks: ['newer:imagemin']
             },
             fonts: {
-                files: 'src/fonts/**/*.*',
+                files: 'src/fonts/**/*',
                 tasks: ['newer:copy:fonts']
             },
-            others: {
-                files: 'src/{fonts}/**/*.*',
-                tasks: ['newer:copy']
+            video: {
+                files: 'src/video/**/*',
+                tasks: ['newer:copy:video']
             },
             php: {
                 options: {
@@ -72,25 +72,6 @@ module.exports = function (grunt) {
                 }
             }
         },
-        // uncss: {
-        //     dist: {
-        //         options: {
-        //             ignoreSheets : [/fonts.googleapis/],
-        //             csspath      : 'dist/css',
-        //             stylesheets  : ['dist/css/styles.css'],
-        //             timeout      : 1000,
-        //         },
-        //         files: [{
-        //             nonull: true,
-        //
-        //             src: [
-        //                 'template-*.php',
-        //                 'header.php'
-        //             ],
-        //             dest: 'dist/css/tidy.css'
-        //         }]
-        //     }
-        // },
         postcss: {
             options: {
                 map: false,
@@ -166,12 +147,6 @@ module.exports = function (grunt) {
                 src: ['**'],
                 dest: 'dist/video'
             },
-            other: {
-                expand: true,
-                cwd: 'src/other',
-                src: ['**'],
-                dest: 'dist/other'
-            },
             fonts: {
                 expand: true,
                 cwd: 'src/fonts',
@@ -213,10 +188,10 @@ module.exports = function (grunt) {
             }
         }
     });
-    grunt.registerTask('default', ['clean','sass:dev', 'newer:concat',
+    grunt.registerTask('default', ['sass:dev', 'newer:concat',
         'newer:imagemin', 'newer:copy']);
     grunt.registerTask('build', [
-        'clean',
+        //'clean',
         'sass:dist',
         'newer:postcss',
         'newer:concat',

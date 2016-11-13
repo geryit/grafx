@@ -1,120 +1,255 @@
-.hSlider__body {
-    position: absolute;
-    z-index: 11;
-    left: 50%;
-    transform: translate(-50%);
-    color: #fff;
-    top: 50%;
-    margin: -50px 0 0 195px;
+@keyframes expandWidth {
+   0% { width: 0; }
+   100% { width: 100%; }
 }
 
-.hSlider__item {
-    position: relative;
+@keyframes expandWidth2 {
+   0% { transform: translateY(-50%) scaleX(0); }
+   100% { transform: translateY(-50%) scaleX(1); }
 }
 
-.hSlider__r1 {
-    display: flex;
-    align-items: center;
+*{
+    backface-visibility: hidden;
+    &:before,&:after{
+        backface-visibility: hidden;   
+    }
 }
 
-.hSlider__play {
-    font-size: 36px;
+.slider__progress__inner {
+  width: 0%;
+  height: 3px;
+  background: #efad17;
+  &.on{
+    animation: expandWidth 4s linear infinite;
+  }
 }
 
-.hSlider__title {
-    margin-left: 10px;
-    font-size: 45px;
-}
-
-.hSlider__date {
-    background: #efad17;
-    display: inline-block;
-    color: #37393a;
-    margin-top: 10px;
-    font-size: 20px;
-    padding: 5px 7px;
-}
-
-
-.hSlider__msg {
-    margin-top: 15px;
-    line-height: 1.4;
-}
-
-.hSlider__img {
-    width: 100%;
-}
-
-.slick-dots {
-    position: absolute;
-    bottom: 85px;
-    left: 50%;
-    transform: translate(-50%);
-    margin-top: 170px;
-    display: flex;
-    li{
-        width: 10px;
-        height: 10px;
-        background-color: #fff;
-        border-radius: 20px;
-        margin: 0 30px;
-        position: relative;
-        cursor: pointer;
-        &:hover, &.slick-active{
-            background-color: #efad17;
+.hSlider {
+    
+    &__body {
+        position: absolute;
+        z-index: 11;
+        left: 50%;
+        transform: translate(-50%, -70%);
+        color: #fff;
+        top: 50%;
+        margin: 0px 0 0 195px;
+        opacity: 0;
+        &.on {
+            opacity: 1;
+            transform: translate(-50%, -50%);
+            transition: 1s all;
         }
+    }
+
+    &__item {
+        position: relative;
         &:before{
             content: '';
             position: absolute;
-            width: 70px;
-            height: 1px;
-            background: rgba(255, 255, 255, .5);
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+    }
+
+    &__r1 {
+        display: flex;
+        align-items: center;
+    }
+
+    &__play {
+        font-size: 36px;
+    }
+
+    &__title {
+        margin-left: 10px;
+        font-size: 45px;
+    }
+
+    &__date {
+        background: #efad17;
+        display: inline-block;
+        color: #37393a;
+        margin-top: 10px;
+        font-size: 20px;
+        padding: 5px 7px;
+    }
+
+    &__msg {
+        margin-top: 15px;
+        line-height: 1.4;
+    }
+
+    &__img {
+        position: absolute;
+        width: 100%;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    &__video {
+        max-width: 100%;
+        position: absolute;
+        width: 100%;
+        top: 50%;
+        transform: translateY(-50%);
+
+    }
+    &__placeHolder {
+        width: 100%;
+    }
+
+    &__arrow {
+        position: absolute;
+        z-index: 1;
+        bottom: 83px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: none;
+        border: 0;
+        font-family: 'icomoon' !important;
+        color: rgba(255, 255, 255, 0.4);
+        font-size: 0;
+        outline: none;
+        cursor: pointer;
+        &__prev {
+            margin-left: -180px;
+            &:before {
+                content: "\e902";
+            }
+        }
+        &__next {
+            margin-left: 180px;
+            &:before {
+                content: "\e903";
+            }
+        }
+        &:before {
+            font-size: 18px;
+        }
+        &:hover:before {
+            color: #efad17;
+        }
+    }
+
+
+    &__dots {
+        position: absolute;
+        bottom: 85px;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        margin-top: 170px;
+        display: flex;
+        &:before{
+            content: '';
+            background: rgba(255, 255, 255, .2);
+            position: absolute;
+            height: 10px;
+            left: 35px;
+            right: 35px;
             top: 50%;
-            transform: translateY(-50%);
-            left: 10px;
-            pointer-events: none;
+            transform: translateY(-50%) scaleX(0);
+            transform-origin:left;
         }
-        &:last-child:before{
-            display: none;
+        &.on:before{
+            //animation: expandWidth2 10s linear infinite;
+        }
+        li {
+            width: 10px;
+            height: 10px;
+            background-color: #fff;
+            border-radius: 20px;
+            margin: 0 30px;
+            position: relative;
+            cursor: pointer;
+            &:hover, &.slick-active {
+                background-color: #efad17;
+            }
+            &:hover{
+                button{
+                    transform: scale(1);
+                }
+            }
+            &:before {
+                content: '';
+                position: absolute;
+                width: 70px;
+                height: 1px;
+                background: rgba(255, 255, 255, .5);
+                top: 50%;
+                transform: translateY(-50%);
+                left: 10px;
+                pointer-events: none;
+            }
+            &:after {
+                content: '';
+                position: absolute;
+                width: 10px;
+                height: 10px;
+                background: transparent;
+                border-radius: 50%;
+                left: 50%;
+                top: 50%;
+                box-shadow: 0 0 0 1px #fff;
+                padding: 10px;
+                transform: translate(-50%,-50%) scale(0);
+                opacity: 1;
+                transition: .1s transform;
+            }
+            &:last-child:before {
+                display: none;
+            }
+            &.slick-active{
+                &:after{
+                    transform: translate(-50%,-50%) scale(1);
+                }
+            }
+        }
+        button {
+            font-size: 0;
+            padding: 0;
+            border: 0;
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: none;
+            outline: none;
+            margin-top: -20px;
+            transform: scale(0);
+            transition: .1s transform;
+            &:before{
+                content: 'Experiential & Digital REEL';
+                background: #fff;
+                color: #000;
+                font-size: 14px;
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%,-50%);
+                margin: -20px 0 0 0;
+                white-space: nowrap;
+                padding: 5px;
+                display: inline-block;
+                line-height: 1.2;
+                min-height: 18px;
+            }
+            &:after{
+                content: '';
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                width: 0;
+                height: 0;
+                border-style: solid;
+                border-width: 8px 5px 0 5px;
+                border-color: #ffffff transparent transparent transparent;
+                margin: -7px 0 0 -5px;
+            }
+            
         }
     }
-    button{
-        display: none;  
-    }
+
 }
 
 
-.slick-arrow {
-    position: absolute;
-    z-index: 1;
-    bottom: 78px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: none;
-    border: 0;
-    font-family: 'icomoon' !important;
-    color: rgba(255, 255, 255, 0.4);
-    font-size: 0;
-    outline: none;
-    cursor: pointer;
-    &:before{
-        font-size: 18px;
-    }
-    &:hover:before{
-        color: #efad17;
-    }
-    
-    &.slick-prev{
-        margin-left: -180px;
-        &:before{
-            content: "\e902";
-        }
-    }
-    &.slick-next{
-        margin-left: 180px;
-        &:before{
-            content: "\e903";
-        }
-    }
-
-}
