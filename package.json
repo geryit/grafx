@@ -5,7 +5,8 @@
   "main": "",
   "dependencies": {
     "imagemin-mozjpeg": "^5.1.0",
-    "imagemin-pngquant": "^4.2.2"
+    "imagemin-pngquant": "^4.2.2",
+    "video.js": "^5.12.6"
   },
   "devDependencies": {
     "autoprefixer": "^6.5.2",

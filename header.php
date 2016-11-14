@@ -14,31 +14,72 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="<?php bloginfo('description'); ?>">
-
     <?php wp_head(); ?>
 
+    <?
+
+    if (is_page_template('template-home.php')) {
+        $activeSlidecount = 0;
+        foreach (get_field('home_slider') as $v) {
+            if ($v['show']) $activeSlidecount++;
+        }
+        ?>
+        <script>
+            window.hsAutoplay = <?=get_field('home_slider_autoplay') ? 'true' : 'false'?>;
+            window.hsAutoplaySecs = <?=get_field('home_slider_duration')?>;
+        </script>
+        <style>
+            .slider__progress__inner.on {
+                transition-duration: <?=get_field('home_slider_duration')?>s !important;
+            }
+
+            .hSlider__arrow__prev {
+                margin-left: -<?=$activeSlidecount*40?>px;
+            }
+
+            .hSlider__arrow__next {
+                margin-left: <?=$activeSlidecount*40?>px;
+            }
+
+            <? foreach (get_field('home_slider') as $i=>$v) { ?>
+            .hSlider__dots li:nth-child(<?=($i+1)?>) button:before {
+                content: '<?=$v['subtitle']?>';
+            }
+
+            <? }?>
+        </style>
+    <? } ?>
+
 </head>
-<body <?php body_class(); ?> ng-app="grafxApp" ng-controller="grafxCtrl">
+<body <?php body_class(); ?> ng-app="grafxApp" ng-controller="grafxCtrl" ng-class="{oyh:vModal.on}">
+
+
+
+
 <header class="header">
     <div class="container">
         <div class="header__inner">
             <div class="logo header__inner__logo">
-                <a class="logo__link">
+                <a class="logo__link" href="<?= home_url(); ?>">
                     <img src="<?= get_template_directory_uri(); ?>/dist/img/logo.svg"
-                        class="logo__img" width="110" alt="">
+                         class="logo__img" width="110" alt="">
+                    <img src="<?= get_template_directory_uri(); ?>/dist/img/logo2.svg"
+                         class="logo__img2" width="100" alt="">
                 </a>
             </div>
 
             <ul class="menu">
-                <li class="menu__item">
-                    <a href="#" class="menu__link">About</a>
-                </li>
-                <li class="menu__item">
-                    <a href="#" class="menu__link">Work</a>
-                </li>
-                <li class="menu__item">
-                    <a href="#" class="menu__link">Contact</a>
-                </li>
+                <?
+                foreach (get_field('menu', 'option') as $v) {
+                    ?>
+                    <li class="menu__item <?= get_the_title() == $v['title'] ? 'on' : '' ?>">
+                        <a href="<?= $v['link'] ?>"
+                           class="menu__link">
+                            <?= $v['title'] ?>
+                        </a>
+                    </li>
+                <? } ?>
+                <div id="menuOverlay"></div>
             </ul>
 
             <div class="search">
@@ -50,5 +91,7 @@
         </div>
     </div>
 </header>
+
+
 
 

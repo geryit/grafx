@@ -2,6 +2,7 @@
 $icomoon-font-path: "../fonts/icomoon/fonts/" !default;
 
 @import "../../bower_components/slick-carousel/slick/slick.scss";
+@import "../../node_modules/video.js/src/css/vjs.scss";
 
 @import "../../src/fonts/icomoon/variables";
 @import "../../src/fonts/icomoon/style.scss";

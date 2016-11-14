@@ -101,7 +101,7 @@ module.exports = function (grunt) {
                             'bower_components/jquery/dist/jquery.slim.js',
                             'bower_components/angular/angular.js',
                             'bower_components/slick-carousel/slick/slick.js',
-                            'bower_components/angular-slick/dist/slick.js',
+                            'node_modules/video.js/dist/video.js',
                             'src/js/<%= pkg.name %>.js'
                         ],
                         dest: 'dist/js/<%= pkg.name %>.min.js'
@@ -188,13 +188,13 @@ module.exports = function (grunt) {
             }
         }
     });
-    grunt.registerTask('default', ['sass:dev', 'newer:concat',
+    grunt.registerTask('default', ['sass:dev', 'concat',
         'newer:imagemin', 'newer:copy']);
     grunt.registerTask('build', [
         //'clean',
         'sass:dist',
         'newer:postcss',
-        'newer:concat',
+        'concat',
         'newer:uglify',
         'newer:imagemin',
         'newer:copy'
@@ -202,7 +202,8 @@ module.exports = function (grunt) {
     grunt.registerTask('deploy', [
         'build',
         'rsync',
-        'sass:dev'
+        'sass:dev',
+        'concat'
     ]);
 };
 

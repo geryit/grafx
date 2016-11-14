@@ -24,3 +24,12 @@ function styles()
 add_action('init', 'scripts'); // Add Custom Scripts to wp_head
 add_action('wp_enqueue_scripts', 'styles'); // Add Theme Stylesheet
 
+add_action('admin_init', 'remove_textarea');
+
+function remove_textarea() {
+    remove_post_type_support( 'page', 'editor' );
+}
+
+if( function_exists('acf_add_options_page') ) {
+    acf_add_options_page();
+}
