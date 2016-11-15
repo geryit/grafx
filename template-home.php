@@ -82,7 +82,7 @@ get_header(); ?>
                         </div>
                         <div class="imagebox__full--title">
                         </div>
-                        <div class="imagebox__full--image"> <img style="width:100%; height:100%" src="src/img/imagebox__full.png"></div>
+                        <div class="imagebox__full--image"> <img style="width:100%; height:100%" src="/wp-content/themes/grafxwp/dist/img/home-imagebox/imagebox-full.png"></div>
                     </div>
                 </a></div>
             </div>
@@ -92,28 +92,28 @@ get_header(); ?>
                     </div>
                     <div class="imagebox__half--title black">
                     </div>
-                    <img class="imagebox__half--image" src="src/img/imagebox__half--left1.png">
+                    <img class="imagebox__half--image" src="/wp-content/themes/grafxwp/dist/img/home-imagebox/imagebox-half1.png">
                 </div>
                 <div class="imagebox__half">
                     <div class="imagebox__half--link">VIEW CASE
                     </div>
                     <div class="imagebox__half--title black">
                     </div>
-                    <img class="imagebox__half--image" src="src/img/imagebox__half--right1.png">
+                    <img class="imagebox__half--image" src="/wp-content/themes/grafxwp/dist/img/home-imagebox/imagebox-half2.png">
                 </div>
                 <div class="imagebox__half">
                     <div class="imagebox__half--link">VIEW CASE
                     </div>
                     <div class="imagebox__half--title black">
                     </div>
-                    <img class="imagebox__half--image" src="src/img/imagebox__half--left2.png">
+                    <img class="imagebox__half--image" src="/wp-content/themes/grafxwp/dist/img/home-imagebox/imagebox-half3.png">
                 </div>
                 <div class="imagebox__half">
                     <div class="imagebox__half--link">VIEW CASE
                     </div>
                     <div class="imagebox__half--title white">
                     </div>
-                    <img class="imagebox__half--image" src="src/img/imagebox__half--right2.png">
+                    <img class="imagebox__half--image" src="/wp-content/themes/grafxwp/dist/img/home-imagebox/imagebox-half4.png">
                 </div>
             </div>
             <div class="clients">
@@ -123,62 +123,62 @@ get_header(); ?>
                     <div class="clients__item">
                         <div class="clients__item--link">LEARN MORE
                         </div>
-                        <img class="clients__item--logo" src="src/img/home-brand-logos/logo1.png">
+                        <img class="clients__item--logo" src="/wp-content/themes/grafxwp/dist/img/home-brand-logos/logo1.png">
                     </div>
                     <div class="clients__item">
                         <div class="clients__item--link">LEARN MORE
                         </div>
-                        <img class="clients__item--logo" src="src/img/home-brand-logos/logo2.png">
+                        <img class="clients__item--logo" src="/wp-content/themes/grafxwp/dist/img/home-brand-logos/logo2.png">
                     </div>
                     <div class="clients__item">
                         <div class="clients__item--link">LEARN MORE
                         </div>
-                        <img class="clients__item--logo" src="src/img/home-brand-logos/logo3.png">
+                        <img class="clients__item--logo" src="/wp-content/themes/grafxwp/dist/img/home-brand-logos/logo3.png">
                     </div>
                     <div class="clients__item">
                         <div class="clients__item--link">LEARN MORE
                         </div>
-                        <img class="clients__item--logo" src="src/img/home-brand-logos/logo4.png">
+                        <img class="clients__item--logo" src="/wp-content/themes/grafxwp/dist/img/home-brand-logos/logo4.png">
                     </div>
                     <div class="clients__item">
                         <div class="clients__item--link">LEARN MORE
                         </div>
-                        <img class="clients__item--logo" src="src/img/home-brand-logos/logo5.png">
+                        <img class="clients__item--logo" src="/wp-content/themes/grafxwp/dist/img/home-brand-logos/logo5.png">
                     </div>
                     <div class="clients__item">
                         <div class="clients__item--link">LEARN MORE
                         </div>
-                        <img class="clients__item--logo" src="src/img/home-brand-logos/logo6.png">
+                        <img class="clients__item--logo" src="/wp-content/themes/grafxwp/dist/img/home-brand-logos/logo6.png">
                     </div>
                     <div class="clients__item">
                         <div class="clients__item--link">LEARN MORE
                         </div>
-                        <img class="clients__item--logo" src="src/img/home-brand-logos/logo7.png">
+                        <img class="clients__item--logo" src="/wp-content/themes/grafxwp/dist/img/home-brand-logos/logo7.png">
                     </div>
                     <div class="clients__item">
                         <div class="clients__item--link">LEARN MORE
                         </div>
-                        <img class="clients__item--logo" src="src/img/home-brand-logos/logo8.png">
+                        <img class="clients__item--logo" src="/wp-content/themes/grafxwp/dist/img/home-brand-logos/logo8.png">
                     </div>
                     <div class="clients__item">
                         <div class="clients__item--link">LEARN MORE
                         </div>
-                        <img class="clients__item--logo" src="src/img/home-brand-logos/logo9.png">
+                        <img class="clients__item--logo" src="/wp-content/themes/grafxwp/dist/img/home-brand-logos/logo9.png">
                     </div>
                     <div class="clients__item">
                         <div class="clients__item--link">LEARN MORE
                         </div>
-                        <img class="clients__item--logo" src="src/img/home-brand-logos/logo10.png">
+                        <img class="clients__item--logo" src="/wp-content/themes/grafxwp/dist/img/home-brand-logos/logo10.png">
                     </div>
                     <div class="clients__item">
                         <div class="clients__item--link">LEARN MORE
                         </div>
-                        <img class="clients__item--logo" src="src/img/home-brand-logos/logo11.png">
+                        <img class="clients__item--logo" src="/wp-content/themes/grafxwp/dist/img/home-brand-logos/logo11.png">
                     </div>
                     <div class="clients__item">
                         <div class="clients__item--link">LEARN MORE
                         </div>
-                        <img class="clients__item--logo" src="src/img/home-brand-logos/logo1.png">
+                        <img class="clients__item--logo" src="/wp-content/themes/grafxwp/dist/img/home-brand-logos/logo1.png">
                     </div>
                 </div>
             </div>
