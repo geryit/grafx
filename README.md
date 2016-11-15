@@ -2,12 +2,15 @@
 
 **do everytime you reboot**
 ```sh
-npm install && bower install && grunt && grunt watch
+grafx && git checkout master && git fetch --all -q && git merge master
+
+#new tab
+grafx && npm install && bower install && grunt && grunt watch
 ```
 
 **deploy your changes**
 ```sh
-#open new tab in terminal
+#new tab
 grunt deploy
 ```
 http://grafx.geryit.com
