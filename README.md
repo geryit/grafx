@@ -1,5 +1,5 @@
 # grafxwp
-
+test
 **do everytime you reboot**
 ```sh
 grafx && git checkout master && git fetch --all -q && git merge master
