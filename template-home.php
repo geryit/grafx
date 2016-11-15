@@ -25,6 +25,7 @@ get_header(); ?>
                     <source src="<?= $v['video']['url'] ?>" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
+                <img src="<?= get_template_directory_uri(); ?>/dist/img/home-slider/<?=$i?>.jpg" class="hSlider__last hSlider__last__<?=$i?>" alt="">
                 <img src="<?= get_template_directory_uri(); ?>/dist/img/1425x700.png"
                      class="hSlider__placeHolder" alt="">
             </div>

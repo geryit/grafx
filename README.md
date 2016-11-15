@@ -5,6 +5,9 @@ test
 grafx && git checkout master && git fetch --all -q && git merge master
 
 #new tab
+=======
+grafx-start
+or
 grafx && npm install && bower install && grunt && grunt watch
 ```
 
