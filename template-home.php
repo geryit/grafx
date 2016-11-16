@@ -10,17 +10,18 @@ get_header(); ?>
         if ($v['show']) {
             ?>
             <div class="hSlider__item">
-                <video id="hSlider__video__<?= $i ?>" class="hSlider__video">
-                    <source src="<?= $v['video']['url'] ?>" type="video/mp4">
+                <video id="hSlider__video__<?= $i ?>" class="hSlider__video"
+                       poster="<?= $v['first_frame'] ?>">
+                    <source src="<?= $v['video'] ?>" type="video/mp4">
                 </video>
-                <img src="<?= get_template_directory_uri(); ?>/dist/img/home-slider-posters/<?= $i ?>.jpg"
-                    id="hSlider__poster__<?= $i ?>" class="hSlider__poster" alt="">
+                <img src="<?= $v['first_frame'] ?>"
+                     id="hSlider__poster__<?= $i ?>" class="hSlider__poster" alt="">
                 <img src="<?= get_template_directory_uri(); ?>/dist/img/1425x700.png"
                      class="hSlider__placeHolder" alt="">
 
 
                 <div id="hSlider__body__<?= $i ?>" class="hSlider__body"
-                     ng-click="vModal.open('<?= $v['long_video']['url'] ?>', <?= $i ?>)">
+                     ng-click="vModal.open('<?= $v['long_video'] ?>', '<?= $v['first_frame'] ?>', <?= $i ?>)">
                     <div class="hSlider__r1">
                         <span class="icon-play hSlider__play"></span>
                         <div class="hSlider__title light"><?= $v['title'] ?></div>
