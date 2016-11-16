@@ -4,16 +4,18 @@ $(document).ready(function () {
         var $pBar = $('.slider__progress__inner');
 
         $('.hSlider').on('init', function () {
-            window.$pBarDots = $('.hSlider__dots');
-            window.$hsBody = $('.hSlider__body');
-            $('.hSlider__video__0').each(function () {
-                //this.play();
+
+            var vidId = 0;
+
+            // window.$pBarDots = $('.hSlider__dots');
+            $('#hSlider__video__' + vidId).addClass('on').each(function () {
+                this.play();
             });
             $pBar.addClass('on');
-            $pBarDots.addClass('on');
-            $hsBody.addClass('on');
+            // $pBarDots.addClass('on');
+            $('#hSlider__body__' + vidId).addClass('on');
 
-            checkVideo(0);
+            // checkVideo(vidId);
 
         }).slick({
             draggable: true,
@@ -30,14 +32,47 @@ $(document).ready(function () {
             nextArrow: '<button class="hSlider__arrow hSlider__arrow__next"></button>',
             dotsClass: 'hSlider__dots'
         }).on('beforeChange', function (event, slick, currentSlide, nextSlide) {
-            console.log('before', 'currentSlide:' + currentSlide, 'nextSlide:' + nextSlide)
+            // console.log('before', 'currentSlide:' + currentSlide, 'nextSlide:' + nextSlide)
+
+
+            // $pBarDots.removeClass('on');
+
+
+            // window.prevVidId = currentSlide;
+
+
+            $('#hSlider__poster__' + nextSlide).addClass('on');
+
             $pBar.removeClass('on');
-            $pBarDots.removeClass('on');
-            $hsBody.removeClass('on');
-            window.prevVidId = currentSlide;
+
+
+            setTimeout(function () {
+
+
+
+                $('#hSlider__poster__' + nextSlide).removeClass('on');
+
+                $('#hSlider__body__' + currentSlide).removeClass('on');
+                $('#hSlider__body__' + nextSlide).addClass('on');
+
+                $('#hSlider__video__' + currentSlide).removeClass('on').each(function () {
+                    this.pause();
+                    this.currentTime = 0;
+                });
+                $('#hSlider__video__' + nextSlide).addClass('on').each(function () {
+                    this.currentTime = 0;
+                    this.play();
+                });
+
+
+
+            }, 2000);
 
         }).on('afterChange', function (event, slick, currentSlide) {
-            console.log('after', 'currentSlide:' + currentSlide, 'prevVidId:' + prevVidId)
+            $pBar.addClass('on');
+
+
+            // console.log('after', 'currentSlide:' + currentSlide, 'prevVidId:' + prevVidId)
             // $('.hSlider__video__' + prevVidId).each(function () {
             //     this.pause();
             //     this.currentTime = 0;
@@ -46,16 +81,21 @@ $(document).ready(function () {
             // $('.hSlider__video__' + currentSlide).each(function () {
             //     this.play();
             // });
-            $pBar.addClass('on');
-            $pBarDots.addClass('on');
-            $hsBody.addClass('on');
+            // $pBar.addClass('on');
+            // $pBarDots.addClass('on');
+            // $hsBody.addClass('on');
+
+            // $('#hSlider__video__' + currentSlide).each(function () {
+            //     this.play();
+            // });
+
             // $('#hSlider__video__' + currentSlide).on('canplaythrough', function () {
             //     this.play();
             // // })
             // var currentVid = $('.hSlider__video__' + currentSlide)[1];
             // currentVid.play();
             // console.log('after', currentSlide)
-            checkVideo(currentSlide);
+            // checkVideo(currentSlide);
 
 
         });
@@ -82,8 +122,8 @@ $(document).ready(function () {
 
 
     function checkVideo(id) {
-        $('.hSlider__last__'+id).addClass('on');
-        // $('.hSlider__video__' + id).on('ended', function () {
+        $('#hSlider__poster__' + id).addClass('on');
+        // $('#hSlider__video__' + id).on('ended', function () {
         //     $(this).addClass('off');
         //     $('.hSlider__last__'+id).addClass('on');
         // });

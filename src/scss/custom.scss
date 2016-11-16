@@ -42,6 +42,17 @@
         margin: 0px 0 0 160px;
         opacity: 0;
         cursor: pointer;
+        &:before {
+            content: '';
+            position: absolute;
+            background: rgba(0, 0, 0, .2);
+            top: -99em;
+            left: -99em;
+            bottom: -99em;
+            right: -99em;
+            z-index: -1;
+            pointer-events: none;
+        }
         &.on {
             opacity: 1;
             transform: translate(-50%, -50%);
@@ -52,14 +63,6 @@
     &__item {
         position: relative;
         opacity: 1 !important;
-        &:before{
-            content: '';
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            z-index: 1;
-        }
     }
 
     &__r1 {
@@ -109,20 +112,16 @@
         }
 
     }
-    &__last {
+    &__poster {
         max-width: 100%;
         position: absolute;
         width: 100%;
         top: 50%;
         transform: translateY(-50%);
-        -webkit-clip-path: polygon(0 100%, 0 100%, 0 100%, 0% 100%);
-        transition: 2s;
-/*         opacity: 0; */
-        &.off{
-            opacity: 0;
-        }
+        -webkit-clip-path: polygon(0 100%, 0 100%, 0 100%);
         &.on {
-            -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+            transition: 2s cubic-bezier(0, 0.7, 1, -0.26);
+            -webkit-clip-path: polygon(0 -300%, 0 100%, 150% 100%);
         }
     }
     &__placeHolder {
