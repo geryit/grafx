@@ -74,7 +74,7 @@
                     ?>
                     <li class="menu__item <?= get_the_title() == $v['title'] ? 'on' : '' ?>">
                         <a href="<?= $v['link'] ?>"
-                           class="menu__link">
+                           class="menu__item__link">
                             <?= $v['title'] ?>
                         </a>
                     </li>

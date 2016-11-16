@@ -1,0 +1,83 @@
+// Text, icons, hover states
+$primary-foreground-color: rgba(255, 255, 255, .5) !default;
+
+// Control backgrounds (control bar, big play, menus)
+$primary-background-color: #000 !default;
+$primary-background-transparency: 0.6 !default;
+
+// Hover states, slider backgrounds
+$secondary-background-color: #fff !default;
+$secondary-background-transparency: 0.5 !default;
+
+$text-font-family: 'gotham_book', sans-serif !default;
+
+// Using the '--' naming for component-specific styles
+$big-play-button--width: 3em !default;
+$big-play-button--height: 1.5em !default;
+$big-play-button--transparency: 0.8 !default;
+
+$gYellow : #efad17 !default;
+
+.vModal {
+    .video-js {
+        .vjs-big-play-button{
+            font-family: 'icomoon';
+            font-size: 64px;
+            border: 0;
+            background-color: transparent !important;
+            &:hover{
+                color: $gYellow;
+            }
+            &:before{
+                content: '\e901';
+            }
+        }
+        .vjs-control:before {
+            font-size: 2.2em;
+        }
+        .vjs-control-bar {
+            height: 50px;
+            padding: 0 50px;
+        }
+        .vjs-volume-level {
+            background-color: $gYellow;
+            &:before {
+                display: none;
+            }
+        }
+        .vjs-play-progress {
+            background-color: $gYellow;
+            &:before {
+                display: none;
+            }
+        }
+        .vjs-time-control {
+            font-size: 14px;
+
+        }
+
+        .vjs-big-play-button:before,
+        .vjs-control:before,
+        .vjs-modal-dialog,
+        .vjs-remaining-time,
+        .vjs-menu-content,
+        .vjs-menu,
+        .vjs-menu-button .vjs-menu{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .vjs-control{
+            &:focus:before,
+            &:hover:before,
+            &:focus{
+                text-shadow: none;
+                color: $gYellow;
+            }
+        }
+
+    }
+}
+
+

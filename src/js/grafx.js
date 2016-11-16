@@ -32,24 +32,12 @@ $(document).ready(function () {
             nextArrow: '<button class="hSlider__arrow hSlider__arrow__next"></button>',
             dotsClass: 'hSlider__dots'
         }).on('beforeChange', function (event, slick, currentSlide, nextSlide) {
-            // console.log('before', 'currentSlide:' + currentSlide, 'nextSlide:' + nextSlide)
-
-
-            // $pBarDots.removeClass('on');
-
-
-            // window.prevVidId = currentSlide;
-
 
             $('#hSlider__poster__' + nextSlide).addClass('on');
 
             $pBar.removeClass('on');
 
-
             setTimeout(function () {
-
-
-
                 $('#hSlider__poster__' + nextSlide).removeClass('on');
 
                 $('#hSlider__body__' + currentSlide).removeClass('on');
@@ -64,40 +52,10 @@ $(document).ready(function () {
                     this.play();
                 });
 
-
-
             }, 2000);
 
         }).on('afterChange', function (event, slick, currentSlide) {
             $pBar.addClass('on');
-
-
-            // console.log('after', 'currentSlide:' + currentSlide, 'prevVidId:' + prevVidId)
-            // $('.hSlider__video__' + prevVidId).each(function () {
-            //     this.pause();
-            //     this.currentTime = 0;
-            // });
-            //
-            // $('.hSlider__video__' + currentSlide).each(function () {
-            //     this.play();
-            // });
-            // $pBar.addClass('on');
-            // $pBarDots.addClass('on');
-            // $hsBody.addClass('on');
-
-            // $('#hSlider__video__' + currentSlide).each(function () {
-            //     this.play();
-            // });
-
-            // $('#hSlider__video__' + currentSlide).on('canplaythrough', function () {
-            //     this.play();
-            // // })
-            // var currentVid = $('.hSlider__video__' + currentSlide)[1];
-            // currentVid.play();
-            // console.log('after', currentSlide)
-            // checkVideo(currentSlide);
-
-
         });
     }
 
@@ -119,15 +77,6 @@ $(document).ready(function () {
     $(window).scroll(function () {
         stickyNav();
     });
-
-
-    function checkVideo(id) {
-        $('#hSlider__poster__' + id).addClass('on');
-        // $('#hSlider__video__' + id).on('ended', function () {
-        //     $(this).addClass('off');
-        //     $('.hSlider__last__'+id).addClass('on');
-        // });
-    }
 });
 
 
@@ -136,21 +85,22 @@ angular.module('grafxApp', [])
         var scope = $scope;
         scope.vModal = {};
 
-        scope.vModal.open = function (url, index) {
+        scope.vModal.open = function (url, poster, index) {
             $('.hSlider').slick('slickPause');
-            $('.hSlider__video__' + index).each(function () {
+            $('#hSlider__video__' + index).each(function () {
                 this.pause();
             });
             $('.slider__progress__inner').removeClass('on');
             scope.vModal.on = true;
             videojs("vModal__video").ready(function () {
-                var myPlayer = this;
-                myPlayer.src({"type": "video/mp4", "src": url});
-                myPlayer.play();
+                var vid = this;
+                vid.src({"type": "video/mp4", "src": url});
+                vid.poster(poster);
+                vid.play();
             });
         };
 
-        scope.vModal.close = function (url) {
+        scope.vModal.close = function () {
             scope.vModal.on = false;
         }
     }]);
