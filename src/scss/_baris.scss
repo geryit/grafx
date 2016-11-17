@@ -2,23 +2,7 @@ $primaryTextColor: #7f8385;
 $primaryHeaderColor: #37393a;
 $primaryContainerBackgroundColor: black;
 
-/* 
 
-$primaryTextColor: #37393a;
-$homeMainContainerBackground: white;
-$firstValue: 62.5%;
-$firstValue: 24px !default;
-
-*/
-
-body {
-	background-color: #ffffff;
-}
-
-html, body {
-    margin: 0;
-    padding: 0;
-}
 
 .topnav {
 	height: 68px;
@@ -53,93 +37,6 @@ html, body {
 	float: right;
 }
 
-.block {
-	margin: auto;
-	max-width: 1280px;
-	background-color: $primaryContainerBackgroundColor;
-	height: 100%;
-}
-
-.infobox {
-	background-color: white;
-	display: flex; /* or inline-flex */
-	flex-direction: row;
-	flex-wrap: wrap;
-	justify-content: center;
-	padding-top: 90px;
-	padding-bottom: 80px;
-}
-
-.infobox__item {
-	width: 273px;
-	height: 220px;
-	background-color: white;
-	display: inline-block;
-	text-align: center;
-	padding-top: 30px;
-	padding-left: 20px;
-	padding-right: 20px;
-	box-shadow: 1px 0px 0px #e5e5e6 inset;
-}
-
-.infobox__item--first {
-	box-shadow: none;
-}
-
-.infobox__item:hover {
-	cursor: hand;
-}
-
-.infobox__item:hover .infobox__title {
-	color: rgba(127, 131, 133, 0.2);
-}
-
-.infobox__item:hover .infobox__text {
-	color: rgba(127, 131, 133, 0.2);
-}
-
-.infobox__item:hover .infobox__link {
-	display: block;
-}
-
-.infobox__title {
-	margin: auto;
-	font-size: 17.5px;
-	font-family: 'Gotham-Medium', sans-serif;
-	padding-bottom: 20px;
-	color: #37393a;
-}
-
-.infobox__text {
-	margin: auto;
-	font-size: 14px;
-	padding-right: 10px;
-	padding-left: 10px;
-	font-family: 'Gotham-Light', sans-serif;
-	color: #7f8385;
-	line-height: 145%;
-}
-
-.infobox__link {
-	display: none;
-	background-color: white;
-	position: absolute;
-	padding: auto;
-	text-align: center;
-	width: auto;
-	height: auto;
-	border: solid 0.5px #efad17;
-	margin: 0 auto;
-	padding-top: 15px;
-	padding-bottom: 15px;
-	padding-left: 42px;
-	margin-left: 50px;
-	margin-top: 80px;
-	padding-right: 30px;
-	color: #efad17;
-	font-family: 'Gotham-Medium', sans-serif;
-	font-size: 14px;
-}
 
 .imagebox {
 	margin: 25px;
@@ -368,7 +265,7 @@ html, body {
 }
 
 .contact__social {
-	width: 40%;	
+	width: 40%;
 	margin: auto;
 	padding-top: 180px;
 	z-index: 1;
@@ -418,7 +315,7 @@ html, body {
   max-width: 1280px;
 }
 
-/* 
+/*
 
 
 
