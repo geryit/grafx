@@ -34,61 +34,57 @@ get_header(); ?>
     } ?>
 </div>
 
-<div class="block">
-    <div class="infobox">
-        <a href="">
-            <div class="infobox__item infobox__item--first">
-                <div class="infobox__link">VIEW WORKS
-                </div>
-                <div class="infobox__title">Branding-Design
-                </div>
-                <div class="infobox__text">From a strategic tagline to a logo design, a business
+
+<div class="container">
+    <ul class="cats">
+        <?
+        $a = array(
+            array(
+                'title' => 'Branding-Design',
+                'body' => 'From a strategic tagline to a logo design, a business
                     card to a global campaign, our partnership is derived from who you really are.
                     Our 360 Branding & Design services are tailored to help deliver your promise to
-                    your clients; a successful brand.
-                </div>
-            </div>
-        </a>
-        <a href="">
-            <div class="infobox__item">
-                <div class="infobox__link">VIEW WORKS
-                </div>
-                <div class="infobox__title">Production
-                </div>
-                <div class="infobox__text">Our production services are tailored for original cinema,
+                    your clients; a successful brand.',
+            ),
+            array(
+                'title' => 'Production',
+                'body' => 'Our production services are tailored for original cinema,
                     television, digital and virtual reality content. Our experienced directors and
                     crew are equipped with state of the art production equipment. We will deliver on
                     our promise of the highest standards.
-                </div>
-            </div>
-        </a>
-        <a href="">
-            <div class="infobox__item">
-                <div class="infobox__link">VIEW WORKS
-                </div>
-                <div class="infobox__title">Post-Production
-                </div>
-                <div class="infobox__text">Our in-house post-production studio, featuring editing,
+                ',
+            ),
+            array(
+                'title' => 'Post-Production',
+                'body' => 'Our in-house post-production studio, featuring editing,
                     2D / 3D motion graphics and design, character animation, visual effects, color
                     correction, as well as sound design and composing, is a compliment to all our
                     other services.
-                </div>
-            </div>
-        </a>
-        <a href="">
-            <div class="infobox__item">
-                <div class="infobox__link">VIEW WORKS
-                </div>
-                <div class="infobox__title">Experiental & Digital
-                </div>
-                <div class="infobox__text">Our experience design expertise is based on a decade long
+                ',
+            ),
+            array(
+                'title' => 'Experiental & Digital',
+                'body' => 'Our experience design expertise is based on a decade long
                     dedication to digital design, out-of-home media, strategic user experience and
                     user interface design for web, mobile, virtual reality as well as live event
                     media and real-time interactive installations.
-                </div>
-            </div>
-        </a>
-    </div>
+                ',
+            ),
+
+
+        );
+        foreach ($a as $v) { ?>
+
+            <li class="cats__item">
+                <a href="#" class="cats__link">
+                    <span class="cats__title"><?= $v['title'] ?></span>
+                    <span class="cats__body"><?= $v['body'] ?></span>
+                </a>
+            </li>
+        <? } ?>
+    </ul>
+
+
     <div class="imagebox">
         <div class="imagebox__full--linkbox"><a href="">
                 <div class="imagebox__full">
@@ -216,5 +212,5 @@ get_header(); ?>
     </div>
 </div>
 
-sdfsdf
+
 <?php get_footer(); ?>
