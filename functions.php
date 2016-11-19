@@ -33,3 +33,29 @@ function remove_textarea() {
 if( function_exists('acf_add_options_page') ) {
     acf_add_options_page();
 }
+
+
+add_action('acf/input/admin_head', 'my_acf_input_admin_head');
+function my_acf_input_admin_head() {
+    ?>
+    <script type="text/javascript">
+        jQuery(function(){
+            jQuery('.layout').addClass('-collapsed');
+        });
+    </script>
+    <?php
+}
+
+function register_my_menu() {
+    register_nav_menu('header-menu',__( 'Header Menu' ));
+}
+add_action( 'init', 'register_my_menu' );
+
+add_filter('nav_menu_css_class' , 'special_nav_class' , 10 , 2);
+
+function special_nav_class ($classes, $item) {
+    if (in_array('current-menu-item', $classes) ){
+        $classes[] = 'active ';
+    }
+    return $classes;
+}

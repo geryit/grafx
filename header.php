@@ -68,19 +68,7 @@
                 </a>
             </div>
 
-            <ul class="menu">
-                <?
-                foreach (get_field('menu', 'option') as $v) {
-                    ?>
-                    <li class="menu__item <?= get_the_title() == $v['title'] ? 'on' : '' ?>">
-                        <a href="<?= $v['link'] ?>"
-                           class="menu__item__link">
-                            <?= $v['title'] ?>
-                        </a>
-                    </li>
-                <? } ?>
-                <div id="menuOverlay"></div>
-            </ul>
+            <?php wp_nav_menu( array( 'theme_location' => 'header-menu' ) ); ?>
 
             <div class="search">
                 <a href="#" class="search__btn icon-search">

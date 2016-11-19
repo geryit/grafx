@@ -60,7 +60,8 @@ module.exports = function (grunt) {
         sass: {
             dev: {
                 options: {
-                    sourceMap: true
+                    sourceMap: true,
+                    // sourceMapEmbed: true
                 },
                 files: {
                     'dist/css/<%= pkg.name %>.css': 'src/scss/<%= pkg.name %>.scss'

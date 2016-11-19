@@ -77,6 +77,8 @@ $(document).ready(function () {
     $(window).scroll(function () {
         stickyNav();
     });
+
+    $('.menu').append('<div id="menuOverlay"/>')
 });
 
 
