@@ -101,30 +101,31 @@ a{
 .menu {
     display: flex;
     position: relative;
-    &__item {
+    &-item {
         padding-left: 45px;
         &:nth-child(1):hover,
-        &:nth-child(1).on {
+        &:nth-child(1).current-menu-item {
             &~ #menuOverlay{
                 transform: translateX(70px) rotate(-35deg);
             }
         }
         &:nth-child(2):hover,
-        &:nth-child(2).on {
+        &:nth-child(2).current-menu-item {
             & ~ #menuOverlay{
                 transform: translateX(160px) rotate(-35deg);
             }
         }
         &:nth-child(3):hover,
-        &:nth-child(3).on {
+        &:nth-child(3).current-menu-item {
             &~ #menuOverlay{
                 transform: translateX(250px) rotate(-35deg);
             }
         }
-        &.on &__link{
+        &.current-menu-item a{
             color: $gYellow;
         }
-        &__link {
+        
+        a {
             position: relative;
             color: #fff;
             font-size: 15px;
