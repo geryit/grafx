@@ -1,0 +1,21 @@
+.icomoon{
+    font-family: 'icomoon' !important;
+}
+
+.clip{
+    -webkit-clip-path: polygon(0 100%, 0 100%, 0 100%);
+    clip-path: polygon(0 100%, 0 100%, 0 100%);
+    @-moz-document url-prefix() {opacity: 0;}
+}
+
+.clip2{
+    -webkit-clip-path: polygon(0 -300%, 0 100%, 150% 100%);
+    clip-path: polygon(0 -300%, 0 100%, 150% 100%);
+    @-moz-document url-prefix() {opacity: 1;}
+}
+
+.cubic{
+    transition: 2s cubic-bezier(0, 0.7, 1, -0.26);
+    @-moz-document url-prefix() {transition-duration: .2s;}
+}
+
