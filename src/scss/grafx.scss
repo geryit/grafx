@@ -1,4 +1,6 @@
 //@import "normalize";
+$yellow : #efad17 !default;
+
 $icomoon-font-path: "../fonts/icomoon/fonts/" !default;
 
 @import "../../bower_components/slick-carousel/slick/slick.scss";
@@ -7,6 +9,8 @@ $icomoon-font-path: "../fonts/icomoon/fonts/" !default;
 
 @import "../../src/fonts/icomoon/variables";
 @import "../../src/fonts/icomoon/style.scss";
+@import "reset";
+@import "mixins";
 @import "fonts";
 @import "global";
 @import "custom";

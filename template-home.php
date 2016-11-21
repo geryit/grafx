@@ -37,16 +37,19 @@ get_header(); ?>
 
 <div class="container">
     <ul class="services">
-        <?
-        foreach (get_field('services') as $i => $v) { ?>
+        <? if (get_field('services'))
+            foreach (get_field('services') as $i => $v) { ?>
 
-            <li class="services__item">
-                <a href="#" class="services__link">
+                <li class="services__item">
                     <span class="services__title"><?= $v['title'] ?></span>
                     <span class="services__body light"><?= $v['body'] ?></span>
-                </a>
-            </li>
-        <? } ?>
+                    <div class="services__item__btnWrapper">
+                        <a href="#" class="diagonalBtn services__item__btn">
+                            <span>LEARN MORE</span>
+                        </a>
+                    </div>
+                </li>
+            <? } ?>
     </ul>
 
 
@@ -64,9 +67,6 @@ get_header(); ?>
                 $post = $post_object;
                 setup_postdata($post);
 
-//            $description = get_the_content();
-//            $download =
-
                 ?>
                 <li class="featWorks__item">
                     <div class="featWorks__inner"
@@ -77,7 +77,9 @@ get_header(); ?>
                             <span class="featWorks__inner__title"><?= get_the_title() ?></span>
                             <span
                                 class="featWorks__inner__desc light"><?= get_field('short_description'); ?></span>
-                            <a href="#" class="featWorks__inner__btn">VIEW CASE</a>
+                            <a href="#" class="diagonalBtn featWorks__inner__btn">
+                                <span>VIEW CASE</span>
+                            </a>
                         </div>
 
                     </div>
@@ -90,6 +92,58 @@ get_header(); ?>
     </ul>
 
 
+    <div class="brands">
+        <h2 class="brands__title light">Brands We Work With</h2>
+        <ul class="brands__list">
+            <? if (get_field('brands'))
+                foreach (get_field('brands') as $v) { ?>
+                    <li class="brands__item">
+                        <img class="brands__img" src="<?= $v["image"] ?>" alt="">
+                        <div class="brands__item__btnWrapper">
+                            <a href="#" class="diagonalBtn brands__btn"><span>LEARN MORE</span></a>
+                        </div>
+                    </li>
+                <? } ?>
+        </ul>
+    </div>
+
+</div>
+
+<div class="social">
+    <video id="social__video" class="social__video" preload="none" loop
+           poster="<?= get_field('social_video_first_frame') ?>">
+        <source src="<?= get_field('social_video') ?>" type="video/mp4">
+    </video>
+
+    <div class="social__video__overlay"></div>
+
+    <a href="#" class="social__pointer"></a>
+    <div class="social__map"></div>
+    <div class="social__map social__map--hover"></div>
+
+    <div class="container">
+        <div class="social__wrapper">
+            <div class="social__left">
+                <h6 class="social__head">FOLLOW US</h6>
+                <ul class="social__networks">
+                    <? if (get_field('social'))
+                        foreach (get_field('social') as $v) { ?>
+                            <li class="social__network">
+                                <a href="<?= $v['link'] ?>"
+                                   class="social__link"><?= $v['title'] ?></a>
+                            </li>
+                        <? } ?>
+                </ul>
+            </div>
+            <div class="social__right">
+                139 Fulton St. Suite 709<br>
+                New York, NY 10038<br>
+                <b>E:</b> <a class="social__link" href="mailto:info@grafx.co">info@grafx.co</a><br>
+                <b>P:</b> 212.571.0100
+            </div>
+        </div>
+
+    </div>
 </div>
 
 

@@ -1,6 +1,6 @@
 {
     "key": "group_582872767c082",
-    "title": "Home",
+    "title": "Home Slider",
     "fields": [
         {
             "key": "field_582882151accb",
@@ -211,84 +211,6 @@
                     "mime_types": ""
                 }
             ]
-        },
-        {
-            "key": "field_58306d461bfb5",
-            "label": "Services",
-            "name": "services",
-            "type": "repeater",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "collapsed": "field_58306d511bfb6",
-            "min": 4,
-            "max": "",
-            "layout": "table",
-            "button_label": "Add Service Item",
-            "sub_fields": [
-                {
-                    "key": "field_58306d511bfb6",
-                    "label": "Title",
-                    "name": "title",
-                    "type": "text",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": ""
-                },
-                {
-                    "key": "field_58306d691bfb7",
-                    "label": "Body",
-                    "name": "body",
-                    "type": "textarea",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "maxlength": "",
-                    "rows": 4,
-                    "new_lines": "wpautop"
-                },
-                {
-                    "key": "field_58306d8a1bfb8",
-                    "label": "Link",
-                    "name": "link",
-                    "type": "text",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": ""
-                }
-            ]
         }
     ],
     "location": [
@@ -308,5 +230,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1479568822
+    "modified": 1479647072
 }

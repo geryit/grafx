@@ -74,11 +74,32 @@ $(document).ready(function () {
 
     stickyNav();
 
+    var sItem = $('.social');
+    var windowH = $(window).height();
+    var windowS = 0;
+    var sItemY = sItem.offset().top;
+
+    var isScrollOverSocialVideo = function () {
+        windowS = $(this).scrollTop();
+        if (windowH + windowS > sItemY + 100) {
+            $('#social__video')[0].play();
+            window.playSocialVideo = true;
+        }
+    };
+
+    window.playSocialVideo = false;
+
+    isScrollOverSocialVideo();
     $(window).scroll(function () {
         stickyNav();
+
+        if (!window.playSocialVideo) {
+            isScrollOverSocialVideo();
+        }
     });
 
-    $('.menu').append('<div id="menuOverlay"/>')
+    $('.menu').append('<div id="menuOverlay"/>');
+
 });
 
 

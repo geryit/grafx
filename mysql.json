@@ -1,0 +1,21 @@
+{
+    "remote": {
+        "site_url": "grafx.geryit.com",
+        "dbname": "grafx",
+        "dbuser": "root",
+        "dbpass": "tmlxvqv5",
+        "dbhost": "127.0.0.1",
+        "host": "54.80.56.240",
+        "username": "ubuntu",
+        "save_path": "/home/ubuntu/grafxwp/wp-content/themes/grafx/.db",
+        "save_url": "http://grafx.geryit.com/wp-content/themes/grafx/.db"
+    },
+    "local": {
+        "site_url": "grafxwp",
+        "dbname": "grafxwp",
+        "dbuser": "root",
+        "dbpass": "",
+        "dbhost": "127.0.0.1",
+        "dump_dir": "./.db"
+    }
+}

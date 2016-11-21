@@ -16,8 +16,6 @@ $big-play-button--width: 3em !default;
 $big-play-button--height: 1.5em !default;
 $big-play-button--transparency: 0.8 !default;
 
-$gYellow : #efad17 !default;
-
 .vModal {
     .video-js {
         .vjs-big-play-button{
@@ -26,7 +24,7 @@ $gYellow : #efad17 !default;
             border: 0;
             background-color: transparent !important;
             &:hover{
-                color: $gYellow;
+                color: $yellow;
             }
             &:before{
                 content: '\e901';
@@ -40,13 +38,13 @@ $gYellow : #efad17 !default;
             padding: 0 50px;
         }
         .vjs-volume-level {
-            background-color: $gYellow;
+            background-color: $yellow;
             &:before {
                 display: none;
             }
         }
         .vjs-play-progress {
-            background-color: $gYellow;
+            background-color: $yellow;
             &:before {
                 display: none;
             }
@@ -73,7 +71,7 @@ $gYellow : #efad17 !default;
             &:hover:before,
             &:focus{
                 text-shadow: none;
-                color: $gYellow;
+                color: #fff;
             }
         }
 
