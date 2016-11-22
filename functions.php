@@ -51,9 +51,8 @@ function my_acf_admin_head() {
 
             $(document).ready(function(){
 
-//                $('.postbox').removeClass('closed');
-                $('.layout').addClass('-collapsed');
-                $('.acf-postbox').addClass('closed');
+//                $('.layout').addClass('-collapsed');
+//                $('.acf-postbox').addClass('closed');
 
             });
 

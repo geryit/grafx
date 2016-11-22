@@ -1,5 +1,7 @@
-<?php get_header(); ?>
+<?php
+get_header(); ?>
 
-<?php get_template_part('loop'); ?>
-
+<div id="wrap">
+    goksel
+</div>
 <?php get_footer(); ?>

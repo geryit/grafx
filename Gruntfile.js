@@ -202,7 +202,7 @@ module.exports = function (grunt) {
                     host: "ubuntu@54.80.56.240",
                     delete: true // Careful this option could cause data loss, read the docs!
                 }
-            },
+            }
         },
 
         sshexec: {
@@ -250,6 +250,28 @@ module.exports = function (grunt) {
                     'mysql -u <%= mysql.remote.dbuser %> -p<%= mysql.remote.dbpass %> <%= mysql.remote.dbname %> < local_migrated-<%= timestamp %>.sql'
                 ].join(' && ')
             },
+            targz_remote_wpcontent: {
+                options: {
+                    host: '<%= mysql.remote.host %>',
+                    username: '<%= mysql.remote.username %>',
+                    agent: process.env.SSH_AUTH_SOCK
+                },
+                command: [
+                    'cd /home/ubuntu/grafxwp/wp-content',
+                    'tar -cvf - plugins uploads | gzip > ~/wpcontent-<%= timestamp %>.tar.gz'
+                ].join(' && ')
+            },
+            remove_remote_wpcontent: {
+                options: {
+                    host: '<%= mysql.remote.host %>',
+                    username: '<%= mysql.remote.username %>',
+                    agent: process.env.SSH_AUTH_SOCK
+                },
+                command: [
+                    'cd ~',
+                    'rm -rf wpcontent-<%= timestamp %>.tar.gz'
+                ].join(' && ')
+            }
         },
         exec: {
             wget_remote_dump: {
@@ -272,6 +294,12 @@ module.exports = function (grunt) {
             },
             scp_local_dump: {
                 command: 'scp <%= mysql.local.dump_dir %>/local_migrated-<%= timestamp %>.sql <%= mysql.remote.username %>@<%= mysql.remote.host %>:<%= mysql.remote.save_path %>'
+            },
+            download_remote_wpcontent: {
+                command: 'echo "Downloading..."  && scp -r <%= mysql.remote.username %>@<%= mysql.remote.host %>:~/wpcontent-<%= timestamp %>.tar.gz ~'
+            },
+            export_and_remove_local_wpcontent: {
+                command: 'cd <%= mysql.local.wpcontent_dir %> && tar -zxvf  ~/wpcontent-<%= timestamp %>.tar.gz && rm -rf ~/wpcontent-<%= timestamp %>.tar.gz'
             }
         },
         peach: {
@@ -293,7 +321,7 @@ module.exports = function (grunt) {
                 from: '<%= mysql.local.site_url %>',
                 to:   '<%= mysql.remote.site_url %>'
             }
-        },
+        }
     });
     grunt.registerTask('default', ['sass:dev', 'concat',
         'newer:imagemin', 'newer:copy']);
@@ -320,6 +348,13 @@ module.exports = function (grunt) {
         'exec:cleanup_local',                 //delete local database dump files
         'sshexec:import_migrated_local_dump', //import the migrated database
         'sshexec:cleanup_remote'             //delete remote database dump file
+    ]);
+
+    grunt.registerTask('download_wpcontent', [
+        'sshexec:targz_remote_wpcontent',
+        'exec:download_remote_wpcontent',
+        'sshexec:remove_remote_wpcontent',
+        'exec:export_and_remove_local_wpcontent'
     ]);
 
 
