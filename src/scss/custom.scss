@@ -52,10 +52,10 @@
             content: '';
             position: absolute;
             background: rgba(0, 0, 0, .2);
-            top: -99em;
-            left: -99em;
-            bottom: -99em;
-            right: -99em;
+            top: -120em;
+            left: -120em;
+            bottom: -120em;
+            right: -120em;
             z-index: -1;
             pointer-events: none;
         }
@@ -478,7 +478,7 @@
             height: 100%;
         }
     }
-
+    
 
     &__wrapper {
         display: flex;

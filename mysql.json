@@ -16,6 +16,7 @@
         "dbuser": "root",
         "dbpass": "",
         "dbhost": "127.0.0.1",
+        "wpcontent_dir": "~/Sites/grafxwp/wp-content/",
         "dump_dir": "./.db"
     }
 }

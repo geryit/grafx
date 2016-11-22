@@ -27,30 +27,6 @@
             "mime_types": ""
         },
         {
-            "key": "field_582fb6f5ddd1b",
-            "label": "Category",
-            "name": "category",
-            "type": "checkbox",
-            "instructions": "",
-            "required": 1,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "33.33",
-                "class": "",
-                "id": ""
-            },
-            "choices": {
-                "Branding-Design": "Branding-Design",
-                "Production": "Production",
-                "Post-Production": "Post-Production",
-                "Experiential & Digital": "Experiential & Digital"
-            },
-            "default_value": [],
-            "layout": "vertical",
-            "toggle": 0,
-            "return_format": "value"
-        },
-        {
             "key": "field_582fb725ddd1c",
             "label": "Year",
             "name": "year",
@@ -681,5 +657,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1479596762
+    "modified": 1479776048
 }
