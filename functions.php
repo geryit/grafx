@@ -62,3 +62,12 @@ function my_acf_admin_head() {
 }
 
 add_action('acf/input/admin_head', 'my_acf_admin_head');
+
+
+
+/*Hide "Posts" from sidebar*/
+function post_remove ()
+{
+    remove_menu_page('edit.php');
+}
+add_action('admin_menu', 'post_remove');

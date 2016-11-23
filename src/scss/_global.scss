@@ -9,20 +9,14 @@ body {
     -moz-osx-font-smoothing: grayscale;
     font-family: 'gotham_book', sans-serif;
     margin: 0;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
 }
 
-//#wrap {
-//    min-height: 100%;
-//    margin-bottom: -63px;
-//    &:after {
-//        content: "";
-//        display: block;
-//    }
-//}
-//
-//.footer, #wrap:after {
-//    height: 63px;
-//}
+#wrap{
+    flex: 1;
+}
 
 .light{
     font-family: 'gotham_light', sans-serif;
@@ -130,22 +124,44 @@ h6{
 
 
 #menuOverlay{
-    position: fixed;
-    width: 100%;
+    position: absolute;
+    left: 0;
+    right: -99em;
     height: 100%;
     z-index: -1;
+    pointer-events: none;
     div{
         top: 0;
         left: 0;
         position: absolute;
         background:rgba(255, 255, 255, 0.07);
-        transform: translate(100%, -50%) rotate(-35deg) scaleY(3);
+        transform: translate(100%, -50%) rotate(-35deg);
         transform-origin: left;
         transition: .2s transform;
         width: 100%;
-        height: 100%;
+        height: 1440px;
+        @media (max-width: 5120px) {
+            height: 7440px;
+        }
+        @media (max-width: 3840px) {
+            height: 5340px;
+        }
+        @media (max-width: 2560px) {
+            height: 3640px;
+        }
+        @media (max-width: 1920px) {
+            height: 2400px;
+        }
+        @media (max-width: 1680px) {
+            height: 2040px;
+        }
+        @media (max-width: 1366px) {
+            height: 1440px;
+        }
     }
 }
+
+
 
 
 .menu {
@@ -156,19 +172,19 @@ h6{
         &:nth-child(1):hover,
         &:nth-child(1).current-menu-item {
             & ~ #menuOverlay div{
-                transform: translate(60px, -50%) rotate(-35deg) scaleY(3);
+                transform: translate(60px, -50%) rotate(-35deg);
             }
         }
         &:nth-child(2):hover,
         &:nth-child(2).current-menu-item {
             & ~ #menuOverlay div{
-                transform: translate(160px, -50%) rotate(-35deg) scaleY(3);
+                transform: translate(160px, -50%) rotate(-35deg);
             }
         }
         &:nth-child(3):hover,
         &:nth-child(3).current-menu-item {
             &~ #menuOverlay div{
-                transform: translate(250px, -50%) rotate(-35deg) scaleY(3);
+                transform: translate(250px, -50%) rotate(-35deg);
             }
         }
         &.current-menu-item a{

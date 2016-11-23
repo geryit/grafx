@@ -63,13 +63,13 @@ $(document).ready(function () {
     var stickyNavTop = $header.offset().top;
 
     var stickyNav = function () {
-        // var scrollTop = $(window).scrollTop();
-        //
-        // if (scrollTop > stickyNavTop) {
-        //     $header.addClass('sticky');
-        // } else {
-        //     $header.removeClass('sticky');
-        // }
+        var scrollTop = $(window).scrollTop();
+
+        if (scrollTop > stickyNavTop) {
+            $header.addClass('sticky');
+        } else {
+            $header.removeClass('sticky');
+        }
     };
 
     stickyNav();
@@ -102,9 +102,11 @@ $(document).ready(function () {
         if (!window.playSocialVideo && sItem.length) {
             isScrollOverSocialVideo();
         }
+
     });
 
     $('.menu').append('<div id="menuOverlay"><div/></div>');
+
 
 });
 

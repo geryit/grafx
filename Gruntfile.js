@@ -333,7 +333,7 @@ module.exports = function (grunt) {
         'sshexec:cleanup_remote_dump',          //delete remote dump
         'peach:search_replace_remote_dump',   //search and replace URLs in database
         'exec:import_migrated_remote_dump',   //import the migrated database
-        'exec:cleanup_local_and_migrated'      //delete local database dump files
+        'exec:cleanup_local'      //delete local database dump files
     ]);
 
     grunt.registerTask('sync_remote_db', [
