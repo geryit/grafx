@@ -370,6 +370,7 @@
             text-align: center;
             opacity: 0;
             transition: .2s opacity;
+            z-index: 1;
         }
         &__cornerTitle {
             position: absolute;
@@ -379,6 +380,7 @@
             left: 30px;
             transition: .3s;
             font-weight: bold;
+            z-index: 1;
         }
 
         &__title {
@@ -409,6 +411,7 @@
             background: rgba(0, 0, 0, 0.75);
             @extend .clip;
             transition: .5s;
+            z-index: 1;
         }
         &:hover:before {
             @extend .clip2;
@@ -552,6 +555,17 @@
     }
 }
 
+.awardsTags {
+    position: absolute;
+    display: flex;
+    right: 10px;
+    &__item {
+        background: $yellow;
+        font-size: 12px;
+        margin-left: 10px;
+        padding: 5px;
+    }
+}
 
 
 

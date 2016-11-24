@@ -71,6 +71,12 @@ get_header(); ?>
                 <li class="featWorks__item">
                     <div class="featWorks__inner"
                          style="background-image: url(<?= get_field('main_image'); ?>)">
+                        <ul class="awardsTags">
+                            <? if (get_field('awards'))
+                                foreach (get_field('awards') as $m) { ?>
+                                    <li class="awardsTags__item"><?=$m?></li>
+                                <? } ?>
+                        </ul>
                         <span class="featWorks__inner__cornerTitle"
                               style="color: <?= get_sub_field('title_color'); ?>"><?= get_the_title() ?></span>
                         <div class="featWorks__inner__items">
