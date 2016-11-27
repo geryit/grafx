@@ -3,6 +3,37 @@
     "title": "Work",
     "fields": [
         {
+            "key": "field_5837858de8ca8",
+            "label": "Case Study",
+            "name": "case_study",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0
+        },
+        {
+            "key": "field_583786d0f4093",
+            "label": "Corner Title Color",
+            "name": "corner_title_color",
+            "type": "color_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "#ffffff"
+        },
+        {
             "key": "field_582fb66d121ae",
             "label": "Main Image",
             "name": "main_image",
@@ -657,5 +688,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1479776048
+    "modified": 1480034038
 }

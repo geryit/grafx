@@ -44,12 +44,13 @@ function register_my_menu()
 add_action('init', 'register_my_menu');
 
 
-function my_acf_admin_head() {
+function my_acf_admin_head()
+{
     ?>
     <script type="text/javascript">
-        (function($){
+        (function ($) {
 
-            $(document).ready(function(){
+            $(document).ready(function () {
 
 //                $('.layout').addClass('-collapsed');
 //                $('.acf-postbox').addClass('closed');
@@ -64,10 +65,41 @@ function my_acf_admin_head() {
 add_action('acf/input/admin_head', 'my_acf_admin_head');
 
 
-
 /*Hide "Posts" from sidebar*/
-function post_remove ()
+function post_remove()
 {
     remove_menu_page('edit.php');
 }
+
 add_action('admin_menu', 'post_remove');
+
+
+//function set_custom_post_types_admin_order($wp_query)
+//{
+//    if (is_admin()) {
+//
+//        // Get the post type from the query
+//        $post_type = $wp_query->query['post_type'];
+//
+//        if ($post_type == 'work') {
+//            if (empty($_GET['orderby'])) {
+//                echo "<meta http-equiv='refresh' content='0;url=" . $_SERVER['REQUEST_URI'] . "&orderby=date&order=desc'>";
+//            }
+//        }
+//    }
+//}
+
+//add_filter('pre_get_posts', 'set_custom_post_types_admin_order');
+
+function printr($data){
+    echo "<pre>";
+    print_r($data);
+    echo "</pre>";
+}
+
+function boldify($str){
+    $str = preg_replace("/&#8211;(.*)/", "<b>$1</b>", $str);
+    return preg_replace("/–(.*)/", "<b>$1</b>", $str);
+}
+
+

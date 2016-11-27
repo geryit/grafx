@@ -32,6 +32,7 @@ get_header(); ?>
             </div>
         <? }
     } ?>
+
 </div>
 
 
@@ -53,7 +54,7 @@ get_header(); ?>
     </ul>
 
 
-    <ul class="featWorks">
+    <div class="works works--feat">
         <?
 
         while (have_rows('featured_works')) {
@@ -67,35 +68,12 @@ get_header(); ?>
                 $post = $post_object;
                 setup_postdata($post);
 
-                ?>
-                <li class="featWorks__item">
-                    <div class="featWorks__inner"
-                         style="background-image: url(<?= get_field('main_image'); ?>)">
-                        <ul class="awardsTags">
-                            <? if (get_field('awards'))
-                                foreach (get_field('awards') as $m) { ?>
-                                    <li class="awardsTags__item"><?=$m?></li>
-                                <? } ?>
-                        </ul>
-                        <span class="featWorks__inner__cornerTitle"
-                              style="color: <?= get_sub_field('title_color'); ?>"><?= get_the_title() ?></span>
-                        <div class="featWorks__inner__items">
-                            <span class="featWorks__inner__title"><?= get_the_title() ?></span>
-                            <span
-                                class="featWorks__inner__desc light"><?= get_field('short_description'); ?></span>
-                            <a href="#" class="diagonalBtn featWorks__inner__btn">
-                                <span>VIEW CASE</span>
-                            </a>
-                        </div>
+                get_template_part( 'loop', 'work' );
 
-                    </div>
-
-                </li>
-                <?
                 wp_reset_postdata();
             }
         }; ?>
-    </ul>
+    </div>
 
 
     <div class="brands">
@@ -150,6 +128,7 @@ get_header(); ?>
         </div>
 
     </div>
+
 </div>
 
 

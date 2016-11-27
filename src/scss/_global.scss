@@ -1,5 +1,5 @@
 html, body {
-  height: 100%;
+    height: 100%;
 }
 
 body {
@@ -14,15 +14,15 @@ body {
     flex-direction: column;
 }
 
-#wrap{
+#wrap {
     flex: 1;
 }
 
-.light{
+.light {
     font-family: 'gotham_light', sans-serif;
 }
 
-b, .bold{
+b, .bold {
     font-weight: normal;
     font-family: 'gotham_medium', sans-serif;
 }
@@ -33,44 +33,42 @@ ul {
     padding: 0;
 }
 
-a{
+a {
     color: #000;
     text-decoration: none;
 }
 
-h1{
+h1 {
     font-size: 45px;
 }
 
-
-h2{
+h2 {
     font-size: 25px;
     color: #37393a;
     font-weight: 500;
 }
 
-h3{
+h3 {
     font-size: 20px;
 }
 
-h4{
+h4 {
     font-size: 18px;
 }
 
-h5{
-    font-size: 16px;
+h5 {
+    font-size: 14px;
 }
 
-h6{
+h6 {
     font-size: 12px;
 }
 
-
-.oyh{
+.oyh {
     overflow-y: hidden;
 }
 
-.dn{
+.dn {
     display: none;
 }
 
@@ -95,14 +93,14 @@ h6{
             flex: 1;
         }
     }
-    &.sticky{
+    &.sticky {
         position: fixed;
         top: 0;
         background-color: rgba(40, 40, 47, 0.9);
         overflow: hidden;
-        .logo__img{
+        .logo__img {
             display: none;
-            &2{
+            &2 {
                 display: block;
             }
         }
@@ -110,31 +108,30 @@ h6{
     }
 }
 
-.logo{
+.logo {
     &__link {
         position: absolute;
         transform: translateY(-50%);
     }
-    .logo__img2{
+    .logo__img2 {
         display: none;
         margin-left: 5px;
         margin-top: -3px;
     }
 }
 
-
-#menuOverlay{
+#menuOverlay {
     position: absolute;
     left: 0;
     right: -99em;
     height: 100%;
     z-index: -1;
     pointer-events: none;
-    div{
+    div {
         top: 0;
         left: 0;
         position: absolute;
-        background:rgba(255, 255, 255, 0.07);
+        background: rgba(255, 255, 255, 0.07);
         transform: translate(100%, -50%) rotate(-35deg);
         transform-origin: left;
         transition: .2s transform;
@@ -158,36 +155,52 @@ h6{
         @media (max-width: 1366px) {
             height: 1440px;
         }
+        @media (max-width: 1024px) {
+            height: 1100px;
+        }
+        @media (max-width: 768px) {
+            height: 768px;
+        }
     }
 }
-
-
-
 
 .menu {
     display: flex;
     position: relative;
     &-item {
         padding-left: 45px;
-        &:nth-child(1):hover,
         &:nth-child(1).current-menu-item {
-            & ~ #menuOverlay div{
+            & ~ #menuOverlay div {
                 transform: translate(60px, -50%) rotate(-35deg);
             }
         }
-        &:nth-child(2):hover,
         &:nth-child(2).current-menu-item {
-            & ~ #menuOverlay div{
+            & ~ #menuOverlay div {
                 transform: translate(160px, -50%) rotate(-35deg);
             }
         }
-        &:nth-child(3):hover,
-        &:nth-child(3).current-menu-item {
-            &~ #menuOverlay div{
+        &:nth-child(3):hover {
+            & ~ #menuOverlay div {
                 transform: translate(250px, -50%) rotate(-35deg);
             }
         }
-        &.current-menu-item a{
+        &:nth-child(1):hover {
+            & ~ #menuOverlay div {
+                transform: translate(60px, -50%) rotate(-35deg);
+            }
+        }
+        &:nth-child(2):hover {
+            & ~ #menuOverlay div {
+                transform: translate(160px, -50%) rotate(-35deg);
+            }
+        }
+        &:nth-child(3).current-menu-item {
+            & ~ #menuOverlay div {
+                transform: translate(250px, -50%) rotate(-35deg);
+            }
+        }
+
+        &.current-menu-item a {
             color: $yellow;
         }
 
@@ -197,7 +210,7 @@ h6{
             font-size: 15px;
             padding: 5px 0;
             cursor: pointer;
-            &:hover{
+            &:hover {
                 color: $yellow;
             }
         }
@@ -211,7 +224,7 @@ h6{
     position: relative;
     &__btn {
         color: #fff;
-        &:hover{
+        &:hover {
             color: $yellow;
         }
     }
@@ -237,7 +250,7 @@ h6{
         margin: auto;
         position: relative;
     }
-    &__video{
+    &__video {
         margin: auto;
         max-width: 100%;
         width: 100%;
@@ -251,11 +264,11 @@ h6{
         right: 50px;
         font-size: 24px;
         cursor: pointer;
-        &:hover{
+        &:hover {
             color: $yellow;
         }
     }
-    &.on{
+    &.on {
         display: block;
     }
 }
@@ -272,7 +285,7 @@ h6{
     font-weight: bold;
     position: relative;
     transition: .2s;
-    span{
+    span {
         position: relative;
     }
     &:before {
@@ -296,7 +309,6 @@ h6{
     }
 
 }
-
 
 .footer {
     background: #000;
@@ -322,6 +334,39 @@ h6{
             color: #fff;
         }
     }
+}
+
+.pluses {
+    position: relative;
+    pointer-events: none;
+    margin: 30px;
+    &__inner{
+        color: rgba(0, 0, 0, 0.2);
+        font-size: 10px;
+        @extend .icomoon;
+        &:before,
+        &:after{
+            content: $icon-plus;
+            display: inline-block;
+        }
+        &:before{
+            margin-left: -5px;
+        }
+        &:after{
+            float: right;
+            margin-right: -5px;
+        }
+    }
+    &--float{
+        position: absolute;
+        width: 100%;
+        bottom: 95px;
+        margin: 0;
+    }
+    &--float &__inner{
+        color: rgba(255, 255, 255, 0.2);
+    }
+
 }
 
 

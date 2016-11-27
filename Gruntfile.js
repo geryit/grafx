@@ -18,7 +18,11 @@ module.exports = function (grunt) {
                 files: [ 'Gruntfile.js' ],
                 options: {
                     reload: true //reloads grunt, not chrome
-                }
+                },
+                tasks: [
+                    'sass:dev'
+                    // 'copy:css'
+                ]
             },
             sass: {
                 files: ['src/**/*.scss'],

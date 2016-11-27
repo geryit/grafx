@@ -3,25 +3,21 @@
     "title": "Featured Works",
     "fields": [
         {
-            "key": "field_5830d2364ad04",
-            "label": "Featured Works",
-            "name": "featured_works",
-            "type": "repeater",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "collapsed": "",
-            "min": 5,
-            "max": "",
-            "layout": "table",
-            "button_label": "Add Featured Work",
             "sub_fields": [
                 {
+                    "post_type": [
+                        "work"
+                    ],
+                    "taxonomy": [
+                        "work-category:branding-design",
+                        "work-category:experiential-digital",
+                        "work-category:post-production",
+                        "work-category:production"
+                    ],
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "return_format": "object",
+                    "ui": 1,
                     "key": "field_5830d2d1e912c",
                     "label": "Work",
                     "name": "work",
@@ -33,32 +29,26 @@
                         "width": "",
                         "class": "",
                         "id": ""
-                    },
-                    "post_type": [
-                        "work"
-                    ],
-                    "taxonomy": [],
-                    "allow_null": 0,
-                    "multiple": 0,
-                    "return_format": "object",
-                    "ui": 1
-                },
-                {
-                    "key": "field_5830de6c50ede",
-                    "label": "Title color",
-                    "name": "title_color",
-                    "type": "color_picker",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "#ffffff"
+                    }
                 }
-            ]
+            ],
+            "min": 5,
+            "max": 0,
+            "layout": "table",
+            "button_label": "Add Featured Work",
+            "collapsed": "",
+            "key": "field_5830d2364ad04",
+            "label": "Featured Works",
+            "name": "featured_works",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
         }
     ],
     "location": [
@@ -78,5 +68,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1479646364
+    "modified": 1480208804
 }

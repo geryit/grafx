@@ -17,6 +17,8 @@ $(document).ready(function () {
 
             // checkVideo(vidId);
 
+            $(this).append('<div class="pluses pluses--float"><div class="container"><div class="pluses__inner"></div></div></div>');
+
         }).slick({
             draggable: true,
             adaptiveHeight: false,
@@ -103,10 +105,79 @@ $(document).ready(function () {
             isScrollOverSocialVideo();
         }
 
+
     });
+
+
+    var stickyHeaders = (function () {
+
+        var $window = $(window),
+            $stickies;
+        var mainHeaderHeight = $('.header').outerHeight();
+
+        var load = function (stickies) {
+
+            if (typeof stickies === "object" && stickies instanceof jQuery && stickies.length > 0) {
+
+                $stickies = stickies.each(function () {
+
+                    var $thisSticky = $(this).wrap('<div class="works__headWrap" />');
+
+                    $thisSticky
+                        .data('originalPosition', $thisSticky.offset().top)
+                        .data('originalHeight', $thisSticky.outerHeight())
+                        .parent()
+                        .height($thisSticky.outerHeight());
+                });
+
+                $window.off("scroll.stickies").on("scroll.stickies", function () {
+                    _whenScrolling();
+                });
+            }
+        };
+
+        var _whenScrolling = function () {
+
+            $stickies.each(function (i) {
+
+                var $thisSticky = $(this),
+                    $stickyPosition = $thisSticky.data('originalPosition');
+
+                if ($stickyPosition <= $window.scrollTop() + mainHeaderHeight) {
+
+                    var $nextSticky = $stickies.eq(i + 1),
+                        $nextStickyPosition = $nextSticky.data('originalPosition') - $thisSticky.data('originalHeight');
+
+                    $thisSticky.addClass("fixed");
+
+
+                    if ($nextSticky.length > 0 && $thisSticky.offset().top >= $nextStickyPosition) {
+
+                        $thisSticky.addClass("absolute").css("top", $nextStickyPosition);
+                    }
+
+                } else {
+
+                    var $prevSticky = $stickies.eq(i - 1);
+
+                    $thisSticky.removeClass("fixed");
+
+                    if ($prevSticky.length > 0 && $window.scrollTop() + mainHeaderHeight <= $thisSticky.data('originalPosition') - $thisSticky.data('originalHeight')) {
+
+                        $prevSticky.removeClass("absolute").removeAttr("style");
+                    }
+                }
+            });
+        };
+
+        return {
+            load: load
+        };
+    })();
 
     $('.menu').append('<div id="menuOverlay"><div/></div>');
 
+    stickyHeaders.load($(".works__head"));
 
 });
 
