@@ -169,14 +169,28 @@ h6 {
     position: relative;
     &-item {
         padding-left: 45px;
-        &:nth-child(1).current-menu-item {
-            & ~ #menuOverlay div {
-                transform: translate(60px, -50%) rotate(-35deg);
+        &:nth-child(1){
+            &.current-menu-item,
+            &.current-menu-parent{
+                & ~ #menuOverlay div {
+                    transform: translate(60px, -50%) rotate(-35deg);
+                }
             }
         }
-        &:nth-child(2).current-menu-item {
-            & ~ #menuOverlay div {
-                transform: translate(160px, -50%) rotate(-35deg);
+        &:nth-child(2){
+            &.current-menu-item,
+            &.current-menu-parent {
+                & ~ #menuOverlay div {
+                    transform: translate(160px, -50%) rotate(-35deg);
+                }
+            }
+        }
+        &:nth-child(3){
+            &.current-menu-item,
+            &.current-menu-parent {
+                & ~ #menuOverlay div {
+                    transform: translate(250px, -50%) rotate(-35deg);
+                }
             }
         }
         &:nth-child(3):hover {
@@ -194,11 +208,7 @@ h6 {
                 transform: translate(160px, -50%) rotate(-35deg);
             }
         }
-        &:nth-child(3).current-menu-item {
-            & ~ #menuOverlay div {
-                transform: translate(250px, -50%) rotate(-35deg);
-            }
-        }
+
 
         &.current-menu-item a {
             color: $yellow;
