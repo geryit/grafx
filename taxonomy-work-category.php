@@ -30,7 +30,7 @@ function single_cat($i)
 }
 
 
-if(get_query_var( 'orderby' )) $orderby = get_query_var( 'orderby' ); else $orderby = 'date';
+if (get_query_var('orderby')) $orderby = get_query_var('orderby'); else $orderby = 'date';
 ?>
 
 <div id="wrap">
@@ -42,7 +42,7 @@ if(get_query_var( 'orderby' )) $orderby = get_query_var( 'orderby' ); else $orde
                     <a class="cats__icon cats__icon--prev icon-l-arrow2"
                        href="<?= get_term_link(single_cat($term_prev_index)->term_id) ?>"></a>
                 </li>
-                <li class="cats__item">
+                <li class="cats__item fx">
                     <a href="<?= get_term_link(single_cat($term_prev_index)->term_id) ?>"
                        class="cats__link light">
                         <?= single_cat($term_prev_index)->name ?>
@@ -54,7 +54,7 @@ if(get_query_var( 'orderby' )) $orderby = get_query_var( 'orderby' ); else $orde
                         <?= single_cat($term_index)->name ?>
                     </a>
                 </li>
-                <li class="cats__item">
+                <li class="cats__item fx">
                     <a class="cats__link light"
                        href="<?= get_term_link(single_cat($term_next_index)->term_id) ?>">
                         <?= single_cat($term_next_index)->name ?>
@@ -72,11 +72,11 @@ if(get_query_var( 'orderby' )) $orderby = get_query_var( 'orderby' ); else $orde
 
 
     <div class="container">
-        <div class="works works--orderBy-<?=$orderby?>">
+        <div class="works works--orderBy-<?= $orderby ?>">
             <?
 
             $year_check = false;
-//            query_posts($query_string . '&orderby=title&order=ASC');
+            //            query_posts($query_string . '&orderby=title&order=ASC');
             if (have_posts()) {
                 while (have_posts()) {
                     the_post();
@@ -91,8 +91,10 @@ if(get_query_var( 'orderby' )) $orderby = get_query_var( 'orderby' ); else $orde
                                 </div>
                                 <div class="works__head__right">
                                     <h5 class='works__head__sortBy'>Sort by</h5>
-                                    <a href="?orderby=title" class='works__head__sortBtn <?=$orderby=='title'?'on':''?>'>A-Z</a>
-                                    <a href="?orderby=date" class='works__head__sortBtn <?=$orderby=='date'?'on':''?>'>DATE</a>
+                                    <a href="?orderby=title"
+                                       class='works__head__sortBtn <?= $orderby == 'title' ? 'on' : '' ?>'>A-Z</a>
+                                    <a href="?orderby=date"
+                                       class='works__head__sortBtn <?= $orderby == 'date' ? 'on' : '' ?>'>DATE</a>
                                 </div>
                             </div>
 
@@ -101,6 +103,8 @@ if(get_query_var( 'orderby' )) $orderby = get_query_var( 'orderby' ); else $orde
 
                     // Now that your year has been printed, assign it to the $year_check variable
                     $year_check = $year;
+
+
                     get_template_part('loop', 'work');
                 }
             }
@@ -109,6 +113,10 @@ if(get_query_var( 'orderby' )) $orderby = get_query_var( 'orderby' ); else $orde
             ?>
         </div>
     </div>
-    <div class="pluses"><div class="container"><div class="pluses__inner"></div></div></div>
+    <div class="pluses">
+        <div class="container">
+            <div class="pluses__inner"></div>
+        </div>
+    </div>
 </div>
 <?php get_footer(); ?>

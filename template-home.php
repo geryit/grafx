@@ -62,11 +62,17 @@ get_header(); ?>
 
             $post_object = get_sub_field('work');
 
-            $title = get_the_title();
 
             if ($post_object) {
                 $post = $post_object;
                 setup_postdata($post);
+//                printr($post);
+//                printr($post->post_type);
+//                printr(get_post_taxonomies( $post )[1]); //['post_tag','work-category']
+//                printr(wp_get_post_terms( $post->ID, get_post_taxonomies( $post )[1]));
+
+                $post_type = $post->post_type;
+
 
                 get_template_part( 'loop', 'work' );
 
@@ -131,5 +137,15 @@ get_header(); ?>
 
 </div>
 
+<div class="vModal" ng-class="{on:vModal.on}">
+    <div class="vModal__bg" ng-click="vModal.close()"></div>
+    <span class="icon-close vModal__close" ng-click="vModal.close()"></span>
+    <video id="vModal__video" class="video-js vjs-default-skin vjs-big-play-centered grafx-skin vModal__video"
+           width="100%" height="100%" controls preload="none"
+           data-setup=''>
+        <source type='video/mp4'/>
+    </video>
+
+</div>
 
 <?php get_footer(); ?>

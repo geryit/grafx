@@ -70,8 +70,8 @@ module.exports = function (grunt) {
             dev: {
                 options: {
                     sourceMap: true,
-                    sourceMapEmbed: true,
-                    sourceMapContents : true,
+                    // sourceMapEmbed: true,
+                    // sourceMapContents : true,
 
                 },
                 files: {

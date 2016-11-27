@@ -179,6 +179,11 @@ $(document).ready(function () {
 
     stickyHeaders.load($(".works__head"));
 
+    $(".cSlider").slick({
+        prevArrow: '<button class="cSlider__arrow cSlider__arrow__prev"></button>',
+        nextArrow: '<button class="cSlider__arrow cSlider__arrow__next"></button>',
+    });
+
 });
 
 

@@ -16,66 +16,75 @@ $big-play-button--width: 3em !default;
 $big-play-button--height: 1.5em !default;
 $big-play-button--transparency: 0.8 !default;
 
-.vModal {
-    .video-js {
-        .vjs-big-play-button{
-            font-family: 'icomoon';
-            font-size: 64px;
-            border: 0;
-            background-color: transparent !important;
-            &:hover{
-                color: $yellow;
-            }
-            &:before{
-                content: '\e901';
-            }
+.video-js.grafx-skin {
+    .vjs-big-play-button {
+        font-family: 'icomoon';
+        font-size: 64px;
+        border: 0;
+        background-color: transparent !important;
+        &:hover {
+            color: $yellow;
         }
-        .vjs-control:before {
-            font-size: 2.2em;
-        }
-        .vjs-control-bar {
-            height: 50px;
-            padding: 0 50px;
-        }
-        .vjs-volume-level {
-            background-color: $yellow;
-            &:before {
-                display: none;
-            }
-        }
-        .vjs-play-progress {
-            background-color: $yellow;
-            &:before {
-                display: none;
-            }
-        }
-        .vjs-time-control {
-            font-size: 14px;
-
-        }
-
-        .vjs-big-play-button:before,
-        .vjs-control:before,
-        .vjs-modal-dialog,
-        .vjs-remaining-time,
-        .vjs-menu-content,
-        .vjs-menu,
-        .vjs-menu-button .vjs-menu{
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .vjs-control{
-            &:focus:before,
-            &:hover:before,
-            &:focus{
-                text-shadow: none;
-                color: #fff;
-            }
+        &:before {
+            content: '\e901';
         }
 
     }
+    &.bigger-play .vjs-big-play-button {
+        font-size: 90px;
+    }
+    &.darker-play .vjs-big-play-button {
+        color: rgba(0, 0, 0, 0.5);
+        &:hover{
+            color: #000;
+        }
+    }
+    .vjs-control:before {
+        font-size: 2.2em;
+    }
+    .vjs-control-bar {
+        height: 50px;
+        padding: 0 50px;
+    }
+    .vjs-volume-level {
+        background-color: $yellow;
+        &:before {
+            display: none;
+        }
+    }
+    .vjs-play-progress {
+        background-color: $yellow;
+        &:before {
+            display: none;
+        }
+    }
+    .vjs-time-control {
+        font-size: 14px;
+
+    }
+
+    .vjs-big-play-button:before,
+    .vjs-control:before,
+    .vjs-modal-dialog,
+    .vjs-remaining-time,
+    .vjs-menu-content,
+    .vjs-menu,
+    .vjs-menu-button .vjs-menu {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .vjs-control {
+        &:focus:before,
+        &:hover:before,
+        &:focus {
+            text-shadow: none;
+            color: #fff;
+        }
+    }
+
 }
+
 
 
