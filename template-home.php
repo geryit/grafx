@@ -45,7 +45,8 @@ get_header(); ?>
                     <span class="services__title"><?= $v['title'] ?></span>
                     <span class="services__body light"><?= $v['body'] ?></span>
                     <div class="services__item__btnWrapper">
-                        <a href="#" class="diagonalBtn services__item__btn">
+                        <a href="<?= get_term_link($v['link']); ?>"
+                           class="diagonalBtn services__item__btn">
                             <span>LEARN MORE</span>
                         </a>
                     </div>
@@ -74,7 +75,7 @@ get_header(); ?>
                 $post_type = $post->post_type;
 
 
-                get_template_part( 'loop', 'work' );
+                get_template_part('loop', 'work');
 
                 wp_reset_postdata();
             }
@@ -86,11 +87,11 @@ get_header(); ?>
         <h2 class="brands__title light">Brands We Work With</h2>
         <ul class="brands__list">
             <? if (get_field('brands'))
-                foreach (get_field('brands') as $v) { ?>
+                foreach (get_field('brands') as $v) {?>
                     <li class="brands__item">
                         <img class="brands__img" src="<?= $v["image"] ?>" alt="">
                         <div class="brands__item__btnWrapper">
-                            <a href="#" class="diagonalBtn brands__btn"><span>LEARN MORE</span></a>
+                            <a href="<?=get_permalink($v["link"])?>" class="diagonalBtn brands__btn"><span>LEARN MORE</span></a>
                         </div>
                     </li>
                 <? } ?>
@@ -140,7 +141,8 @@ get_header(); ?>
 <div class="vModal" ng-class="{on:vModal.on}">
     <div class="vModal__bg" ng-click="vModal.close()"></div>
     <span class="icon-close vModal__close" ng-click="vModal.close()"></span>
-    <video id="vModal__video" class="video-js vjs-default-skin vjs-big-play-centered grafx-skin vModal__video"
+    <video id="vModal__video"
+           class="video-js vjs-default-skin vjs-big-play-centered grafx-skin vModal__video"
            width="100%" height="100%" controls preload="none"
            data-setup=''>
         <source type='video/mp4'/>

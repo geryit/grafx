@@ -109,6 +109,12 @@ if ($thisindex < count($ids) - 1) $nextid = $ids[$thisindex + 1];
         }
         ?>
     </div>
+
+    <div class="pluses">
+        <div class="container">
+            <div class="pluses__inner"></div>
+        </div>
+    </div>
 </div>
 
 <?php get_footer(); ?>

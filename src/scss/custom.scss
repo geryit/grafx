@@ -36,7 +36,6 @@
     }
 }
 
-
 .hSlider {
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
     &__body {
@@ -347,14 +346,14 @@
     flex-wrap: wrap;
     margin-left: -10px;
     margin-right: -10px;
-    &__item{
+    &__item {
         width: 50%;
         padding: 10px;
         &--case {
-            .works__inner{
+            .works__inner {
                 box-shadow: 0 0 0 10px $yellow inset;
             }
-            .awardsTags{
+            .awardsTags {
                 top: 10px;
                 right: 20px;
             }
@@ -439,7 +438,7 @@
         background-color: #fff;
         margin-left: -10px;
         margin-right: -10px;
-        &Wrap{
+        &Wrap {
             width: 100%;
         }
         &.fixed {
@@ -452,11 +451,11 @@
             &.absolute {
                 position: absolute;
             }
-            .works__head__inner{
+            .works__head__inner {
             }
         }
-        &:first-child &{
-            &__right{
+        &:first-child & {
+            &__right {
                 display: flex;
             }
         }
@@ -493,7 +492,7 @@
             min-width: 60px;
             text-align: center;
             &.on,
-            &:hover{
+            &:hover {
                 color: $yellow;
                 border-color: $yellow;
                 font-weight: bold;
@@ -501,29 +500,27 @@
         }
     }
 
-    &--orderBy-title{
-        .works__head{
-            &Wrap{
+    &--orderBy-title {
+        .works__head {
+            &Wrap {
                 display: none;
-                &:first-child{
+                &:first-child {
                     display: block;
                 }
             }
-            &.absolute{
+            &.absolute {
                 top: 0 !important;
-                &.fixed{
+                &.fixed {
                     top: 70px !important;
                     position: fixed !important;
                 }
             }
-            &__year{
+            &__year {
                 display: none;
             }
         }
 
     }
-
-
 
 }
 
@@ -563,7 +560,6 @@
     }
 
 }
-
 
 .social {
     overflow: hidden;
@@ -662,6 +658,7 @@
     display: flex;
     right: 10px;
     top: 0;
+    z-index: 1;
     &Wrap {
         position: absolute;
         top: 0;
@@ -682,7 +679,7 @@
     height: 315px;
     align-items: flex-end;
     justify-content: space-between;
-    &Wrap{
+    &Wrap {
         position: relative;
         background-size: cover;
         background-color: #000;
@@ -695,7 +692,7 @@
             background: rgba(0, 0, 0, 0.87);
         }
     }
-    &__item{
+    &__item {
         white-space: nowrap;
     }
     &__link {
@@ -723,31 +720,31 @@
         opacity: .5;
         transition: .2s opacity;
         color: #fff;
-        &--prev{
+        &--prev {
             transform: translateX(-15px);
         }
-        &--next{
+        &--next {
             transform: translateX(15px);
         }
-        &:hover{
+        &:hover {
             opacity: 1;
         }
     }
 }
 
 .workHead {
-   background-color: #000;
-   box-shadow: 0 0 10px 1px #000;
-   z-index: 1;
-   position: relative;
-   &__head {
+    background-color: #000;
+    box-shadow: 0 0 10px 1px #000;
+    z-index: 1;
+    position: relative;
+    &__head {
         color: $yellow;
         font-size: 12px;
         display: block;
         text-align: center;
         margin-bottom: 10px;
     }
-    &__items{
+    &__items {
         position: relative;
         display: flex;
         height: 315px;
@@ -771,7 +768,7 @@
         }
 
     }
-    &__nav{
+    &__nav {
         min-width: 20px;
     }
     &__icon {
@@ -781,22 +778,21 @@
         opacity: .5;
         transition: .2s opacity;
         color: #fff;
-        &--prev{
+        &--prev {
             transform: translateX(0px);
         }
-        &--next{
+        &--next {
             transform: translateX(0px);
         }
-        &:hover{
+        &:hover {
             opacity: 1;
         }
     }
 }
 
-
 .mainVideo {
     position: relative;
-    .awardsTags{
+    .awardsTags {
         position: relative;
         float: right;
     }
@@ -812,7 +808,6 @@
         line-height: 1.2;
     }
 }
-
 
 .imageVideoSet {
     display: flex;
@@ -832,35 +827,34 @@
     }
 }
 
-.halfWidthText{
+.halfWidthText {
     margin-top: 80px;
-    &__item{
+    &__item {
         margin-top: 40px;
         display: flex;
     }
-    &__col{
+    &__col {
         padding-left: 25px;
-        &:first-child{
+        &:first-child {
             padding-left: 0;
         }
     }
-    &__body{
+    &__body {
         margin-top: 10px;
         color: #7f8385;
         line-height: 1.2;
     }
 }
 
-
 .cSlider {
 
-    &Wrap{
+    &Wrap {
         margin-top: 80px;
         position: relative;
     }
-    &__items{
+    &__items {
         position: relative;
-        &:before{
+        &:before {
             content: '';
             position: absolute;
             width: 100%;
@@ -876,7 +870,7 @@
         z-index: 1;
         left: 50%;
         top: 50%;
-        transform: translate(-50%,-50%);
+        transform: translate(-50%, -50%);
         background: none;
         border: 0;
         @extend .icomoon;
@@ -904,12 +898,9 @@
         }
     }
 
-
-
 }
 
-
-.credits{
+.credits {
     margin-top: 80px;
     margin-bottom: 80px;
 
@@ -917,7 +908,7 @@
         display: flex;
         border-bottom: 1px solid rgba(0, 0, 0, 0.3);
         padding-bottom: 40px;
-        &Wrap{
+        &Wrap {
             opacity: 0;
             max-height: 0;
             overflow: hidden;
@@ -929,7 +920,7 @@
     &__col {
         width: 25%;
         padding-left: 20px;
-        &:first-child{
+        &:first-child {
             padding-left: 0;
         }
     }
@@ -951,16 +942,14 @@
         }
     }
 
-
-
     &__toggle:checked {
         ~ {
-            .credits__header{
-                .credits__header__arrow{
+            .credits__header {
+                .credits__header__arrow {
                     transform: rotate(-90deg);
                 }
             }
-            .credits__colsWrap{
+            .credits__colsWrap {
                 max-height: none;
                 overflow: auto;
                 opacity: 1;
@@ -969,7 +958,7 @@
         }
     }
 
-    &__rows{
+    &__rows {
         margin-top: 15px;
         &__title {
             color: #7f8385;

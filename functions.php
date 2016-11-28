@@ -103,5 +103,7 @@ function boldify($str){
 }
 
 
-
+function getTax(){
+    return 'work-category';
+}
 

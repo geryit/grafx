@@ -51,7 +51,7 @@
     <? } ?>
 
 </head>
-<body <?php body_class(); ?> ng-app="grafxApp" ng-controller="grafxCtrl" ng-class="{oyh:vModal.on}">
+<body <?php body_class(); ?> ng-app="grafxApp" ng-controller="grafxCtrl" ng-class="{oyh:vModal.on||sModal.on}">
 
 
 
@@ -71,7 +71,7 @@
             <?php wp_nav_menu( array( 'theme_location' => 'header-menu' ) ); ?>
 
             <div class="search">
-                <a href="#" class="search__btn icon-search">
+                <a ng-click="sModal.open()" class="search__btn icon-search">
                 </a>
             </div>
 

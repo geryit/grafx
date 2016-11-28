@@ -10,6 +10,21 @@
     </div>
 </footer>
 
+<div class="sModal" ng-class="{on:sModal.on}">
+    <div class="sModal__bg" ng-click="sModal.close()"></div>
+
+    <div class="sModal__content">
+        <div class="container">
+            <div class="sModal__inner">
+                <img src="<?= get_template_directory_uri(); ?>/dist/img/logo.svg"
+                     class="sModal__logo" width="110" alt="">
+                <span class="icon-close sModal__close" ng-click="sModal.close()"></span>
+            </div>
+        </div>
+    </div>
+
+</div>
+
 <?php wp_footer(); ?>
 
 

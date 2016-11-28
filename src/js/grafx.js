@@ -192,6 +192,7 @@ angular.module('grafxApp', [])
         var scope = $scope;
         scope.vModal = {};
 
+
         scope.vModal.open = function (url, poster, index) {
             $('.hSlider').slick('slickPause');
             $('#hSlider__video__' + index).each(function () {
@@ -209,5 +210,14 @@ angular.module('grafxApp', [])
 
         scope.vModal.close = function () {
             scope.vModal.on = false;
-        }
+        };
+
+        scope.sModal = {};
+        scope.sModal.open = function () {
+            scope.sModal.on = true;
+            console.log(scope.sModal)
+        };
+        scope.sModal.close = function () {
+            scope.sModal.on = false;
+        };
     }]);
