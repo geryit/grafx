@@ -85,7 +85,7 @@ img{
 }
 
 .container {
-    max-width: 1170px;
+    max-width: 1220px;
     padding: 0 15px;
     margin: auto;
 }
@@ -109,7 +109,8 @@ img{
         position: fixed;
         top: 0;
         background-color: rgba(40, 40, 47, 0.9);
-        overflow: hidden;
+        overflow: hidden; 
+        z-index: 11;
         .logo__img {
             display: none;
             &2 {

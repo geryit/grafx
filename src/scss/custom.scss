@@ -338,30 +338,30 @@
     &__body {
         color: #7f8385;
         display: block;
-        margin-top: 10px;
+        margin-top: 25px;
         font-size: 14px;
+        line-height: 20px;
     }
 }
 
+
 .works {
-    margin-top: 80px;
+    margin-top: 125px;
     display: flex;
     flex-wrap: wrap;
-    margin-left: -10px;
-    margin-right: -10px;
-    &__item {
-        width: 50%;
-        padding: 10px;
-        &--case {
-            .works__inner {
-                box-shadow: 0 0 0 10px $yellow inset;
-            }
-            .awardsTags {
-                top: 10px;
-                right: 20px;
-            }
-        }
+    margin-left: -5px;
+    margin-right: -5px;
+    position: relative;
+    z-index: 10;
+    &--cats{
+        margin-top: 75px;
+    }
+    &--cats &__item--case &__inner{
+        box-shadow: 0 0 0 10px $yellow inset;
+    }
 
+    &--cats &__item--case .awardsTags {
+        right: 20px;
     }
 
     &--feat &__item {
@@ -372,6 +372,14 @@
             }
         }
     }
+    &__item {
+        width: 50%;
+        padding: 10px;
+
+
+    }
+
+
     &__inner {
         position: relative;
         padding-bottom: 56.25%;
@@ -443,6 +451,11 @@
         margin-right: -10px;
         &Wrap {
             width: 100%;
+             &:first-child {
+                .works__head__right {
+                    display: flex;
+                }
+            }
         }
         &.fixed {
             position: fixed;
@@ -457,11 +470,7 @@
             .works__head__inner {
             }
         }
-        &:first-child & {
-            &__right {
-                display: flex;
-            }
-        }
+       
         &__year {
             color: #848484;
             font-weight: normal;
@@ -477,23 +486,25 @@
 
         &__right {
             align-items: center;
+            margin-right: 5px;
             display: none;
         }
 
         &__sortBy {
             color: #848484;
             font-weight: normal;
+            margin-right: 10px;
         }
 
         &__sortBtn {
             display: inline-block;
             border: 1px solid #d0d0d0;
             padding: 5px;
-            margin-left: 10px;
             color: #d0d0d0;
             font-size: 12px;
             min-width: 60px;
             text-align: center;
+            margin-left: 10px;
             &.on,
             &:hover {
                 color: $yellow;
@@ -659,7 +670,7 @@
 .awardsTags {
     position: absolute;
     display: flex;
-    right: 10px;
+    right: 20px;
     top: 0;
     z-index: 1;
     &Wrap {
@@ -673,6 +684,7 @@
         margin-left: 10px;
         padding: 10px;
         text-transform: uppercase;
+        letter-spacing: -0.5px;
     }
 }
 
@@ -703,7 +715,7 @@
         font-size: 25px;
         border-bottom: 5px solid transparent;
         display: block;
-        padding-bottom: 35px;
+        padding-bottom: 38px;
         margin: 0 70px;
         opacity: .3;
         transition: .2s;
@@ -724,10 +736,10 @@
         transition: .2s opacity;
         color: #fff;
         &--prev {
-            transform: translateX(-15px);
+            transform: translateX(5px); 
         }
         &--next {
-            transform: translateX(15px);
+            transform: translateX(0px);
         }
         &:hover {
             opacity: 1;

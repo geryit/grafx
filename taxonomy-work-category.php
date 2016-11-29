@@ -72,7 +72,7 @@ if (get_query_var('orderby')) $orderby = get_query_var('orderby'); else $orderby
 
 
     <div class="container">
-        <div class="works works--orderBy-<?= $orderby ?>">
+        <div class="works works--orderBy-<?= $orderby ?> works--cats">
             <?
 
             $year_check = false;
@@ -91,10 +91,19 @@ if (get_query_var('orderby')) $orderby = get_query_var('orderby'); else $orderby
                                 </div>
                                 <div class="works__head__right">
                                     <h5 class='works__head__sortBy'>Sort by</h5>
-                                    <a href="?orderby=title"
-                                       class='works__head__sortBtn <?= $orderby == 'title' ? 'on' : '' ?>'>A-Z</a>
-                                    <a href="?orderby=date"
-                                       class='works__head__sortBtn <?= $orderby == 'date' ? 'on' : '' ?>'>DATE</a>
+                                    <? if($orderby == 'title'){?>
+                                        <span class='works__head__sortBtn on'>A-Z</span>
+                                    <?}else{?>
+                                        <a href="?orderby=title" class='works__head__sortBtn'>A-Z</a>
+                                    <?}?>
+
+                                    <? if($orderby == 'date'){?>
+                                        <span class='works__head__sortBtn on'>DATE</span>
+                                    <?}else{?>
+                                        <a href="?orderby=date" class='works__head__sortBtn'>DATE</a>
+                                    <?}?>
+
+
                                 </div>
                             </div>
 
