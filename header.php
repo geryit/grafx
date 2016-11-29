@@ -70,12 +70,6 @@
 
             <?php wp_nav_menu( array( 'theme_location' => 'header-menu' ) ); ?>
 
-            <div class="search">
-                <a ng-click="sModal.open()" class="search__btn icon-search">
-                </a>
-            </div>
-
-
         </div>
     </div>
 </header>

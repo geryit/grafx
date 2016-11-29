@@ -218,6 +218,7 @@
                 left: 10px;
                 pointer-events: none;
             }
+
             &:after {
                 content: '';
                 position: absolute;
@@ -227,7 +228,7 @@
                 border-radius: 50%;
                 left: 50%;
                 top: 50%;
-                box-shadow: 0 0 0 1px #fff;
+                box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.7);
                 padding: 10px;
                 transform: translate(-50%, -50%) scale(0);
                 opacity: 1;
@@ -239,6 +240,8 @@
             &.slick-active {
                 &:after {
                     transform: translate(-50%, -50%) scale(1);
+                    width: 46px;
+                    height: 46px;
                 }
             }
         }

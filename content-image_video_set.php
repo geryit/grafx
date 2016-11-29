@@ -11,8 +11,9 @@
             <? } else if (get_row_layout() == 'video') { ?>
                 <div class="imageVideoSet__item imageVideoSet__item--video">
                     <video
+                        id="imageVideoSet__video__<?=rand()?>"
                         class="video-js vjs-default-skin vjs-big-play-centered vjs-16-9 grafx-skin bigger-play imageVideoSet__video"
-                        width="100%" height="100%"  loop
+                        width="100%" height="100%" loop autoplay
                         data-setup=''>
                         <source src="<?= get_sub_field('video') ?>" type='video/mp4'/>
                     </video>

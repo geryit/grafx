@@ -9,7 +9,8 @@ $(document).ready(function () {
 
             // window.$pBarDots = $('.hSlider__dots');
             $('#hSlider__video__' + vidId).addClass('on').each(function () {
-                this.play();
+                var player = this;
+                player.play();
             });
             $pBar.addClass('on');
             // $pBarDots.addClass('on');
@@ -184,40 +185,82 @@ $(document).ready(function () {
         nextArrow: '<button class="cSlider__arrow cSlider__arrow__next"></button>',
     });
 
+
+    $('.video-js').each(function () {
+        var myPlayer, whereYouAt, minutes, seconds, x, y;
+        if (this.id) videojs(this.id).ready(function () {
+            myPlayer = this;
+
+            // myPlayer.play();
+
+            myPlayer.on("timeupdate", function () {
+                whereYouAt = myPlayer.currentTime();
+                minutes = Math.floor(whereYouAt / 60);
+                seconds = Math.floor(whereYouAt - minutes * 60);
+                x = minutes < 10 ? "0" + minutes : minutes;
+                y = seconds < 10 ? "0" + seconds : seconds;
+
+                $(".vjs-remaining-time-display", myPlayer.el_).addClass('op1').html(x + ":" + y);
+            })
+
+
+        });
+    });
+
+
 });
 
 
 angular.module('grafxApp', [])
     .controller('grafxCtrl', ['$scope', function ($scope) {
         var scope = $scope;
-        scope.vModal = {};
+        scope.vModal = {
+            on: false,
+            open: function (url, poster, index) {
+                $('.hSlider').slick('slickPause');
+                $('#hSlider__video__' + index).each(function () {
+                    this.pause();
+                });
+                $('.slider__progress__inner').removeClass('on');
+                scope.vModal.on = true;
+                videojs("vModal__video").ready(function () {
+                    var vid = this;
+                    vid.src({"type": "video/mp4", "src": url});
+                    vid.poster(poster);
+                    vid.play();
 
+                    vid.on("timeupdate", function () { //chrome fix
+                        if (vid.currentTime() == vid.duration()) {
+                            scope.vModal.close();
 
-        scope.vModal.open = function (url, poster, index) {
-            $('.hSlider').slick('slickPause');
-            $('#hSlider__video__' + index).each(function () {
-                this.pause();
+                        }
+                    });
+                });
+
+            },
+            close: function () {
+                //because there is a timer, we need to use $apply
+                $scope.$apply(function () {
+                    scope.vModal.on = false;
+                });
+
+            }
+        };
+
+        scope.sModal = {
+            on: false,
+            open: function () {
+                scope.sModal.on = true;
+            },
+            close: function () {
+                scope.sModal.on = false;
+            }
+        };
+
+        $('.search__btn').on("click", function () {
+            $scope.$apply(function () {
+                scope.sModal.open();
             });
-            $('.slider__progress__inner').removeClass('on');
-            scope.vModal.on = true;
-            videojs("vModal__video").ready(function () {
-                var vid = this;
-                vid.src({"type": "video/mp4", "src": url});
-                vid.poster(poster);
-                vid.play();
-            });
-        };
 
-        scope.vModal.close = function () {
-            scope.vModal.on = false;
-        };
-
-        scope.sModal = {};
-        scope.sModal.open = function () {
-            scope.sModal.on = true;
-            console.log(scope.sModal)
-        };
-        scope.sModal.close = function () {
-            scope.sModal.on = false;
-        };
+        })
     }]);

@@ -72,6 +72,10 @@ h6 {
     display: none;
 }
 
+.op1{
+    opacity: 1 !important;
+}
+
 .fx {
     flex: 1;
 }
@@ -120,6 +124,10 @@ img{
     &__link {
         position: absolute;
         transform: translateY(-50%);
+        transition: .2s opacity;
+        &:hover{
+            opacity: .9;
+        }
     }
     .logo__img2 {
         display: none;
@@ -201,11 +209,6 @@ img{
                 }
             }
         }
-        &:nth-child(3):hover {
-            & ~ #menuOverlay div {
-                transform: translate(250px, -50%) rotate(-35deg);
-            }
-        }
         &:nth-child(1):hover {
             & ~ #menuOverlay div {
                 transform: translate(60px, -50%) rotate(-35deg);
@@ -214,6 +217,16 @@ img{
         &:nth-child(2):hover {
             & ~ #menuOverlay div {
                 transform: translate(160px, -50%) rotate(-35deg);
+            }
+        }
+        &:nth-child(3):hover {
+            & ~ #menuOverlay div {
+                transform: translate(250px, -50%) rotate(-35deg);
+            }
+        }
+        &:nth-child(4):hover {
+            & ~ #menuOverlay div {
+                transform: translate(340px, -50%) rotate(-35deg);
             }
         }
 
@@ -236,9 +249,11 @@ img{
 }
 
 .search {
-    font-size: 22px;
-    margin-left: 50px;
-    position: relative;
+    a{
+        font-size: 22px;
+        margin-left: 5px;
+        position: relative;
+    }
     &__btn {
         color: #fff;
         &:hover {
@@ -428,5 +443,9 @@ img{
         left: -7px;
     }
 
+}
+
+.vjs-remaining-time-display{
+    opacity: 0;
 }
 

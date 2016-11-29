@@ -1,9 +1,9 @@
 <div class="mainVideo">
-    <video id=""
-           class="video-js vjs-default-skin vjs-big-play-centered vjs-16-9 grafx-skin bigger-play"
+    <video id="mainVideo__video__<?=rand()?>"
+           class="video-js vjs-default-skin vjs-big-play-centered vjs-16-9 grafx-skin bigger-play mainVideo__video"
            width="100%" height="100%" controls preload="none"
            poster="<?= get_sub_field('first_frame') ?>"
-           data-setup=''>
+           data-setup='{}'>
         <source src="<?= get_sub_field('video') ?>" type='video/mp4'/>
     </video>
     <div class="awardsTagsWrap">

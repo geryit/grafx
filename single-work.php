@@ -77,6 +77,7 @@ if ($thisindex < count($ids) - 1) $nextid = $ids[$thisindex + 1];
 
                 if (get_row_layout() == 'main_video') {
 
+
                     if (have_rows('item')) {
                         while (have_rows('item')) {
                             the_row();
@@ -99,7 +100,7 @@ if ($thisindex < count($ids) - 1) $nextid = $ids[$thisindex + 1];
                 } elseif (get_row_layout() == 'slider') {
                     get_template_part('content', 'slider');
 
-                }elseif (get_row_layout() == 'credit') {
+                } elseif (get_row_layout() == 'credit') {
                     get_template_part('content', 'credit');
 
                 }

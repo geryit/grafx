@@ -14,6 +14,7 @@
                     <? } else if (get_row_layout() == 'video') { ?>
                         <div class="cSlider__item cSlider__item--video">
                             <video
+                                id="video__<?=rand()?>"
                                 class="video-js vjs-default-skin vjs-big-play-centered vjs-16-9 grafx-skin cSlider__item__video bigger-play darker-play"
                                 width="100%" height="100%" controls
                                 poster="<?= get_sub_field('video_first_frame') ?>"
