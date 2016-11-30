@@ -4,8 +4,8 @@
             the_row();
             if (get_row_layout() == 'image') {
                 ?>
-                <div class="imageVideoSet__item imageVideoSet__item--img">
-                    <img class="imageVideoSet__img" src="<?= get_sub_field('image') ?>" alt="">
+                <div class="imageVideoSet__item imageVideoSet__item--img r16-9">
+                    <img class="imageVideoSet__img r16-9__item" src="<?= get_sub_field('image') ?>" alt="">
                 </div>
 
             <? } else if (get_row_layout() == 'video') { ?>

@@ -70,7 +70,7 @@ h6 {
     display: none;
 }
 
-.op1{
+.op1 {
     opacity: 1 !important;
 }
 
@@ -78,11 +78,11 @@ h6 {
     flex: 1;
 }
 
-.pos-s{
+.pos-s {
     position: static !important;
 }
 
-img{
+img {
     max-width: 100%;
 }
 
@@ -128,7 +128,7 @@ img{
         position: absolute;
         transform: translateY(-50%);
         transition: .2s opacity;
-        &:hover{
+        &:hover {
             opacity: .9;
         }
     }
@@ -252,7 +252,7 @@ img{
 }
 
 .search {
-    a{
+    a {
         font-size: 22px;
         margin-left: 5px;
         position: relative;
@@ -372,7 +372,7 @@ img{
     }
 }
 
-.pluses {
+.pluses { 
     position: relative;
     pointer-events: none;
     margin: 30px 0 85px;
@@ -404,9 +404,6 @@ img{
     }
 
 }
-
-
-
 
 .sModal {
     position: fixed;
@@ -449,7 +446,25 @@ img{
 
 }
 
-.vjs-remaining-time-display{
+.vjs-remaining-time-display {
     opacity: 0;
 }
 
+.r16-9 {
+    &:after {
+        padding-top: 56.25%;
+        /* 16:9 ratio */
+        display: block;
+        content: '';
+    }
+    &__item {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        /* fill parent */
+    }
+}
