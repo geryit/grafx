@@ -232,7 +232,7 @@
                 padding: 10px;
                 transform: translate(-50%, -50%) scale(0);
                 opacity: 1;
-                transition: .1s transform;
+                transition: .1s;
             }
             &:last-child:before {
                 display: none;
@@ -351,8 +351,8 @@
     flex-wrap: wrap;
     margin-left: -5px;
     margin-right: -5px;
-    position: relative;
     z-index: 10;
+    position: relative;
     &--cats{
         margin-top: 75px;
     }
@@ -451,11 +451,6 @@
         margin-right: -10px;
         &Wrap {
             width: 100%;
-             &:first-child {
-                .works__head__right {
-                    display: flex;
-                }
-            }
         }
         &.fixed {
             position: fixed;
@@ -470,7 +465,7 @@
             .works__head__inner {
             }
         }
-       
+
         &__year {
             color: #848484;
             font-weight: normal;
@@ -487,7 +482,14 @@
         &__right {
             align-items: center;
             margin-right: 5px;
-            display: none;
+            opacity: 0;
+            visibility: hidden;
+            display: flex;
+            .works__head.fixed &,
+            .works__headWrap:first-child &{
+                opacity: 1;
+                visibility: visible;
+            }
         }
 
         &__sortBy {
@@ -670,19 +672,19 @@
 .awardsTags {
     position: absolute;
     display: flex;
-    right: 20px;
+    right: 20px; 
     top: 0;
     z-index: 1;
     &Wrap {
         position: absolute;
         top: 0;
         width: 100%;
-    }
+    } 
     &__item {
-        background: $yellow;
+        background: #efad17;
         font-size: 12px;
         margin-left: 10px;
-        padding: 10px;
+        padding: 8px 6px;
         text-transform: uppercase;
         letter-spacing: -0.5px;
     }
@@ -736,7 +738,7 @@
         transition: .2s opacity;
         color: #fff;
         &--prev {
-            transform: translateX(5px); 
+            transform: translateX(5px);
         }
         &--next {
             transform: translateX(0px);
@@ -749,20 +751,19 @@
 
 .workHead {
     background-color: #000;
-    box-shadow: 0 0 10px 1px #000;
     z-index: 1;
-    position: relative;
+    position: relative; 
     &__head {
         color: $yellow;
         font-size: 12px;
         display: block;
         text-align: center;
-        margin-bottom: 10px;
+        margin-bottom: 18px;
     }
     &__items {
         position: relative;
         display: flex;
-        height: 315px;
+        height: 317px;
         align-items: flex-end;
         justify-content: space-between;
     }
@@ -771,7 +772,7 @@
         font-size: 25px;
         border-bottom: 5px solid transparent;
         display: block;
-        padding-bottom: 35px;
+        padding-bottom: 40px;
         margin: 0 70px;
         opacity: .3;
         transition: .2s;
@@ -805,11 +806,27 @@
     }
 }
 
+.workC {
+    position: relative;
+    z-index: 10;
+}
+
 .mainVideo {
     position: relative;
+    &:before{
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        z-index: 2;
+        box-shadow: 0 5px 10px -1px rgba(0, 0, 0, 0.5) inset; 
+        pointer-events: none;
+    }
     .awardsTags {
         position: relative;
         float: right;
+        right: 5px;
     }
 
 }
@@ -818,16 +835,16 @@
     margin-top: 80px;
     &__body {
         column-count: 2;
-        margin-top: 10px;
+        margin-top: 12px;
         color: #7f8385;
-        line-height: 1.2;
+        line-height: 1.6;
     }
 }
 
 .imageVideoSet {
     display: flex;
     flex-wrap: wrap;
-    margin-top: 80px;
+    margin-top: 40px; 
     &__item {
         width: 50%;
         display: inline-flex;
@@ -849,15 +866,15 @@
         display: flex;
     }
     &__col {
-        padding-left: 25px;
+        padding-left: 55px;
         &:first-child {
             padding-left: 0;
         }
     }
     &__body {
-        margin-top: 10px;
+        margin-top: 12px;
         color: #7f8385;
-        line-height: 1.2;
+        line-height: 1.6;
     }
 }
 
@@ -916,7 +933,7 @@
 }
 
 .credits {
-    margin-top: 80px;
+    margin-top: 65px;
     margin-bottom: 80px;
 
     &__cols {

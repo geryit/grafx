@@ -33,9 +33,9 @@ if ($query->have_posts()) {
 //printr($ids);
 
 $thisindex = array_search($post_id, $ids);
-if ($thisindex > 0) $previd = $ids[$thisindex - 1];
-if ($thisindex < count($ids) - 1) $nextid = $ids[$thisindex + 1];
-
+$workCount = count($ids);
+if ($thisindex > 0) $previd = $ids[$thisindex - 1]; else $previd = $ids[$workCount - 1];
+if ($thisindex < $workCount - 1) $nextid = $ids[$thisindex + 1]; else $nextid = $ids[0];
 ?>
 
 <div id="wrap">
@@ -44,10 +44,8 @@ if ($thisindex < count($ids) - 1) $nextid = $ids[$thisindex + 1];
             <ul class="workHead__items">
 
                 <li class="workHead__nav workHead__nav--prev">
-                    <? if (isset($previd)) { ?>
                         <a class="workHead__icon workHead__icon--prev icon-l-arrow2"
                            href="<?= add_query_arg(array('term' => $term), get_permalink($previd)) ?>"></a>
-                    <? } ?>
                 </li>
                 <li class="workHead__item">
                     <span class="workHead__head">BRAND & TITLE</span>

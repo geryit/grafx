@@ -80,6 +80,10 @@ h6 {
     flex: 1;
 }
 
+.pos-s{
+    position: static !important;
+}
+
 img{
     max-width: 100%;
 }
@@ -109,7 +113,7 @@ img{
         position: fixed;
         top: 0;
         background-color: rgba(40, 40, 47, 0.9);
-        overflow: hidden; 
+        overflow: hidden;
         z-index: 11;
         .logo__img {
             display: none;
@@ -257,6 +261,7 @@ img{
     }
     &__btn {
         color: #fff;
+        margin-right: 5px;
         &:hover {
             color: $yellow;
         }
@@ -372,7 +377,7 @@ img{
 .pluses {
     position: relative;
     pointer-events: none;
-    margin: 30px 0;
+    margin: 30px 0 85px;
     &__inner {
         color: rgba(0, 0, 0, 0.2);
         font-size: 10px;

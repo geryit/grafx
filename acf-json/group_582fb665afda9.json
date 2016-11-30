@@ -177,6 +177,21 @@
                                         "class": "",
                                         "id": ""
                                     }
+                                },
+                                {
+                                    "default_value": "#000000",
+                                    "key": "field_583dfee0a6282",
+                                    "label": "Play Button Color",
+                                    "name": "play_button_color",
+                                    "type": "color_picker",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    }
                                 }
                             ],
                             "min": 0,
@@ -691,5 +706,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1480277293
+    "modified": 1480458751
 }

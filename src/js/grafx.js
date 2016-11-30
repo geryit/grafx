@@ -150,11 +150,14 @@ $(document).ready(function () {
                         $nextStickyPosition = $nextSticky.data('originalPosition') - $thisSticky.data('originalHeight');
 
                     $thisSticky.addClass("fixed");
+                    $('.works--cats').addClass('pos-s');
 
 
                     if ($nextSticky.length > 0 && $thisSticky.offset().top >= $nextStickyPosition) {
 
                         $thisSticky.addClass("absolute").css("top", $nextStickyPosition);
+                        // console.log(1)
+
                     }
 
                 } else {
@@ -163,9 +166,12 @@ $(document).ready(function () {
 
                     $thisSticky.removeClass("fixed");
 
+
                     if ($prevSticky.length > 0 && $window.scrollTop() + mainHeaderHeight <= $thisSticky.data('originalPosition') - $thisSticky.data('originalHeight')) {
 
                         $prevSticky.removeClass("absolute").removeAttr("style");
+                        // console.log(2)
+
                     }
                 }
             });
@@ -207,6 +213,10 @@ $(document).ready(function () {
         });
     });
 
+    if ($("body").hasClass("tax-work-category")) {
+        $(".menu-item-object-work-category").addClass('current-menu-item');
+    }
+
 
 });
 
@@ -223,10 +233,14 @@ angular.module('grafxApp', [])
                 });
                 $('.slider__progress__inner').removeClass('on');
                 scope.vModal.on = true;
+
+                // $("#vModal__video").attr("src", url);
+                // $("#vModal__video").load();
                 videojs("vModal__video").ready(function () {
                     var vid = this;
                     vid.src({"type": "video/mp4", "src": url});
                     vid.poster(poster);
+                    vid.load();
                     vid.play();
 
                     vid.on("timeupdate", function () { //chrome fix
@@ -238,9 +252,10 @@ angular.module('grafxApp', [])
                 });
 
             },
-            close: function () {
+            close: function (viaCloseBtn) {
                 //because there is a timer, we need to use $apply
-                $scope.$apply(function () {
+                if (viaCloseBtn) scope.vModal.on = false;
+                else $scope.$evalAsync(function () {
                     scope.vModal.on = false;
                 });
 
@@ -258,7 +273,7 @@ angular.module('grafxApp', [])
         };
 
         $('.search__btn').on("click", function () {
-            $scope.$apply(function () {
+            $scope.$evalAsync(function () {
                 scope.sModal.open();
             });
 
