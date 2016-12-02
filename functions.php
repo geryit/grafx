@@ -91,58 +91,116 @@ add_action('admin_menu', 'post_remove');
 
 //add_filter('pre_get_posts', 'set_custom_post_types_admin_order');
 
-function printr($data){
+function printr($data)
+{
     echo "<pre>";
     print_r($data);
     echo "</pre>";
 }
 
-function boldify($str){
+function boldify($str)
+{
     $str = preg_replace("/&#8211;(.*)/", "<b>$1</b>", $str);
     return preg_replace("/–(.*)/", "<b>$1</b>", $str);
 }
 
 
-function getTax(){
+function getTax()
+{
     return 'work-category';
 }
 
 /* Convert hexdec color string to rgb(a) string */
 
-function hex2rgba($color, $opacity = false) {
+function hex2rgba($color, $opacity = false)
+{
 
     $default = 'rgb(0,0,0)';
 
     //Return default if no color provided
-    if(empty($color))
+    if (empty($color))
         return $default;
 
     //Sanitize $color if "#" is provided
-    if ($color[0] == '#' ) {
-        $color = substr( $color, 1 );
+    if ($color[0] == '#') {
+        $color = substr($color, 1);
     }
 
     //Check if color has 6 or 3 characters and get values
     if (strlen($color) == 6) {
-        $hex = array( $color[0] . $color[1], $color[2] . $color[3], $color[4] . $color[5] );
-    } elseif ( strlen( $color ) == 3 ) {
-        $hex = array( $color[0] . $color[0], $color[1] . $color[1], $color[2] . $color[2] );
+        $hex = array($color[0] . $color[1], $color[2] . $color[3], $color[4] . $color[5]);
+    } elseif (strlen($color) == 3) {
+        $hex = array($color[0] . $color[0], $color[1] . $color[1], $color[2] . $color[2]);
     } else {
         return $default;
     }
 
     //Convert hexadec to rgb
-    $rgb =  array_map('hexdec', $hex);
+    $rgb = array_map('hexdec', $hex);
 
     //Check if opacity is set(rgba or rgb)
-    if($opacity){
-        if(abs($opacity) > 1)
+    if ($opacity) {
+        if (abs($opacity) > 1)
             $opacity = 1.0;
-        $output = 'rgba('.implode(",",$rgb).','.$opacity.')';
+        $output = 'rgba(' . implode(",", $rgb) . ',' . $opacity . ')';
     } else {
-        $output = 'rgb('.implode(",",$rgb).')';
+        $output = 'rgb(' . implode(",", $rgb) . ')';
     }
 
     //Return rgb(a) color string
     return $output;
 }
+
+
+//function acf_load_color_field_choices( $field ) {
+//
+//    // reset choices
+//    $field['choices'] = array();
+//
+//
+//    // if has rows
+//    if( have_rows('button', 'option') ) {
+//
+//        // while has rows
+//        while( have_rows('button', 'option') ) {
+//
+//            // instantiate row
+//            the_row();
+//
+//
+//            // vars
+//            $value = get_sub_field('value');
+//            $label = get_sub_field('label');
+//
+//
+//            // append to choices
+//            $field['choices'][ $value ] = $label;
+//
+//        }
+//
+//    }
+//
+//
+//    // return the field
+//    return $field;
+//
+//}
+//
+//add_filter('acf/load_field/name=work_button', 'acf_load_color_field_choices');
+$buttons = array();
+$loop = new WP_Query(array('post_type' => 'button', 'posts_per_page' => -1));
+while ($loop->have_posts()) {
+    $loop->the_post();
+    $buttons[get_the_title()] = get_the_content();
+}
+function get_button($v){
+    global $buttons;
+    return $buttons[$v];
+}
+
+//wp_localize_script( 'wp-api', 'wpApiSettings', array( 'root' => esc_url_raw( rest_url() ), 'nonce' => wp_create_nonce( 'wp_rest' ) ) );
+
+
+
+
+

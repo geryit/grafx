@@ -47,7 +47,7 @@ get_header(); ?>
                     <div class="services__item__btnWrapper">
                         <a href="<?= get_term_link($v['link']); ?>"
                            class="diagonalBtn services__item__btn">
-                            <span>LEARN MORE</span>
+                            <span><?= get_button('View Works') ?></span>
                         </a>
                     </div>
                 </li>
@@ -87,11 +87,13 @@ get_header(); ?>
         <h2 class="brands__title light">Brands We Work With</h2>
         <ul class="brands__list">
             <? if (get_field('brands'))
-                foreach (get_field('brands') as $v) {?>
+                foreach (get_field('brands') as $v) { ?>
                     <li class="brands__item">
                         <img class="brands__img" src="<?= $v["image"] ?>" alt="">
                         <div class="brands__item__btnWrapper">
-                            <a href="<?=get_permalink($v["link"])?>" class="diagonalBtn brands__btn"><span>LEARN MORE</span></a>
+                            <a href="<?= get_permalink($v["link"]) ?>"
+                               class="diagonalBtn brands__btn">
+                                <span><?= isset($v['button']->post_content) ? $v['button']->post_content : 'View Project' ?></span></a>
                         </div>
                     </li>
                 <? } ?>
@@ -127,10 +129,7 @@ get_header(); ?>
                 </ul>
             </div>
             <div class="social__right">
-                139 Fulton St. Suite 709<br>
-                New York, NY 10038<br>
-                <b>E:</b> <a class="social__link" href="mailto:info@grafx.co">info@grafx.co</a><br>
-                <b>P:</b> 212.571.0100
+                <?= get_field('address') ?>
             </div>
         </div>
 
@@ -149,5 +148,16 @@ get_header(); ?>
     </video>
 
 </div>
+<div style="margin-bottom: 100px">
+    <angucomplete-alt id="members"
+                      placeholder="Search members"
+                      pause="400"
+                      selected-object="title"
+                      remote-url="http://grafxwp/?json=1&post_type=work&exclude=status,type,author,date,content,modified,excerpt,categories,title_plain,comments,attachments,comment_count,comment_status,custom_fields&s="
+                      remote-url-data-field="posts"
+                      title-field="title"
+                      input-class="form-control form-control-small"/>
+</div>
+
 
 <?php get_footer(); ?>

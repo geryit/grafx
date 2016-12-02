@@ -221,8 +221,8 @@ $(document).ready(function () {
 });
 
 
-angular.module('grafxApp', [])
-    .controller('grafxCtrl', ['$scope', function ($scope) {
+angular.module('grafxApp', ["angucomplete-alt"])
+    .controller('grafxCtrl', ['$scope', '$http', function ($scope, $http) {
         var scope = $scope;
         scope.vModal = {
             on: false,
@@ -278,4 +278,9 @@ angular.module('grafxApp', [])
             });
 
         })
+
+        // $http.get('/wp-json/wp/v2/work')
+        //     .then(function(response){
+        //         console.log(response)
+        //     });
     }]);
