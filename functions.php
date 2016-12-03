@@ -151,42 +151,11 @@ function hex2rgba($color, $opacity = false)
     return $output;
 }
 
+function plog($v){
+    file_put_contents('php://stderr', print_r($v, TRUE));
+}
 
-//function acf_load_color_field_choices( $field ) {
-//
-//    // reset choices
-//    $field['choices'] = array();
-//
-//
-//    // if has rows
-//    if( have_rows('button', 'option') ) {
-//
-//        // while has rows
-//        while( have_rows('button', 'option') ) {
-//
-//            // instantiate row
-//            the_row();
-//
-//
-//            // vars
-//            $value = get_sub_field('value');
-//            $label = get_sub_field('label');
-//
-//
-//            // append to choices
-//            $field['choices'][ $value ] = $label;
-//
-//        }
-//
-//    }
-//
-//
-//    // return the field
-//    return $field;
-//
-//}
-//
-//add_filter('acf/load_field/name=work_button', 'acf_load_color_field_choices');
+
 $buttons = array();
 $loop = new WP_Query(array('post_type' => 'button', 'posts_per_page' => -1));
 while ($loop->have_posts()) {
@@ -199,52 +168,28 @@ function get_button($v)
     return $buttons[$v];
 }
 
-//wp_localize_script( 'wp-api', 'wpApiSettings', array( 'root' => esc_url_raw( rest_url() ), 'nonce' => wp_create_nonce( 'wp_rest' ) ) );
 
-//
-//add_filter('asp_pagepost_results', 'asp_add_category_titles', 1, 1);
-//
-//function asp_add_category_titles($pageposts)
-//{
-//    foreach ($pageposts as $k => $v) {
-//
-//        // Get the post categories
-//        $post_categories = wp_get_post_categories($pageposts[$k]->id);
-//        $cats = "";
-//
-//        // Concatenate category names to the $cats variable
-//        foreach ($post_categories as $c) {
-//            $cat = get_category($c);
-//            $cats = " " . $cat->name;
-//        }
-//
-//        // Modify the post title
-//        $pageposts[$k]->title .= " " . $cats;
-//    }
-//
-//    return $pageposts;
-//}
-//
-///**
-// * Numbering the results
-// *
-// * @link: https://wp-dreams.com/knowledge-base/numbering-the-results/
-// */
-//add_filter('asp_results', 'asp_number_results', 1, 1);
-//
-//function asp_number_results($results)
-//{
-//
-//    $num = 1;
-//    foreach ($results as $k => $v) {
-//        // Modify the post title
-//        $results[$k]->title = $num . ". " . $results[$k]->title;
-//        $num++;
-//    }
-//
-//    return $results;
-//}
+add_filter('asp_results', 'asp_number_results', 1, 1);
 
+function asp_number_results($results)
+{
 
+    foreach ($results as $k => $v) {
+        // Modify the post title
+        $work_terms = wp_get_post_terms($results[$k]->id, 'work-category');
+
+        $terms = "<span class='r_terms'>";
+
+        foreach ($work_terms as $t) {
+            $terms .= "<span class='r_term r_term--".$t->slug."'></span>";
+        }
+        $terms .= "</span>";
+//        plog($work_terms[0]->slug);
+        $results[$k]->title = "<span class='r_title'>" . boldify($results[$k]->title) .
+            "</span>" . $terms;
+    }
+
+    return $results;
+}
 
 

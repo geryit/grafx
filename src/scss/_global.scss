@@ -449,6 +449,9 @@ img {
         top: 58px;
         left: -7px;
     }
+    &__content{
+        position: relative;
+    }
 
 }
 
@@ -475,25 +478,25 @@ img {
     }
 }
 
-div#ajaxsearchpro1_1{
+div#ajaxsearchpro1_1 {
     margin-top: 20px;
     background: transparent;
     border: 0;
     box-shadow: none;
     @extend .container;
 
-    .probox{
+    .probox {
         background: transparent;
         height: 70px;
         border-bottom: 1px solid #808080;
 
-        .proloading{
+        .proloading {
             margin-top: 20px;
         }
-        .proinput{
+        .proinput {
             margin: 0;
             padding: 0;
-            input.orig{ 
+            input.orig {
                 @extend .light;
                 font-size: 25px;
                 height: 70px;
@@ -508,24 +511,26 @@ div#ajaxsearchpro1_1{
 
             }
         }
-        .promagnifier{
+        .promagnifier {
             box-shadow: none;
             margin-top: 20px;
             margin-right: 8px;
-            transform: scale(1.2); 
-            .innericon svg{
+            transform: scale(1.2);
+            .innericon svg {
                 fill: #666;
             }
-            &:hover{
-                .innericon svg{
+            &:hover {
+                .innericon svg {
                     fill: $yellow;
                 }
             }
         }
     }
+
+
 }
 
-div#ajaxsearchprores1_1.vertical{
+div#ajaxsearchprores1_1.vertical {
     background-color: transparent;
     padding: 0;
     -webkit-animation: none !important;
@@ -533,7 +538,7 @@ div#ajaxsearchprores1_1.vertical{
     margin-bottom: 40px;
     .results {
         margin-top: 50px;
-        .item{
+        .item {
             background: transparent;
             border-radius: 0;
             border: 0;
@@ -544,40 +549,64 @@ div#ajaxsearchprores1_1.vertical{
             .asp_content {
                 padding: 0;
                 @extend .container;
-                h3{
+                h3 {
                     display: block;
                     line-height: normal;
-                    a{
-                        @extend .normal;
+                    a {
+                        @extend .light;
                         color: #fff;
                         font-size: 17px;
                         height: 72px;
                         display: flex;
                         align-items: center;
                         border-bottom: 1px solid #323232;
+                        b {
+                            font-weight: bold;
+                            text-transform: uppercase;
+                        }
+                        .r_title {
+                            flex: 1;
+                            text-transform: uppercase;
+                        }
                     }
                 }
             }
-            div.etc{
+            div.etc {
                 display: none;
             }
-            &.hovered{
+            &.hovered {
                 background-color: #37393a;
                 .asp_content {
-                    h3 a{
-/*                         background-color: #37393a; */
+                    h3 a {
                     }
                 }
             }
         }
-         a span.overlap{
-             display: none;
+        a span.overlap {
+            display: none;
+        }
+        .asp_spacer {
+            display: none;
+        }
+        .resdrg{
+            //@extend .container;
+        }
+        .asp_nores{
+            background: transparent;
+            text-align: left;
+            color: #fff;
+            font-size: 18px;
+            @extend .container;
+            .asp_keyword{
+                color: #fff;
+                font-size: 18px;
+                text-decoration: underline;
+            }
         }
     }
-    .results .asp_spacer{
-        display: none;
-    }
-    span.highlighted{
+
+
+    span.highlighted {
         @extend .bold;
         font-weight: bold;
         color: #fff;
@@ -586,5 +615,90 @@ div#ajaxsearchprores1_1.vertical{
         line-height: 26px;
         border-bottom: 1px solid #fff;
     }
+    p.showmore{
+        a{
+            @extend .container;
+            @extend .light;
+            background: transparent;
+            text-align: left;
+            height: 70px;
+            line-height: 70px;
+            font-size: 18px;
+            color: $yellow;
+            &:hover{
+                color: #fff;
+            }
+        }
+    }
 
+}
+
+.r_term {
+    display: inline-block;
+    border: 1px solid #676868 !important;
+    font-size: 12px;
+    margin-left: 10px !important;
+    padding: 5px 15px !important;
+    text-transform: uppercase !important;
+    overflow: hidden;
+    transition: .2s;
+    width: 15px;
+    text-align: center !important;
+    &:before, &:after {
+        display: inline-block;
+        white-space: nowrap;
+        text-align: center;
+    }
+    &:before {
+        display: none;
+    }
+    &:after {
+        display: inline-block;
+
+    }
+    .hovered &{
+        width: 150px;
+        &:before {
+            display: block;
+        }
+        &:after {
+            display: none;
+        }
+    }
+    &--branding-design {
+        color: #accf97;
+        &:before {
+            content: 'Branding-Design';
+        }
+        &:after {
+            content: 'BD';
+        }
+    }
+    &--experiential-digital {
+        color: #2e80bc;
+        &:before {
+            content: 'EXPERIENTIAL & DIGITAL';
+        }
+        &:after {
+            content: 'ED';
+        }
+    }
+    &--production {
+        color: #e39000;
+        &:before {
+            content: 'PRODUCTION';
+        }
+        &:after {
+            content: 'P';
+        }
+    }
+    &--post-production {
+        color: #cb0f0b;
+        &:before {
+            content: 'POST PRODUCTION';
+        }
+        &:after {
+            content: 'PP';
+        }
+    }
 }

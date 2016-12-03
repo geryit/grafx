@@ -17,13 +17,13 @@
         <div class="container">
             <div class="sModal__inner">
 
-                <img src="<?= get_template_directory_uri(); ?>/dist/img/logo.svg"
-                     class="sModal__logo" width="110" alt="">
+                <a class="" href="<?= home_url(); ?>"><img
+                        src="<?= get_template_directory_uri(); ?>/dist/img/logo.svg"
+                        class="sModal__logo" width="110" alt=""></a>
                 <span class="icon-close sModal__close" ng-click="sModal.close()"></span>
             </div>
-
-
         </div>
+
         <?php echo do_shortcode('[wd_asp id=1]'); ?>
     </div>
 

@@ -265,6 +265,10 @@ angular.module('grafxApp', [])
             on: false,
             open: function () {
                 scope.sModal.on = true;
+                setTimeout(function(){
+                    angular.element(document.getElementsByClassName("orig")).val('');
+                    angular.element(document.getElementsByClassName("orig")).focus();
+                }, 1000);
             },
             close: function () {
                 scope.sModal.on = false;
@@ -274,6 +278,8 @@ angular.module('grafxApp', [])
         $('.search__btn').on("click", function () {
             scope.$evalAsync(function () {
                 scope.sModal.open();
+
+
             });
 
         });

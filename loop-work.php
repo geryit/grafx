@@ -2,7 +2,7 @@
 $current_object = get_queried_object();// can be page,tax/term, single
 $post_tax = get_post_taxonomies($post)[1];//['post_tag','work-category']
 
-if ($current_object->slug) { //page object doesnt have slug, so this page is tax/terms page
+if (isset($current_object->slug)) { //page object doesnt have slug, so this page is tax/terms page
     $post_term = $current_object->slug; //if tax/term page, get current term
 } else {
     $post_term = wp_get_post_terms($post->ID, $post_tax)[0]->slug; // get first term
