@@ -1,10 +1,10 @@
 //@import "normalize";
 $yellow : #efad17 !default;
+$gray : #6A6A6B !default;
 
 $icomoon-font-path: "../fonts/icomoon/fonts/" !default;
 
 @import "../../bower_components/slick-carousel/slick/slick.scss";
-@import "../../bower_components/angucomplete-alt/angucomplete-alt";
 @import "../../src/scss/videojs";
 @import "../../node_modules/video.js/src/css/vjs.scss";
 

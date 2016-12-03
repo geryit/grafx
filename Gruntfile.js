@@ -115,7 +115,6 @@ module.exports = function (grunt) {
                             'bower_components/angular/angular.js',
                             'bower_components/slick-carousel/slick/slick.js',
                             'node_modules/video.js/dist/video.js',
-                            'bower_components/angucomplete-alt/angucomplete-alt.js',
                             'src/js/<%= pkg.name %>.js'
                         ],
                         dest: 'dist/js/<%= pkg.name %>.min.js'

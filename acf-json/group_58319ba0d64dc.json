@@ -19,7 +19,7 @@
                     "label": "Image",
                     "name": "image",
                     "type": "image",
-                    "instructions": "",
+                    "instructions": "Max width: 320px\r\nMax height: 190px",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -114,5 +114,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1480632569
+    "modified": 1480709281
 }

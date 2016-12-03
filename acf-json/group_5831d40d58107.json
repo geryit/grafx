@@ -12,7 +12,7 @@
             "label": "Social Video",
             "name": "social_video",
             "type": "file",
-            "instructions": "",
+            "instructions": "best size: 1280x498 (1280x720 is also fine)",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -36,7 +36,7 @@
             "label": "Social Video First Frame",
             "name": "social_video_first_frame",
             "type": "image",
-            "instructions": "",
+            "instructions": "5120x501 (Image size should be less than 50kb)",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -141,5 +141,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1480631700
+    "modified": 1480709969
 }

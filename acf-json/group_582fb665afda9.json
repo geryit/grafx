@@ -51,7 +51,7 @@
             "label": "Main Image",
             "name": "main_image",
             "type": "image",
-            "instructions": "",
+            "instructions": "min : 1180x664 (1280x720 is fine)",
             "required": 1,
             "conditional_logic": 0,
             "wrapper": {
@@ -150,7 +150,7 @@
                                     "label": "First Frame",
                                     "name": "first_frame",
                                     "type": "image",
-                                    "instructions": "",
+                                    "instructions": "1280x720 (or 1920x1080)",
                                     "required": 0,
                                     "conditional_logic": 0,
                                     "wrapper": {
@@ -169,7 +169,7 @@
                                     "label": "Video",
                                     "name": "video",
                                     "type": "file",
-                                    "instructions": "",
+                                    "instructions": "1280x720 (or 1920x1080)",
                                     "required": 0,
                                     "conditional_logic": 0,
                                     "wrapper": {
@@ -383,7 +383,7 @@
                                             "label": "Image",
                                             "name": "image",
                                             "type": "image",
-                                            "instructions": "",
+                                            "instructions": "1280x720",
                                             "required": 0,
                                             "conditional_logic": 0,
                                             "wrapper": {
@@ -412,7 +412,7 @@
                                             "label": "Video",
                                             "name": "video",
                                             "type": "file",
-                                            "instructions": "",
+                                            "instructions": "1280\/720",
                                             "required": 0,
                                             "conditional_logic": 0,
                                             "wrapper": {
@@ -475,7 +475,7 @@
                                             "label": "Video First Frame",
                                             "name": "video_first_frame",
                                             "type": "image",
-                                            "instructions": "",
+                                            "instructions": "1280x720",
                                             "required": 0,
                                             "conditional_logic": 0,
                                             "wrapper": {
@@ -494,7 +494,7 @@
                                             "label": "Video",
                                             "name": "video",
                                             "type": "file",
-                                            "instructions": "",
+                                            "instructions": "1280x720",
                                             "required": 0,
                                             "conditional_logic": 0,
                                             "wrapper": {
@@ -528,7 +528,7 @@
                                             "label": "Image",
                                             "name": "image",
                                             "type": "image",
-                                            "instructions": "",
+                                            "instructions": "1280x720",
                                             "required": 0,
                                             "conditional_logic": 0,
                                             "wrapper": {
@@ -706,5 +706,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1480631121
+    "modified": 1480710140
 }

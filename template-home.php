@@ -148,16 +148,7 @@ get_header(); ?>
     </video>
 
 </div>
-<div style="margin-bottom: 100px">
-    <angucomplete-alt id="members"
-                      placeholder="Search members"
-                      pause="400"
-                      selected-object="title"
-                      remote-url="http://grafxwp/?json=1&post_type=work&exclude=status,type,author,date,content,modified,excerpt,categories,title_plain,comments,attachments,comment_count,comment_status,custom_fields&s="
-                      remote-url-data-field="posts"
-                      title-field="title"
-                      input-class="form-control form-control-small"/>
-</div>
+
 
 
 <?php get_footer(); ?>

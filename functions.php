@@ -193,13 +193,57 @@ while ($loop->have_posts()) {
     $loop->the_post();
     $buttons[get_the_title()] = get_the_content();
 }
-function get_button($v){
+function get_button($v)
+{
     global $buttons;
     return $buttons[$v];
 }
 
 //wp_localize_script( 'wp-api', 'wpApiSettings', array( 'root' => esc_url_raw( rest_url() ), 'nonce' => wp_create_nonce( 'wp_rest' ) ) );
 
+//
+//add_filter('asp_pagepost_results', 'asp_add_category_titles', 1, 1);
+//
+//function asp_add_category_titles($pageposts)
+//{
+//    foreach ($pageposts as $k => $v) {
+//
+//        // Get the post categories
+//        $post_categories = wp_get_post_categories($pageposts[$k]->id);
+//        $cats = "";
+//
+//        // Concatenate category names to the $cats variable
+//        foreach ($post_categories as $c) {
+//            $cat = get_category($c);
+//            $cats = " " . $cat->name;
+//        }
+//
+//        // Modify the post title
+//        $pageposts[$k]->title .= " " . $cats;
+//    }
+//
+//    return $pageposts;
+//}
+//
+///**
+// * Numbering the results
+// *
+// * @link: https://wp-dreams.com/knowledge-base/numbering-the-results/
+// */
+//add_filter('asp_results', 'asp_number_results', 1, 1);
+//
+//function asp_number_results($results)
+//{
+//
+//    $num = 1;
+//    foreach ($results as $k => $v) {
+//        // Modify the post title
+//        $results[$k]->title = $num . ". " . $results[$k]->title;
+//        $num++;
+//    }
+//
+//    return $results;
+//}
 
 
 

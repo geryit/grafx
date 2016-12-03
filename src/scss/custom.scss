@@ -205,9 +205,9 @@
             &.slick-active {
                 button {
                     transform: scale(1);
-                }
+                } 
             }
-            &:before {
+            &:before { 
                 content: '';
                 position: absolute;
                 width: 70px;
@@ -548,7 +548,7 @@
         flex-wrap: wrap;
     }
     &__item {
-        flex: 25%;
+        flex: 25%; 
         position: relative;
         display: flex;
         align-items: center;
@@ -573,6 +573,10 @@
                 opacity: 1;
             }
         }
+    }
+    &__img{
+        max-width: 160px;
+        max-height: 95px;
     }
 
 }

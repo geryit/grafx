@@ -117,8 +117,7 @@ $(document).ready(function () {
         var mainHeaderHeight = $('.header').outerHeight();
 
         var load = function (stickies) {
-
-            if (typeof stickies === "object" && stickies instanceof jQuery && stickies.length > 0) {
+            if (typeof stickies === "object" && stickies.length > 0) {
 
                 $stickies = stickies.each(function () {
 
@@ -221,8 +220,8 @@ $(document).ready(function () {
 });
 
 
-angular.module('grafxApp', ["angucomplete-alt"])
-    .controller('grafxCtrl', ['$scope', '$http', function ($scope, $http) {
+angular.module('grafxApp', [])
+    .controller('grafxCtrl', ['$scope', function ($scope) {
         var scope = $scope;
         scope.vModal = {
             on: false,
@@ -255,7 +254,7 @@ angular.module('grafxApp', ["angucomplete-alt"])
             close: function (viaCloseBtn) {
                 //because there is a timer, we need to use $apply
                 if (viaCloseBtn) scope.vModal.on = false;
-                else $scope.$evalAsync(function () {
+                else scope.$evalAsync(function () {
                     scope.vModal.on = false;
                 });
 
@@ -273,11 +272,13 @@ angular.module('grafxApp', ["angucomplete-alt"])
         };
 
         $('.search__btn').on("click", function () {
-            $scope.$evalAsync(function () {
+            scope.$evalAsync(function () {
                 scope.sModal.open();
             });
 
-        })
+        });
+
+        // scope.sModal.open();
 
         // $http.get('/wp-json/wp/v2/work')
         //     .then(function(response){
