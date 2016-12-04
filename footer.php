@@ -30,7 +30,14 @@
 </div>
 
 <?php wp_footer(); ?>
-
+<script>
+    jQuery(function($) {
+        $(".asp_main_container").on("asp_search_end", function(event, id, instance, phrase) {
+            ASP.api(0, "toggleSettings", "hide");
+            console.log('sdf')
+        });
+    });
+</script>
 
 </body>
 </html>

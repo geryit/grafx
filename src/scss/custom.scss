@@ -452,7 +452,7 @@
         &Wrap {
             width: 100%;
         }
-        &.fixed {
+        &.fixed { 
             position: fixed;
             top: 70px;
             z-index: 4;
@@ -466,10 +466,13 @@
             }
         }
 
-        &__year {
+        &__year,&__keyword {
             color: #848484;
             font-weight: normal;
-        }
+            font-size: 18px;
+        } 
+
+
         &__inner {
             display: flex;
             align-items: center;

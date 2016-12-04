@@ -111,10 +111,10 @@ module.exports = function (grunt) {
                 files: [
                     {
                         src: [
-                            'bower_components/jquery/dist/jquery.slim.js',
-                            'bower_components/angular/angular.js',
-                            'bower_components/slick-carousel/slick/slick.js',
-                            'node_modules/video.js/dist/video.js',
+                            // 'bower_components/jquery/dist/jquery.slim.js',
+                            'bower_components/angular/angular.min.js',
+                            'bower_components/slick-carousel/slick/slick.min.js',
+                            'node_modules/video.js/dist/video.min.js',
                             'src/js/<%= pkg.name %>.js'
                         ],
                         dest: 'dist/js/<%= pkg.name %>.min.js'

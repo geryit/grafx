@@ -86,6 +86,12 @@ h6 {
     position: static !important;
 }
 
+.fltng{
+    position: relative;
+    z-index: 999;
+    background: #fff;
+}
+
 img {
     max-width: 100%;
 }
@@ -255,7 +261,7 @@ img {
 
 }
 
-.search {
+.searchBtn {
     a {
         font-size: 22px;
         margin-left: 5px;
@@ -564,7 +570,7 @@ div#ajaxsearchprores1_1.vertical {
                             font-weight: bold;
                             text-transform: uppercase;
                         }
-                        .r_title {
+                        .r_title { 
                             flex: 1;
                             text-transform: uppercase;
                         }
@@ -700,5 +706,21 @@ div#ajaxsearchprores1_1.vertical {
         &:after {
             content: 'PP';
         }
+    }
+}
+
+#seeAll{
+    .container{
+        @extend .container;
+        a{
+            color: $yellow;
+            line-height: 70px;
+            display: block;
+            font-size: 18px;
+
+        }
+    }
+    &:hover{
+        background: #37393a;
     }
 }

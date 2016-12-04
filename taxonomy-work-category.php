@@ -2,7 +2,9 @@
 get_header();
 $cats = get_field('categories', 'option');
 
+
 $term_id = get_queried_object()->term_id;
+
 
 //find index in acf list
 foreach ($cats as $i => $v) {
@@ -17,9 +19,7 @@ $bg_image = $cats[$term_index]['background_image'];
 $cat_num = count($cats);
 
 $term_prev_index = $term_index - 1;
-if ($term_prev_index < 0) {
-    $term_prev_index = $cat_num - 1;
-}
+if ($term_prev_index < 0) $term_prev_index = $cat_num - 1;
 
 $term_next_index = ($term_index + 1) % $cat_num;
 
@@ -49,10 +49,9 @@ if (get_query_var('orderby')) $orderby = get_query_var('orderby'); else $orderby
                     </a>
                 </li>
                 <li class="cats__item">
-                    <a class="cats__link light active"
-                       href="<?= get_term_link(single_cat($term_index)->term_id) ?>">
+                    <span class="cats__link light active">
                         <?= single_cat($term_index)->name ?>
-                    </a>
+                    </span>
                 </li>
                 <li class="cats__item fx">
                     <a class="cats__link light"
@@ -76,7 +75,7 @@ if (get_query_var('orderby')) $orderby = get_query_var('orderby'); else $orderby
             <?
 
             $year_check = false;
-            //            query_posts($query_string . '&orderby=title&order=ASC');
+            //            if($orderby == 'title') query_posts($query_string . '&orderby=title&order=ASC');
             if (have_posts()) {
                 while (have_posts()) {
                     the_post();
@@ -91,17 +90,23 @@ if (get_query_var('orderby')) $orderby = get_query_var('orderby'); else $orderby
                                 </div>
                                 <div class="works__head__right">
                                     <h5 class='works__head__sortBy'>Sort by</h5>
-                                    <? if($orderby == 'title'){?>
+                                    <? if ($orderby == 'title') { ?>
                                         <span class='works__head__sortBtn on'>A-Z</span>
-                                    <?}else{?>
-                                        <a href="?orderby=title" class='works__head__sortBtn'>A-Z</a>
-                                    <?}?>
+                                    <?
+                                    } else { ?>
+                                        <a href="<?= esc_url(add_query_arg(array('orderby' => 'title', 'order' => 'ASC'))) ?>"
+                                           class='works__head__sortBtn'>A-Z</a>
+                                    <?
+                                    } ?>
 
-                                    <? if($orderby == 'date'){?>
+                                    <? if ($orderby == 'date') { ?>
                                         <span class='works__head__sortBtn on'>DATE</span>
-                                    <?}else{?>
-                                        <a href="?orderby=date" class='works__head__sortBtn'>DATE</a>
-                                    <?}?>
+                                    <?
+                                    } else { ?>
+                                        <a href="<?= esc_url(add_query_arg(array('orderby' => 'date', 'order' => 'DESC'))) ?>"
+                                           class='works__head__sortBtn'>DATE</a>
+                                    <?
+                                    } ?>
 
 
                                 </div>

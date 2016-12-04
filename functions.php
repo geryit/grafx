@@ -4,13 +4,12 @@ function scripts()
 {
     if ($GLOBALS['pagenow'] != 'wp-login.php' && !is_admin()) {
 
-        wp_dequeue_script('jquery');
+//        wp_dequeue_script('jquery');
         wp_deregister_script('wp-embed');
         remove_action('wp_head', 'print_emoji_detection_script', 7);
         remove_action('wp_print_styles', 'print_emoji_styles');
 
-        wp_register_script('main', get_template_directory_uri() . '/dist/js/grafx.min.js', array(), null); // Conditional script(s)
-        wp_enqueue_script('main'); // Enqueue it!
+        wp_enqueue_script('main', get_template_directory_uri() . '/dist/js/grafx.min.js', array(), null); // Enqueue it!
     }
 }
 
@@ -21,7 +20,7 @@ function styles()
     wp_enqueue_style('main'); // Enqueue it!
 }
 
-add_action('init', 'scripts'); // Add Custom Scripts to wp_head
+add_action('wp_footer', 'scripts'); // Add Custom Scripts to wp_head
 add_action('wp_enqueue_scripts', 'styles'); // Add Theme Stylesheet
 
 add_action('admin_init', 'remove_textarea');
@@ -93,7 +92,7 @@ add_action('admin_menu', 'post_remove');
 
 function printr($data)
 {
-    echo "<pre>";
+    echo "<pre class='fltng'>";
     print_r($data);
     echo "</pre>";
 }
@@ -151,7 +150,8 @@ function hex2rgba($color, $opacity = false)
     return $output;
 }
 
-function plog($v){
+function plog($v)
+{
     file_put_contents('php://stderr', print_r($v, TRUE));
 }
 
@@ -181,7 +181,7 @@ function asp_number_results($results)
         $terms = "<span class='r_terms'>";
 
         foreach ($work_terms as $t) {
-            $terms .= "<span class='r_term r_term--".$t->slug."'></span>";
+            $terms .= "<span class='r_term r_term--" . $t->slug . "'></span>";
         }
         $terms .= "</span>";
 //        plog($work_terms[0]->slug);
@@ -193,3 +193,60 @@ function asp_number_results($results)
 }
 
 
+//add_action('mytheme_aboveblog', 'mytheme_online_user_message', 10, 2);
+//
+//function mytheme_online_user_message($v, $k)
+//{
+//    echo "<br>echoing: " . $v . $k;
+//}
+//
+//
+//add_action('mytheme_aboveblog', 'mytheme_online_user_message2', 10, 2);
+//
+//function mytheme_online_user_message2($v, $k)
+//{
+//    echo "<br>echoing2: " . $v . $k;
+//}
+//
+//
+//add_filter( 'jacks_boast' , 'cut_the_boasting');
+//function cut_the_boasting($boast) {
+//    // Replace "best" with "second-best"
+//    $boast = str_replace ( "best" , "second-best" , $boast );
+//    // Append another phrase at the end of his boast
+//    $boast = $boast . ' However, Gill can outshine me any day.';
+//    return $boast;
+//}
+
+//
+//add_action( 'asp_after_pagepost_results', 'asp_change_phrase', 10, 1);
+//
+//function asp_change_phrase( $search_phrase, $pageposts_assoc_array ) {
+//    plog($search_phrase, $pageposts_assoc_array);
+//}
+
+
+//add_filter('asp_search_phrase_after_cleaning', 'tt', 1, 1);
+//
+//function tt($v){
+//
+//    plog($v);
+//
+//    return $v;
+//}
+
+//add_action('asp_after_autocomplete','tt');
+//add_action('asp_layout_after_shortcode','tt');
+//add_action('asp_layout_before_input','tt');
+//add_action('asp_layout_after_input','tt');
+//add_action('asp_layout_after_loading','tt');
+//add_action('asp_res_vertical_end_item','tt');
+//
+//function tt(){
+//
+//    plog('amcik');
+//
+//    echo 'amcik';
+//
+//
+//}

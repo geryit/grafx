@@ -1,4 +1,4 @@
-$(document).ready(function () {
+jQuery(document).ready(function ($) {
 
     if ($('.hSlider').length) {
         var $pBar = $('.slider__progress__inner');
@@ -212,7 +212,7 @@ $(document).ready(function () {
         });
     });
 
-    if ($("body").hasClass("tax-work-category")) {
+    if ($("body").hasClass("tax-work-category") || $("body").hasClass("search-results")) {
         $(".menu-item-object-work-category").addClass('current-menu-item');
     }
 
@@ -265,9 +265,19 @@ angular.module('grafxApp', [])
             on: false,
             open: function () {
                 scope.sModal.on = true;
-                setTimeout(function(){
+                setTimeout(function () {
                     angular.element(document.getElementsByClassName("orig")).val('');
                     angular.element(document.getElementsByClassName("orig")).focus();
+
+                    $(".asp_main_container").on("asp_search_end", function (event, id, instance, phrase) {
+
+                        if (!$('#seeAll').length) $(".results").append("<div id='seeAll'></div>");
+
+                        var html = "<div class='container'>" +
+                            "<a href='?s=" + phrase + "&orderby=date&order=DESC' id='seeAll__link'>See all results for \"" + phrase + "\" </a></div>";
+
+                        $("#seeAll").html(html);
+                    });
                 }, 1000);
             },
             close: function () {
@@ -275,10 +285,9 @@ angular.module('grafxApp', [])
             }
         };
 
-        $('.search__btn').on("click", function () {
+        $('.searchBtn__btn').on("click", function () {
             scope.$evalAsync(function () {
                 scope.sModal.open();
-
 
             });
 
