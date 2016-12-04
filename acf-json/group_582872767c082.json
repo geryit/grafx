@@ -22,7 +22,7 @@
             }
         },
         {
-            "default_value": "",
+            "default_value": 8,
             "min": "",
             "max": "",
             "step": "",
@@ -226,6 +226,13 @@
                 "operator": "==",
                 "value": "template-home.php"
             }
+        ],
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "template-about.php"
+            }
         ]
     ],
     "menu_order": 0,
@@ -236,5 +243,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1480710060
+    "modified": 1480887975
 }

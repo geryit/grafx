@@ -34,33 +34,33 @@ if (get_query_var('orderby')) $orderby = get_query_var('orderby'); else $orderby
 ?>
 
 <div id="wrap">
-    <div class="catsWrap" style="background-image: url(<?= $bg_image ? $bg_image : '' ?>)">
+    <div class="headItemsWrap" style="background-image: url(<?= $bg_image ? $bg_image : '' ?>)">
         <div class="container">
 
-            <ul class="cats">
-                <li class="cats__nav cats__nav--prev">
-                    <a class="cats__icon cats__icon--prev icon-l-arrow2"
+            <ul class="headItems">
+                <li class="headItems__nav headItems__nav--prev">
+                    <a class="headItems__icon headItems__icon--prev icon-l-arrow2"
                        href="<?= get_term_link(single_cat($term_prev_index)->term_id) ?>"></a>
                 </li>
-                <li class="cats__item fx">
+                <li class="headItems__item fx">
                     <a href="<?= get_term_link(single_cat($term_prev_index)->term_id) ?>"
-                       class="cats__link light">
+                       class="headItems__link light">
                         <?= single_cat($term_prev_index)->name ?>
                     </a>
                 </li>
-                <li class="cats__item">
-                    <span class="cats__link light active">
+                <li class="headItems__item">
+                    <span class="headItems__link light active">
                         <?= single_cat($term_index)->name ?>
                     </span>
                 </li>
-                <li class="cats__item fx">
-                    <a class="cats__link light"
+                <li class="headItems__item fx">
+                    <a class="headItems__link light"
                        href="<?= get_term_link(single_cat($term_next_index)->term_id) ?>">
                         <?= single_cat($term_next_index)->name ?>
                     </a>
                 </li>
-                <li class="cats__nav cats__nav--next">
-                    <a class="cats__icon cats__icon--next icon-r-arrow2"
+                <li class="headItems__nav headItems__nav--next">
+                    <a class="headItems__icon headItems__icon--next icon-r-arrow2"
                        href="<?= get_term_link(single_cat($term_next_index)->term_id) ?>"></a>
                 </li>
             </ul>

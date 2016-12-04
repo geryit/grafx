@@ -68,7 +68,7 @@
                     "taxonomy": "work-category",
                     "field_type": "radio",
                     "multiple": 0,
-                    "allow_null": 0,
+                    "allow_null": 1,
                     "return_format": "object",
                     "add_term": 0,
                     "load_terms": 0,
@@ -113,6 +113,13 @@
                 "operator": "==",
                 "value": "template-home.php"
             }
+        ],
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "template-about.php"
+            }
         ]
     ],
     "menu_order": 0,
@@ -123,5 +130,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1480631348
+    "modified": 1480890808
 }

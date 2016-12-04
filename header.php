@@ -18,7 +18,7 @@
 
     <?
 
-    if (is_page_template('template-home.php')) {
+    if (is_page_template('template-home.php') || is_page_template('template-about.php')) {
         $activeSlidecount = 0;
         foreach (get_field('home_slider') as $v) {
             if ($v['show']) $activeSlidecount++;
