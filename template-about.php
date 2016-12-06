@@ -102,6 +102,45 @@ get_header(); ?>
         </div>
     </div>
 
+    <div class="stats">
+        <div class="container">
+            <h2 class="stats__head light">
+                <span class="stats__head__inner">Our Stats</span>
+            </h2>
+            <div class="pluses pluses1">
+                <div class="container">
+                    <div class="pluses__inner"></div>
+                </div>
+            </div>
+            <ul class="stats__list">
+                <? if (get_field('stats'))
+                    foreach (get_field('stats') as $i => $v) { ?>
+                        <li class="stats__item">
+                            <div class="stats__main">
+                                <span class="stats__num"><?= $v['number'] ?></span>
+                                <span class="stats__title"><?= $v['title'] ?></span>
+                            </div>
+
+                            <div class="stats__body">
+                                Maecenas vitae interdum mauris. Suspendisse tortor erat, accumsan
+                                vitae dui non, cursus luctus tortor. Phasellus aliquet consectetur
+                                enim lacinia suscipit. Vestibulum accumsan convallis metus quis
+                                mollis. Morbi felis risus, fringilla in tempor eu, auctor vitae
+                                ipsum. Ut sed nisl nunc.
+                            </div>
+
+
+                        </li>
+                    <? } ?>
+            </ul>
+            <div class="pluses pluses2">
+                <div class="container">
+                    <div class="pluses__inner"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
 </div>
 <?php get_footer(); ?>

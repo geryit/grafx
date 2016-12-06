@@ -274,7 +274,7 @@ angular.module('grafxApp', [])
                         if (!$('#seeAll').length) $(".results").append("<div id='seeAll'></div>");
 
                         var html = "<div class='container'>" +
-                            "<a href='?s=" + phrase + "&orderby=date&order=DESC' id='seeAll__link'>See all results for \"" + phrase + "\" </a></div>";
+                            "<a href='/?s=" + phrase + "&orderby=date&order=DESC' id='seeAll__link'>See all results for \"" + phrase + "\" </a></div>";
 
                         $("#seeAll").html(html);
                     });

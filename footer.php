@@ -24,20 +24,12 @@
             </div>
         </div>
 
-        <?php echo do_shortcode('[wd_asp id=1]'); ?>
+        <?=do_shortcode('[wd_asp id=1]'); ?>
     </div>
 
 </div>
 
 <?php wp_footer(); ?>
-<script>
-    jQuery(function($) {
-        $(".asp_main_container").on("asp_search_end", function(event, id, instance, phrase) {
-            ASP.api(0, "toggleSettings", "hide");
-            console.log('sdf')
-        });
-    });
-</script>
 
 </body>
 </html>
