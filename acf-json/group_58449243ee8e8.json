@@ -31,15 +31,8 @@
         [
             {
                 "param": "page_template",
-                "operator": "==",
-                "value": "template-about.php"
-            }
-        ],
-        [
-            {
-                "param": "page_template",
-                "operator": "==",
-                "value": "template-contact.php"
+                "operator": "!=",
+                "value": "default"
             }
         ]
     ],
@@ -51,5 +44,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1480978401
+    "modified": 1481071077
 }

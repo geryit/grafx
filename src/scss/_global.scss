@@ -86,7 +86,7 @@ h6 {
     position: static !important;
 }
 
-.fltng{
+.fltng {
     position: relative;
     z-index: 999;
     background: #fff;
@@ -96,8 +96,28 @@ img {
     max-width: 100%;
 }
 
-.color-black{
+.color-black {
     color: #000;
+}
+
+.mt5 {
+    margin-top: 5px;
+}
+
+.mt10 {
+    margin-top: 10px;
+}
+
+.mt15 {
+    margin-top: 15px;
+}
+
+.mt20 {
+    margin-top: 20px;
+}
+
+.mt30 {
+    margin-top: 30px;
 }
 
 .container {
@@ -459,7 +479,7 @@ img {
         top: 58px;
         left: -7px;
     }
-    &__content{
+    &__content {
         position: relative;
     }
 
@@ -537,7 +557,6 @@ div#ajaxsearchpro1_1 {
         }
     }
 
-
 }
 
 div#ajaxsearchprores1_1.vertical {
@@ -598,23 +617,22 @@ div#ajaxsearchprores1_1.vertical {
         .asp_spacer {
             display: none;
         }
-        .resdrg{
+        .resdrg {
             //@extend .container;
         }
-        .asp_nores{
+        .asp_nores {
             background: transparent;
             text-align: left;
             color: #fff;
             font-size: 18px;
             @extend .container;
-            .asp_keyword{
+            .asp_keyword {
                 color: #fff;
                 font-size: 18px;
                 text-decoration: underline;
             }
         }
     }
-
 
     span.highlighted {
         @extend .bold;
@@ -625,8 +643,8 @@ div#ajaxsearchprores1_1.vertical {
         line-height: 26px;
         border-bottom: 1px solid #fff;
     }
-    p.showmore{
-        a{
+    p.showmore {
+        a {
             @extend .container;
             @extend .light;
             background: transparent;
@@ -635,7 +653,7 @@ div#ajaxsearchprores1_1.vertical {
             line-height: 70px;
             font-size: 18px;
             color: $yellow;
-            &:hover{
+            &:hover {
                 color: #fff;
             }
         }
@@ -666,7 +684,7 @@ div#ajaxsearchprores1_1.vertical {
         display: inline-block;
 
     }
-    .hovered &{
+    .hovered & {
         width: 150px;
         &:before {
             display: block;
@@ -713,10 +731,10 @@ div#ajaxsearchprores1_1.vertical {
     }
 }
 
-#seeAll{
-    .container{
+#seeAll {
+    .container {
         @extend .container;
-        a{
+        a {
             color: $yellow;
             line-height: 70px;
             display: block;
@@ -724,7 +742,7 @@ div#ajaxsearchprores1_1.vertical {
 
         }
     }
-    &:hover{
+    &:hover {
         background: #37393a;
     }
 }

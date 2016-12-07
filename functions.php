@@ -250,3 +250,7 @@ function asp_number_results($results)
 //
 //
 //}
+
+//remove stupid ajax loader upload folder
+wd_asp()->upload_dir = '';
+

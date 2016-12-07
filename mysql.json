@@ -8,7 +8,7 @@
         "host": "54.80.56.240",
         "username": "ubuntu",
         "save_path": "/home/ubuntu/grafxwp/wp-content/themes/grafx/.db",
-        "save_url": "http://grafx.geryit.com/wp-content/themes/grafx/.db"
+        "save_url": "https://grafx.geryit.com/wp-content/themes/grafx/.db"
     },
     "local": {
         "site_url": "grafxwp",
