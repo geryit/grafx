@@ -9,7 +9,7 @@ grafx && git pull
 =======
 grafx-start
 or
-grafx && npm install && bower install && grunt && grunt watch
+grafx && npm i && grunt && grunt watch
 
 
 #download uploads and plugins and download dump (sync with remote)
