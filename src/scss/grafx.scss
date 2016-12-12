@@ -6,8 +6,10 @@ $error : #da0101 !default;
 $icomoon-font-path: "../fonts/icomoon/fonts/" !default;
 
 @import "../../node_modules/slick-carousel/slick/slick.scss";
+@import "../../node_modules/ui-select/dist/select";
 @import "../../src/scss/videojs";
 @import "../../node_modules/video.js/src/css/vjs.scss";
+@import "../../node_modules/selectize/dist/css/selectize.default";
 
 @import "../../src/fonts/icomoon/variables";
 @import "../../src/fonts/icomoon/style.scss";
@@ -17,4 +19,5 @@ $icomoon-font-path: "../fonts/icomoon/fonts/" !default;
 @import "global";
 @import "custom";
 @import "baris";
+
 

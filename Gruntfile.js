@@ -43,7 +43,7 @@ module.exports = function (grunt) {
         ],
       },
       js: {
-        files: 'src/js/**/*.js',
+        files: 'src/{js,json}/**/*',
         tasks: [
           'browserify:dev',
           // 'babel',
@@ -58,10 +58,6 @@ module.exports = function (grunt) {
         files: 'src/fonts/**/*',
         tasks: ['newer:copy:fonts'],
       },
-      video: {
-        files: 'src/video/**/*',
-        tasks: ['newer:copy:video'],
-      },
       php: {
         options: {
           livereload: true,
@@ -75,9 +71,10 @@ module.exports = function (grunt) {
     sass: {
       dev: {
         options: {
-          sourceMap: true,
+          // sourceMap: true,
           sourceMapEmbed: true,
-
+          sourceMapContents: true,
+          // sourceMapRoot: '/wp-content/themes/grafx/',
         },
         files: {
           'dist/css/<%= pkg.name %>.css': 'src/scss/<%= pkg.name %>.scss',
@@ -394,14 +391,14 @@ module.exports = function (grunt) {
     'build',
     'rsync:theme',
     'sass:dev',
-    'concat',
+    // 'concat',
   ]);
   grunt.registerTask('full-deploy', [
     'build',
     'rsync:wpcontent',
     'sync_remote_db',
     'sass:dev',
-    'concat',
+    // 'concat',
   ]);
 };
 

@@ -7,6 +7,7 @@
   }
 }
 
+
 @keyframes expandWidth2 {
   0% {
     transform: translateY(-50%) scaleX(0);
@@ -1280,7 +1281,7 @@
 }
 
 .application__section {
-  padding: 70px 0;
+  padding: 65px 0;
 }
 
 .application__inner {
@@ -1310,12 +1311,13 @@
 
 .application__input {
   font-size: 16px;
-  color: #7f8385;
+  color: #000;
   @extend .light;
   border: 0;
   border-bottom: 1px solid #b0b0b0;
   padding: 16px 10px 8px;
   outline: none;
+  background-color: transparent;
   &:focus {
     border-color: $yellow;
   }
@@ -1328,7 +1330,7 @@
 }
 
 .application__fields {
-  margin-top: 20px;
+  margin-top: 15px;
   display: flex;
   flex-wrap: wrap;
   margin-left: -15px;
@@ -1338,11 +1340,20 @@
   margin-top: 40px;
   width: 50%;
   padding-left: 15px;
+  &--opts{
+    width: 100%;
+    margin-top: 15px;
+    margin-bottom: 20px;
+  }
 }
 
 .ng-submitted {
-  .ng-empty,
-  .ng-invalid-email {
+  .ng-invalid,
+  .ng-invalid-email,
+  .ui-select-container.ng-empty:not(.open),
+  .ui-select-container.ng-empty:not(.open) .selectize-input,
+  .ui-select-container.ng-empty:not(.open) .ui-select-toggle,
+  .application__upload.ng-invalid .application__upload__input{
     color: $error;
     border-color: $error;
     &::-webkit-input-placeholder {
@@ -1351,16 +1362,141 @@
     ~ label {
       color: $error;
     }
-  }
-  &.ng-invalid{
-    .application{
-      &__note{
-        display: none;
-      }
-      &__error{
-        display: block;
-      }
+    .selectize-input:after{
+      color: $error;
     }
   }
 
+  .application__error{
+    display: block;
+  }
 }
+
+
+
+.selectize-control{
+  height: 42px;
+  &.single .selectize-input{
+    border: 0;
+    border-bottom: 1px solid #b0b0b0;
+    border-radius: 0;
+    background: none;
+    box-shadow: none;
+    padding: 0;
+    @extend .light;
+    &:after{
+      @extend .icomoon;
+      content: "\e908";
+      border: 0;
+      width: 8px;
+      height: 5px;
+      font-size: 10px;
+      color: #b0b0b0;
+      right: 15px;
+    }
+    &.focus:after{
+      color: $yellow;
+    }
+
+    > input{
+      font-size: 16px;
+      padding: 16px 10px 8px !important;
+      margin: 0 !important;
+
+    }
+    .ui-select-match span{
+      display: block;
+      line-height: 41px;
+      font-size: 16px;
+      padding-left: 5px;
+    }
+    &.selectize-focus {
+      border-color: $yellow !important;
+    }
+  }
+}
+
+.selectize-dropdown{
+  margin-top: -4px;
+  border-radius: 0;
+  font-size: 16px;
+  @extend .light;
+  &.single{
+    border: 0;
+  }
+  .active{
+    background-color: transparent;
+    color: $yellow;
+  }
+  .ui-select-choices-row:hover {
+    background-color: transparent;
+    color: $yellow;
+  }
+}
+
+
+.application__upload {
+    display: flex;
+    align-items: flex-end;
+    position: relative;
+}
+
+.application__upload__input {
+    flex: 1;
+}
+
+.application__upload__btn {
+    @extend .normal;
+    color: #7f8385;
+    border: 1px solid #b0b0b0;
+    background: #fff;
+    padding: 10px 10px;
+    outline: none;
+    &:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      right: 0;
+  }
+  &:hover{
+    background-color: $yellow;
+    color: #fff;
+    border-color: $yellow;
+  }
+}
+
+.opts {
+    column-count: 4;
+}
+
+.opts__cb{
+    display: none;
+    &:checked ~ .opts__label {
+      .icon-check{
+        color: #000;
+      }
+      .opts__txt{
+        color: #000;
+      }
+    }
+}
+
+.opts__txt {
+    color: #7f8385;
+    font-size: 14px;
+}
+
+.opts__item {
+    margin-top: 5px;
+}
+
+.icon-check {
+    font-size: 10px;
+    display: inline-block;
+    margin-right: 4px;
+    color: #d0d0d0;
+}
+
+

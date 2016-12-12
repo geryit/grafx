@@ -1,0 +1,12 @@
+{
+  "expiration": "2020-01-01T00:00:00Z",
+  "conditions": [
+    {"bucket": "grafx"},
+    ["starts-with", "$key", "resumes/"],
+    {"acl": "public-read"},
+    {"success_action_redirect": "#"},
+    ["starts-with", "$Content-Type", ""],
+    ["starts-with", "$filename", ""],
+    ["content-length-range", 0, 524288000]
+  ]
+}

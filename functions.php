@@ -9,7 +9,7 @@ function scripts()
         remove_action('wp_head', 'print_emoji_detection_script', 7);
         remove_action('wp_print_styles', 'print_emoji_styles');
 
-        wp_enqueue_script('main', get_template_directory_uri() . '/dist/js/grafx.min.js', array(), null); // Enqueue it!
+        wp_enqueue_script('main', get_template_directory_uri() . '/dist/js/grafx.min.js', array('jquery'), null, true); // Enqueue it!
     }
 }
 
@@ -252,5 +252,5 @@ function asp_number_results($results)
 //}
 
 //remove stupid ajax loader upload folder
-wd_asp()->upload_dir = '';
+//wd_asp()->upload_dir = '';
 

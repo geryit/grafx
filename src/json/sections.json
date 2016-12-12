@@ -1,0 +1,251 @@
+[
+  {
+    "title": "BASIC INFORMATION",
+    "subTitle": "Please type in your basic information",
+    "errorMsg": "There were errors in your basic information.",
+    "fields": [
+      {
+        "type": "input",
+        "name": "first_name",
+        "label": "YOUR FIRST NAME",
+        "placeholder": "Please Fill In"
+      },
+      {
+        "type": "input",
+        "name": "last_name",
+        "label": "YOUR LAST NAME",
+        "placeholder": "Please Fill In"
+      },
+      {
+        "type": "email",
+        "name": "email",
+        "label": "E-MAIL",
+        "placeholder": "Please Fill In"
+      },
+      {
+        "type": "input",
+        "name": "phone",
+        "label": "PHONE",
+        "placeholder": "Please Fill In"
+      }
+    ]
+  },
+  {
+    "title": "ADDRESS",
+    "subTitle": "Please type in your address information",
+    "errorMsg": "There were errors in your address information.",
+    "bg": "#f6f6f6",
+    "fields": [
+      {
+        "type": "input",
+        "name": "address1",
+        "label": "ADDRESS #1",
+        "placeholder": "Please Fill In"
+      },
+      {
+        "type": "input",
+        "name": "address2",
+        "label": "ADDRESS #2",
+        "placeholder": "Please Fill In",
+        "notRequired": true
+      },
+      {
+        "type": "input",
+        "name": "city",
+        "label": "CITY",
+        "placeholder": "Please Fill In"
+      },
+      {
+        "type": "select",
+        "label": "STATE",
+        "name": "state",
+        "placeholder": "Please Select"
+      },
+      {
+        "type": "input",
+        "name": "zip",
+        "label": "ZIP CODE",
+        "placeholder": "Please Fill In"
+      },
+      {
+        "type": "select",
+        "label": "COUNTRY",
+        "name": "country",
+        "placeholder": "Please Select"
+      }
+    ]
+  },
+  {
+    "title": "PORTFOLIO & RESUME",
+    "subTitle": "Please let us know about you better",
+    "errorMsg": "Please upload your resume (Max file size is 4MB)",
+    "fields": [
+      {
+        "type": "input",
+        "name": "portfolio",
+        "label": "PORTFOLIO LINK",
+        "placeholder": "Paste your link here",
+        "notRequired": true
+      },
+      {
+        "type": "file",
+        "name": "resume",
+        "label": "RESUME (Maximum 4MB)",
+        "placeholder": "Please Select a file"
+      }
+    ]
+  },
+  {
+    "title": "CAPABILITIES (*)",
+    "subTitle": "Please select from the list of items below.",
+    "errorMsg": "You need to select at least one from the capabilities.",
+    "bg": "#f6f6f6",
+    "name": "capabilities",
+    "fields": [
+      {
+        "type": "checkbox",
+        "label": "",
+        "name": "caps",
+        "items": [
+          {
+            "label": "3D Generalist",
+          },
+          {
+            "label": "3D Modeling",
+          },
+          {
+            "label": "3D Rigging",
+          },
+          {
+            "label": "3D Animation",
+          },
+          {
+            "label": "3D Character Animation",
+          },
+          {
+            "label": "Compositing",
+          },
+          {
+            "label": "Tracking",
+          },
+          {
+            "label": "Matte Painting",
+          },
+          {
+            "label": "2D Animation",
+          },
+          {
+            "label": "Motion Design",
+          },
+          {
+            "label": "Graphic Design",
+          },
+          {
+            "label": "Directing",
+          },
+          {
+            "label": "Creative Direction",
+          },
+          {
+            "label": "Art Direction",
+          },
+          {
+            "label": "Editing",
+          },
+          {
+            "label": "Color Correction",
+          },
+          {
+            "label": "Producing",
+          },
+          {
+            "label": "Illustration",
+          },
+          {
+            "label": "Story Boarding",
+          },
+          {
+            "label": "Character / Concept Design",
+          },
+          {
+            "label": "Branding Design",
+          },
+          {
+            "label": "Branding Strategy",
+          },
+          {
+            "label": "Copy Writing",
+          },
+          {
+            "label": "UX Design",
+          },
+          {
+            "label": "UI Design",
+          },
+          {
+            "label": "Front End Coding",
+          },
+          {
+            "label": "Back End Coding",
+          },
+          {
+            "label": "Full Stack Developer"
+          },
+        ]
+      }
+    ]
+  },
+  {
+    "title": "TOOLS (*)",
+    "subTitle": "Please select from the list of items below.",
+    "errorMsg": "You need to select at least one from the tool.",
+    "name": "tools",
+    "fields": [
+      {
+        "type": "checkbox",
+        "label": "",
+        "items": [
+          {
+            "label": "Maya"
+          },
+          {
+            "label": "Cinema 4D"
+          },
+          {
+            "label": "3D Max"
+          },
+          {
+            "label": "Softimage"
+          },
+          {
+            "label": "Nuke"
+          },
+          {
+            "label": "After Effects"
+          },
+          {
+            "label": "Illustrator"
+          },
+          {
+            "label": "Photoshop"
+          },
+          {
+            "label": "InDesign"
+          },
+          {
+            "label": "Premiere"
+          },
+          {
+            "label": "Final Cut"
+          },
+          {
+            "label": "Davinci"
+          },
+          {
+            "label": "Other Adobe Creative Suite"
+          },
+        ]
+      }
+    ]
+  }
+]

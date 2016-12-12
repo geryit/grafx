@@ -1,7 +1,14 @@
 import angular from 'angular';
 import $ from 'jquery';
-import 'slick-carousel';
 import videojs from 'video.js';
+import 'slick-carousel';
+import 'angular-sanitize';
+import 'ui-select';
+import 'ng-file-upload';
+import countries from '../json/countries.json';
+import states from '../json/states.json';
+import sections from '../json/sections.json';
+
 
 $(document).ready(() => {
   if ($('.hSlider').length) {
@@ -206,8 +213,8 @@ $(document).ready(() => {
 });
 
 
-angular.module('grafxApp', [])
-  .controller('grafxCtrl', ['$scope', ($scope) => {
+angular.module('grafxApp', ['ui.select', 'ngSanitize', 'ngFileUpload'])
+  .controller('grafxCtrl', ['$scope', 'Upload', '$timeout', ($scope, Upload, $timeout) => {
     const scope = $scope;
     scope.vModal = {
       on: false,
@@ -223,7 +230,7 @@ angular.module('grafxApp', [])
         // $("#vModal__video").load();
         videojs('vModal__video').ready(function () {
           const vid = this;
-          vid.src({type: 'video/mp4', src: url});
+          vid.src({ type: 'video/mp4', src: url });
           vid.poster(poster);
           vid.load();
           vid.play();
@@ -246,22 +253,16 @@ angular.module('grafxApp', [])
       },
     };
 
+
     scope.sModal = {
       on: false,
       open() {
         scope.sModal.on = true;
-        setTimeout(() => {
+
+        $timeout(() => {
           angular.element(document.getElementsByClassName('orig')).val('');
           angular.element(document.getElementsByClassName('orig')).focus();
-
-          $('.asp_main_container').on('asp_search_end', (event, id, instance, phrase) => {
-            if (!$('#seeAll').length) $('.results').append("<div id='seeAll'></div>");
-
-            const html = `<div class='container'><a href='/?s=${phrase}&orderby=date&order=DESC' id='seeAll__link'>See all results for "${phrase}" </a></div>`;
-
-            $('#seeAll').html(html);
-          });
-        }, 1000);
+        }, 0);
       },
       close() {
         scope.sModal.on = false;
@@ -281,71 +282,90 @@ angular.module('grafxApp', [])
     //         console.log(response)
     //     });
 
-    scope.sections = [
-      {
-        title: 'BASIC INFORMATION',
-        errorMsg: 'There were errors in your basic information.',
-        fields: [
-          {
-            type: 'input',
-            label: 'YOUR FIRST NAME',
-            placeholder: 'Please Fill In',
-          },
-          {
-            type: 'input',
-            label: 'YOUR LAST NAME',
-            placeholder: 'Please Fill In',
-          },
-          {
-            type: 'email',
-            label: 'E-MAIL',
-            placeholder: 'Please Fill In',
-          },
-          {
-            type: 'input',
-            label: 'PHONE',
-            placeholder: 'Please Fill In',
-          },
-        ],
 
-      },
-      {
-        title: 'ADDRESS',
-        errorMsg: 'There were errors in your basic information.',
-        fields: [
-          {
-            type: 'input',
-            label: 'YOUR FIRST NAME',
-            placeholder: 'Please Fill In',
-          },
-          {
-            type: 'input',
-            label: 'YOUR LAST NAME',
-            placeholder: 'Please Fill In',
-          },
-          {
-            type: 'email',
-            label: 'E-MAIL',
-            placeholder: 'Please Fill In',
-          },
-          {
-            type: 'input',
-            label: 'PHONE',
-            placeholder: 'Please Fill In',
-          },
-        ],
+    sections.forEach((v) => {
+      v.fields.forEach((_m) => {
+        const m = _m;
+        if (m.name === 'country') {
+          m.items = countries;
+        } else if (m.name === 'state') {
+          m.items = states;
+        }
+      });
+    });
 
+    scope.sections = sections;
+
+
+    scope.uploadFiles = (_file, _errFiles, _field) => {
+      const file = scope.f = _file;
+      const field = _field;
+      scope.errFile = _errFiles && _errFiles[0];
+
+      if (scope.errFile) {
+        field.placeholder = `File is bigger than ${scope.errFile.$errorParam}`;
+        field.invalid = true;
+      } else if (file) {
+        field.fName = file.name;
+        field.invalid = false;
       }
 
+      if (file) {
+        scope.f.key = `resumes/${+new Date()}-${file.name}`;
+        field.value = scope.f.key;
 
-    ];
+        file.upload = Upload.upload({
+          url: '//grafx.s3.amazonaws.com/', // S3 upload url including bucket name
+          method: 'POST',
+          data: {
+            key: scope.f.key, // the key to store the file on S3, could be file name or customized
+            AWSAccessKeyId: 'AKIAI474FYZA6WDANSMQ',
+            acl: 'public-read', // sets the access to the uploaded file in the bucket: private, public-read, ...
+            success_action_redirect: '#',
+            policy: 'ewogICAgImV4cGlyYXRpb24iOiAiMjAyMC0wMS0wMVQwMDowMDowMFoiLAogICAgImNvbmRpdGlvbnMiOiBbCiAgICAgICAgeyJidWNrZXQiOiAiZ3JhZngifSwKICAgICAgICBbInN0YXJ0cy13aXRoIiwgIiRrZXkiLCAicmVzdW1lcy8iXSwKICAgICAgICB7ImFjbCI6ICJwdWJsaWMtcmVhZCJ9LAogICAgICAgIHsic3VjY2Vzc19hY3Rpb25fcmVkaXJlY3QiOiAiIyJ9LAogICAgICAgIFsic3RhcnRzLXdpdGgiLCAiJENvbnRlbnQtVHlwZSIsICIiXSwKICAgICAgICBbInN0YXJ0cy13aXRoIiwgIiRmaWxlbmFtZSIsICIiXSwKICAgICAgICBbImNvbnRlbnQtbGVuZ3RoLXJhbmdlIiwgMCwgNTI0Mjg4MDAwXQogICAgXQp9', // base64-encoded json policy (see article below)
+            signature: 'RfvIEns0trx3RkZGRyErHirdnKk=', // base64-encoded signature based on policy string (see article below)
+            'Content-Type': file.type !== '' ? file.type : 'application/octet-stream', // content type of the file (NotEmpty)
+            filename: file.name, // this is needed for Flash polyfill IE8-9
+            file,
+          },
+        });
+      }
+    };
+
 
     scope.submitApp = () => {
-      if (scope.application__form.$valid) {
-        console.log('true')
-      } else {
-        console.log('false')
-      }
+      console.log(scope.application__form);
+      angular.forEach(sections, (_section) => {
+        const section = _section;
+        // console.log(section);
+        section.invalid = false;
+        angular.forEach(section.fields, (_field) => {
+          const field = _field;
+          if (field.type === 'input' || field.type === 'email' || field.type === 'select' || field.type === 'file') {
+            console.log(field.name, scope.application__form[field.name].$invalid);
+            field.invalid = scope.application__form[field.name].$invalid;
+          } else if (field.type === 'file') {
+            console.log(field.name, scope.application__form[field.name].$invalid);
+          } else if (field.type === 'checkbox') {
+            let checkedItems = 0;
+            field.items.forEach((item) => {
+              checkedItems += item.checked ? 1 : 0;
+            });
 
-    }
+            field.invalid = !checkedItems;
+          }
+          if (field.invalid) {
+            section.invalid = true;
+            scope.application__form.$setValidity('size', false);
+          }
+        });
+      });
+
+
+      if (scope.application__form.$valid) {
+        console.log('true');
+      } else {
+        console.log('false');
+      }
+    };
   }]);
