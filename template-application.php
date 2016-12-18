@@ -1,8 +1,32 @@
 <?php
 /* Template Name: Application */
 get_header();
-
-?>
+if (isset($_GET['appsent'])) { ?>
+  <div class="mModal">
+    <div class="mModal__inner">
+      <div class="pluses pluses1">
+        <div class="container">
+          <div class="pluses__inner"></div>
+        </div>
+      </div>
+      <h2 class="mModal__head">Thank You For Your Interest!</h2>
+      <h3 class="mModal__head2">You've successfully applied.</h3>
+      <div class="mModal__copy">We will go through your information provided. Unfortunately we get
+        so many applications
+        and we can't guarentee that we'll reply to them all. If you don't have a reply, please
+        accept our apologies profusely in advance and don't take it personal.
+      </div>
+      <div class="mModal__footer">
+        <a href="/" class="mModal__btn diagonalBtn"><span>MAIN PAGE</span></a>
+      </div>
+      <div class="pluses pluses2">
+        <div class="container">
+          <div class="pluses__inner"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+<? } ?>
 <div id="wrap">
   <div class="headItemsWrap"
        style="background-image: url(<?= get_field('page_header_image') ?>)">
@@ -22,7 +46,6 @@ get_header();
 
   <div class="application">
     <div class="application__inner">
-
 
 
       <form name="application__form" class="application__form" novalidate
@@ -50,10 +73,10 @@ get_header();
             </div>
 
 
-<!---->
-<!--                        <pre>-->
-<!--                  {{section | json}}-->
-<!--                  </pre>-->
+            <!---->
+            <!--                        <pre>-->
+            <!--                  {{section | json}}-->
+            <!--                  </pre>-->
 
 
             <ul class="application__fields">
@@ -87,7 +110,8 @@ get_header();
                     <ui-select-match placeholder="{{field.placeholder}}">
                       {{$select.selected.name}}
                     </ui-select-match>
-                    <ui-select-choices repeat="item.name as item in field.items | filter: $select.search">
+                    <ui-select-choices
+                      repeat="item.name as item in field.items | filter: $select.search">
                       <span ng-bind-html="item.name | highlight: $select.search"></span>
                     </ui-select-choices>
                   </ui-select>

@@ -360,15 +360,17 @@ img {
     color: $yellow;
     background-color: rgba(255, 255, 255, 0.2);
     padding: 15px 40px;
-    border: 1px solid $yellow;
+    box-shadow: inset 0 0 0 1px $yellow;
     font-size: 14px;
     border-radius: 2px;
     margin-top: 10px;
     font-weight: bold;
     position: relative;
     transition: .2s;
+    backface-visibility: initial;
     span {
         position: relative;
+        display: inline-block;
     }
     &:before {
         content: '';
@@ -422,6 +424,7 @@ img {
     position: relative;
     pointer-events: none;
     margin: 30px 0 85px;
+    text-align: left;
     &__inner {
         color: rgba(0, 0, 0, 0.2);
         font-size: 10px;

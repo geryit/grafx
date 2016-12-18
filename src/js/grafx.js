@@ -213,12 +213,14 @@ $(document).ready(() => {
   if ($('body').hasClass('tax-work-category') || $('body').hasClass('search-results')) {
     $('.menu-item-object-work-category').addClass('current-menu-item');
   }
+
+  if ($('.mModal').length) $('body').addClass('mModalOn');
 });
 
 
 angular.module('grafxApp', ['ui.select', 'ngSanitize', 'ngFileUpload', 'vcRecaptcha'])
-  .controller('grafxCtrl', ['$scope', '$http', '$timeout', 'Upload', 'vcRecaptchaService',
-    ($scope, $http, $timeout, Upload, vcRecaptchaService) => {
+  .controller('grafxCtrl', ['$scope', '$http', '$timeout', 'Upload',
+    ($scope, $http, $timeout, Upload) => {
       const scope = $scope;
       const http = $http;
       scope.vModal = {
@@ -359,7 +361,8 @@ angular.module('grafxApp', ['ui.select', 'ngSanitize', 'ngFileUpload', 'vcRecapt
           section.invalid = false;
           angular.forEach(section.fields, (_field) => {
             const field = _field;
-            if (field.type === 'input' || field.type === 'email' || field.type === 'select' || field.type === 'file') {
+            if (field.type === 'input' || field.type === 'email' ||
+              field.type === 'select' || field.type === 'file') {
               field.invalid = scope.application__form[field.name].$invalid;
               data[field.name] = field.value || '';
             } else if (field.type === 'checkbox') {
@@ -384,21 +387,17 @@ angular.module('grafxApp', ['ui.select', 'ngSanitize', 'ngFileUpload', 'vcRecapt
 
 
         data.g_recaptcha_response = scope.captcha.response;
-        console.log(data);
+        // console.log(data);
 
+        const url = `${window.location.href}?appsent=1`;
 
         http.post(`${templateUrl}/sendmail.php`, data).then(
           (response) => {
             console.log(response);
+            if (response.data === 'success') window.location.href = url;
           },
-          (response) => {
-            console.log(response);
+          () => {
+            window.location.href = url;
           });
-
-        if (scope.application__form.$invalid) {
-          // console.log('invalid');
-        } else {
-          // console.log('valid');
-        }
       };
     }]);
