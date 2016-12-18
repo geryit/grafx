@@ -1340,10 +1340,28 @@
   margin-top: 40px;
   width: 50%;
   padding-left: 15px;
-  &--opts{
+  position: relative;
+  &--checkbox{
     width: 100%;
     margin-top: 15px;
     margin-bottom: 20px;
+  }
+  &--file{
+    overflow: hidden;
+  }
+}
+
+.invalidField{
+  color: $error;
+  border-color: $error;
+  &::-webkit-input-placeholder {
+    color: $error;
+  }
+  ~ label {
+    color: $error;
+  }
+  .selectize-input:after{
+    color: $error;
   }
 }
 
@@ -1352,23 +1370,18 @@
   .ng-invalid-email,
   .ui-select-container.ng-empty:not(.open),
   .ui-select-container.ng-empty:not(.open) .selectize-input,
-  .ui-select-container.ng-empty:not(.open) .ui-select-toggle,
-  .application__upload.ng-invalid .application__upload__input{
-    color: $error;
-    border-color: $error;
-    &::-webkit-input-placeholder {
-      color: $error;
-    }
-    ~ label {
-      color: $error;
-    }
-    .selectize-input:after{
-      color: $error;
-    }
+  .ui-select-container.ng-empty:not(.open) .ui-select-toggle{
+    @extend .invalidField;
   }
 
   .application__error{
     display: block;
+  }
+}
+
+.application__upload__input{
+  &.invalid{
+    @extend .invalidField;
   }
 }
 
@@ -1442,7 +1455,7 @@
 }
 
 .application__upload__input {
-    flex: 1;
+
 }
 
 .application__upload__btn {
@@ -1452,13 +1465,15 @@
     background: #fff;
     padding: 10px 10px;
     outline: none;
+    position: absolute;
+    right: 0;
     &:before {
       content: '';
       position: absolute;
-      left: 0;
+      left: -59em;
+      right: 100%;
       top: 0;
       bottom: 0;
-      right: 0;
   }
   &:hover{
     background-color: $yellow;
@@ -1497,6 +1512,37 @@
     display: inline-block;
     margin-right: 4px;
     color: #d0d0d0;
+}
+
+.application__captcha{
+  margin-top: 40px;
+  text-align: center;
+  &__box{
+    display: inline-block;
+  }
+  .ng-submitted &.captchaMissing{
+    iframe{
+      border: 1px solid $error;
+      border-radius: 4px;
+    }
+  }
+}
+
+.application__submit {
+    margin-top: 40px;
+    text-align: center;
+    &__btn {
+      color: #efad17;
+      border: 1px solid #efad17;
+      background: #fff;
+      font-size: 16px;
+      padding: 15px 50px;
+      border-radius: 3px;
+      outline: none;
+      &:hover{
+        color: #000;
+      }
+  }
 }
 
 

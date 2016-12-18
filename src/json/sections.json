@@ -100,7 +100,7 @@
     "subTitle": "Please select from the list of items below.",
     "errorMsg": "You need to select at least one from the capabilities.",
     "bg": "#f6f6f6",
-    "name": "capabilities",
+    "name": "caps_parent",
     "fields": [
       {
         "type": "checkbox",
@@ -199,11 +199,12 @@
     "title": "TOOLS (*)",
     "subTitle": "Please select from the list of items below.",
     "errorMsg": "You need to select at least one from the tool.",
-    "name": "tools",
+    "name": "tools_parent",
     "fields": [
       {
         "type": "checkbox",
         "label": "",
+        "name": "tools",
         "items": [
           {
             "label": "Maya"
@@ -247,5 +248,34 @@
         ]
       }
     ]
+  },
+  {
+    "title": "INTERESTED IN",
+    "subTitle": "Please select from the list of items below.",
+    "name": "interested_parent",
+    "bg": "#f6f6f6",
+    "fields": [
+      {
+        "type": "checkbox",
+        "label": "",
+        "name": "interested",
+        "notRequired": true,
+        "items": [
+          {
+            "label": "Full Time"
+          },
+          {
+            "label": "Part Time"
+          },
+          {
+            "label": "Freelance"
+          },
+          {
+            "label": "Remote"
+          }
+        ]
+      }
+    ]
   }
+
 ]

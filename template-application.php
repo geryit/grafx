@@ -1,6 +1,8 @@
 <?php
 /* Template Name: Application */
-get_header(); ?>
+get_header();
+
+?>
 <div id="wrap">
   <div class="headItemsWrap"
        style="background-image: url(<?= get_field('page_header_image') ?>)">
@@ -22,13 +24,15 @@ get_header(); ?>
     <div class="application__inner">
 
 
-      <form name="application__form" class="application__form"
-            ng-submit="submitApp()" novalidate
+
+      <form name="application__form" class="application__form" novalidate
+            ng-submit="submitApp()"
       >
 
-<!--      <pre>-->
-<!--      {{application__form.email | json}}-->
-<!--      </pre>-->
+
+        <!--      <pre>-->
+        <!--      {{application__form.email | json}}-->
+        <!--      </pre>-->
 
 
         <div ng-repeat="section in sections"
@@ -47,16 +51,15 @@ get_header(); ?>
 
 
 <!---->
-<!--            <pre>-->
-<!--      {{section | json}}-->
-<!--      </pre>-->
+<!--                        <pre>-->
+<!--                  {{section | json}}-->
+<!--                  </pre>-->
 
 
             <ul class="application__fields">
-              <li class="application__field"
+              <li class="application__field application__field--{{field.type}}"
                   ng-repeat="field in section.fields"
                   ng-init="index = $index"
-                  ng-class="{'application__field--opts':field.type=='checkbox'}"
               >
 
 
@@ -73,55 +76,51 @@ get_header(); ?>
                     ng-required="!field.notRequired"
                   >
 
-                  {{$select}}
                   <ui-select
                     name="{{field.name}}"
                     my-ui-select
                     ng-if="field.type=='select'"
-                    ng-model="country.selected"
+                    ng-model="field.value"
                     theme="selectize"
                     required
                   >
                     <ui-select-match placeholder="{{field.placeholder}}">
                       {{$select.selected.name}}
                     </ui-select-match>
-                    <ui-select-choices repeat="item in field.items | filter: $select.search">
+                    <ui-select-choices repeat="item.name as item in field.items | filter: $select.search">
                       <span ng-bind-html="item.name | highlight: $select.search"></span>
                     </ui-select-choices>
                   </ui-select>
 
-                  <div
+
+                  <input
+                    ng-model="field.value"
                     ng-if="field.type=='file'"
-                    class="application__upload ng-invalid"
-                    ng-class="{'ng-invalid':errFile.name}"
+                    type="hidden"
                   >
-                    <input
-                      ng-model="field.value"
-                      type="hidden"
-                    >
-                    <input
-                      ng-model="field.fName"
-                      name="{{field.name}}"
-                      type="text"
-                      class="application__input application__upload__input"
-                      placeholder="{{field.placeholder}}"
-                      ng-class="{'ng-invalid':errFile.name}"
-                      required
-                      readonly
-                    >
+                  <input
+                    ng-model="field.value2"
+                    ng-if="field.type=='file'"
+                    name="{{field.name}}"
+                    type="text"
+                    class="application__input application__upload__input"
+                    placeholder="{{field.placeholder}}"
+                    ng-class="{'invalid':field.invalid}"
+                    required
+                    readonly
+                  >
 
 
-                    <button type="file"
-                            ngf-select="uploadFiles($file, $invalidFiles, field)"
-                            accept="application/pdf,application/msword"
-                            ngf-max-size="1MB"
-                            class="application__upload__btn"
-                    >
-                      BROWSE
-                    </button>
+                  <button type="file"
+                          ng-if="field.type=='file'"
+                          ngf-select="uploadFiles($file, $invalidFiles, section, field)"
+                          accept="application/pdf,application/msword"
+                          ngf-max-size="1MB"
+                          class="application__upload__btn"
+                  >
+                    BROWSE
+                  </button>
 
-
-                  </div>
 
                   <ul class="opts" ng-if="field.type=='checkbox'">
                     <li
@@ -139,7 +138,7 @@ get_header(); ?>
                              name="{{field.name}}"
                       />
                       <label for="opt__{{parentIndex}}__{{cIndex}}" class="opts__label">
-                        <span class="icon-check" claass="opts__icon"></span>
+                        <span class="icon-check" class="opts__icon"></span>
                         <span class="opts__txt">{{cItem.label}}</span>
                       </label>
                     </li>
@@ -159,7 +158,26 @@ get_header(); ?>
           </div>
         </div>
 
-        <button type="submit">Submit</button>
+        <div class="application__captcha" ng-class="{'captchaMissing' : !captcha.response}">
+
+          <script
+            src="//www.google.com/recaptcha/api.js?render=explicit&onload=vcRecaptchaApiLoaded"
+            async defer></script>
+
+          <div
+            vc-recaptcha
+            key="captcha.key"
+            on-success="captcha.setResponse(response)"
+            class="application__captcha__box"
+          ></div>
+        </div>
+
+        <div class="application__submit">
+          <button type="submit" class="application__submit__btn"
+          >SEND MY APPLICATION
+          </button>
+        </div>
+
 
       </form>
     </div>
