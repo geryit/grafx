@@ -54,17 +54,8 @@ get_header(); ?>
 
     <div class="welcome">
         <div class="container">
-            <h2 class="welcome__head light">Welcome to GRAFX CO.</h2>
-            <div class="welcome__body">
-                <p>We are a multi-disciplinary creative studio. Design is not only what
-                    we do, it is who we are. We believe <span class="color-black">every emotion is a vector in space, every vector
-                is an emotion.</span> It’s our way of moving forward.</p>
-
-                <p>Our projects are not daily tasks. They are tools for us to push our skills to the
-                    next level. We believe in our creativity, visionary perspective, flawless
-                    execution,
-                    and our long-term valuable partnerships with our clients.</p>
-            </div>
+            <h2 class="welcome__head light"><?=get_field('welcome_title')?></h2>
+            <div class="welcome__body"><?=get_field('welcome_body')?></div>
         </div>
     </div>
 
@@ -122,11 +113,7 @@ get_header(); ?>
                             </div>
 
                             <div class="stats__body">
-                                Maecenas vitae interdum mauris. Suspendisse tortor erat, accumsan
-                                vitae dui non, cursus luctus tortor. Phasellus aliquet consectetur
-                                enim lacinia suscipit. Vestibulum accumsan convallis metus quis
-                                mollis. Morbi felis risus, fringilla in tempor eu, auctor vitae
-                                ipsum. Ut sed nisl nunc.
+                                <?= $v['body'] ?>
                             </div>
 
 
