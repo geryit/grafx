@@ -317,6 +317,9 @@ module.exports = function (grunt) {
         command: 'echo \'Downloading...\'  && scp -r <%= mysql.remote.username %>@<%= mysql.remote.host %>:~/wpcontent-<%= timestamp %>.tar.gz ~',
       },
       export_and_remove_local_wpcontent: {
+        options: {
+          maxBuffer: 400*1024,
+        },
         command: 'cd <%= mysql.local.wpcontent_dir %> && tar -zxvf  ~/wpcontent-<%= timestamp %>.tar.gz && rm -rf ~/wpcontent-<%= timestamp %>.tar.gz',
       },
     },
@@ -399,6 +402,10 @@ module.exports = function (grunt) {
     'sync_remote_db',
     'sass:dev',
     // 'concat',
+  ]);
+  grunt.registerTask('full-import', [
+    'download_wpcontent',
+    'sync_local_db',
   ]);
 };
 
