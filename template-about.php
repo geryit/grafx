@@ -24,6 +24,7 @@ get_header(); ?>
                 ?>
                 <div class="hSlider__item">
                     <video id="hSlider__video__<?= $i ?>" class="hSlider__video"
+                           loop autoplay
                            poster="<?= $v['first_frame'] ?>">
                         <source src="<?= $v['video'] ?>" type="video/mp4">
                     </video>
@@ -33,22 +34,10 @@ get_header(); ?>
                          class="hSlider__placeHolder" alt="">
 
 
-                    <div id="hSlider__body__<?= $i ?>" class="hSlider__body"
-                         ng-click="vModal.open('<?= $v['long_video'] ?>', '<?= $v['first_frame'] ?>', <?= $i ?>)">
-                        <div class="hSlider__r1">
-                            <span class="icon-play hSlider__play"></span>
-                            <div class="hSlider__title light"><?= $v['title'] ?></div>
-                        </div>
-                        <div class="hSlider__date"><?= $v['date'] ?></div>
-                        <div class="hSlider__msg"><?= $v['description'] ?></div>
-                    </div>
                 </div>
             <? }
         } ?>
 
-    </div>
-    <div class="slider__progress">
-        <div class="slider__progress__inner"></div>
     </div>
 
 

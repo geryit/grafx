@@ -383,6 +383,7 @@ angular.module('grafxApp', ['ui.select', 'ngSanitize', 'ngFileUpload', 'vcRecapt
           });
         });
 
+
         // console.log(sections);
 
 
@@ -391,13 +392,19 @@ angular.module('grafxApp', ['ui.select', 'ngSanitize', 'ngFileUpload', 'vcRecapt
 
         const url = `${window.location.href}?appsent=1`;
 
-        http.post(`${templateUrl}/sendmail.php`, data).then(
-          (response) => {
-            console.log(response);
-            if (response.data === 'success') window.location.href = url;
-          },
-          () => {
-            window.location.href = url;
-          });
+        if (scope.application__form.$valid) {
+          http.post(`${templateUrl}/sendmail.php`, data).then(
+            (response) => {
+              console.log(response);
+              if (response.data === 'success') window.location.href = url;
+            },
+            () => {
+              window.location.href = url;
+            });
+        } else {
+          console.log('false');
+        }
+
+
       };
     }]);
