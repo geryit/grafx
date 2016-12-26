@@ -24,4 +24,7 @@ grunt sync_local_db
 #new tab
 grunt deploy
 ```
+
+**logs**
+`tail -f /private/var/log/apache2/grafxwp.log`
 http://grafx.geryit.com
