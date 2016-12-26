@@ -1,6 +1,7 @@
 <?php
 get_header();
 $cats = get_field('categories', 'option');
+printr($cats);
 
 
 $term_id = get_queried_object()->term_id;
@@ -38,31 +39,30 @@ if (get_query_var('orderby')) $orderby = get_query_var('orderby'); else $orderby
         <div class="container">
 
             <ul class="headItems">
-                <li class="headItems__nav headItems__nav--prev">
-                    <a class="headItems__icon headItems__icon--prev icon-l-arrow2"
-                       href="<?= get_term_link(single_cat($term_prev_index)->term_id) ?>"></a>
-                </li>
-                <li class="headItems__item fx">
-                    <a href="<?= get_term_link(single_cat($term_prev_index)->term_id) ?>"
-                       class="headItems__link light">
-                        <?= single_cat($term_prev_index)->name ?>
-                    </a>
-                </li>
-                <li class="headItems__item">
-                    <span class="headItems__link light active">
-                        <?= single_cat($term_index)->name ?>
-                    </span>
-                </li>
-                <li class="headItems__item fx">
-                    <a class="headItems__link light"
-                       href="<?= get_term_link(single_cat($term_next_index)->term_id) ?>">
-                        <?= single_cat($term_next_index)->name ?>
-                    </a>
-                </li>
-                <li class="headItems__nav headItems__nav--next">
-                    <a class="headItems__icon headItems__icon--next icon-r-arrow2"
-                       href="<?= get_term_link(single_cat($term_next_index)->term_id) ?>"></a>
-                </li>
+
+                <?
+                foreach ($cats as $cat) {?>
+                    <li class="headItems__item fx">
+                        <a href="<?= get_term_link($cat['category']->term_id) ?>"
+                           class="headItems__link light <?=$term_id == $cat['category']->term_id ? 'active': ''?>">
+                            <?= $cat['category']->name ?>
+                        </a>
+                    </li>
+
+                <? } ?>
+                <!--                <li class="headItems__item">-->
+                <!--                    <span class="headItems__link light active">-->
+                <!--                        --><? //= single_cat($term_index)->name ?>
+                <!--                    </span>-->
+                <!--                </li>-->
+                <!--                <li class="headItems__item fx">-->
+                <!--                    <a class="headItems__link light"-->
+                <!--                       href="-->
+                <? //= get_term_link(single_cat($term_next_index)->term_id) ?><!--">-->
+                <!--                        --><? //= single_cat($term_next_index)->name ?>
+                <!--                    </a>-->
+                <!--                </li>-->
+
             </ul>
 
         </div>
@@ -92,20 +92,20 @@ if (get_query_var('orderby')) $orderby = get_query_var('orderby'); else $orderby
                                     <h5 class='works__head__sortBy'>Sort by</h5>
                                     <? if ($orderby == 'title') { ?>
                                         <span class='works__head__sortBtn on'>A-Z</span>
-                                    <?
+                                        <?
                                     } else { ?>
                                         <a href="<?= esc_url(add_query_arg(array('orderby' => 'title', 'order' => 'ASC'))) ?>"
                                            class='works__head__sortBtn'>A-Z</a>
-                                    <?
+                                        <?
                                     } ?>
 
                                     <? if ($orderby == 'date') { ?>
                                         <span class='works__head__sortBtn on'>DATE</span>
-                                    <?
+                                        <?
                                     } else { ?>
                                         <a href="<?= esc_url(add_query_arg(array('orderby' => 'date', 'order' => 'DESC'))) ?>"
                                            class='works__head__sortBtn'>DATE</a>
-                                    <?
+                                        <?
                                     } ?>
 
 
