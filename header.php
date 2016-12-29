@@ -47,8 +47,32 @@
       }
 
       <? }?>
+
     </style>
   <? } ?>
+
+  <style>
+    <?
+      $cats = get_field('categories', 'option');
+
+      foreach ($cats as $v) {
+        $c = $v['category'];
+
+        ?>
+    .r_term--<?=$c->slug;?> {
+      color: <?=$v['color']?>;
+    }
+
+    .r_term--<?=$c->slug;?>:before {
+      content: '<?=html_entity_decode($c->name);?>';
+    }
+
+    .r_term--<?=$c->slug;?>:after {
+      content: '<?=$v['initials']?>';
+    }
+
+    <?}?>
+  </style>
 
 
 </head>

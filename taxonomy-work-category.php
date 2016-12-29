@@ -35,18 +35,6 @@ if (get_query_var('orderby')) $orderby = get_query_var('orderby'); else $orderby
           </li>
 
         <? } ?>
-        <!--                <li class="headItems__item">-->
-        <!--                    <span class="headItems__link light active">-->
-        <!--                        --><? //= single_cat($term_index)->name ?>
-        <!--                    </span>-->
-        <!--                </li>-->
-        <!--                <li class="headItems__item fx">-->
-        <!--                    <a class="headItems__link light"-->
-        <!--                       href="-->
-        <? //= get_term_link(single_cat($term_next_index)->term_id) ?><!--">-->
-        <!--                        --><? //= single_cat($term_next_index)->name ?>
-        <!--                    </a>-->
-        <!--                </li>-->
 
       </ul>
 

@@ -11,7 +11,7 @@ function scripts()
 
     wp_enqueue_script('main', get_template_directory_uri() . '/dist/js/grafx.min.js', array('jquery'), null, true); // Enqueue it!
     $translation_array = array('templateUrl' => get_stylesheet_directory_uri());
-    wp_localize_script( 'main', 'theme_vars', $translation_array );
+    wp_localize_script('main', 'theme_vars', $translation_array);
 
 
   }
@@ -177,8 +177,11 @@ add_filter('asp_results', 'asp_number_results', 1, 1);
 
 function asp_number_results($results)
 {
+  $aspp = $_POST['aspp'];//get keyword
 
   foreach ($results as $k => $v) {
+    $results[$k]->link = $results[$k]->link . "?se=" . $aspp; // add keyword to the end of urls
+
     // Modify the post title
     $work_terms = wp_get_post_terms($results[$k]->id, 'work-category');
 
@@ -188,13 +191,52 @@ function asp_number_results($results)
       $terms .= "<span class='r_term r_term--" . $t->slug . "'></span>";
     }
     $terms .= "</span>";
-//        plog($work_terms[0]->slug);
     $results[$k]->title = "<span class='r_title'>" . boldify($results[$k]->title) .
       "</span>" . $terms;
   }
 
   return $results;
 }
+
+
+//add "se" as so "get_query_var('se', '')" will work.
+// You can get "se" var from url (?se=hea)
+function add_query_vars_filter($vars)
+{
+  $vars[] = "se";
+  return $vars;
+}
+
+add_filter('query_vars', 'add_query_vars_filter');
+
+
+//function theme_pgp($query)
+//{
+//
+//
+//  if (is_admin()) {
+//    return;                 // If we're in the admin panel - drop out
+//  }
+//
+//  if ($query->is_single()) {      // Apply to all search queries
+//    $term = get_query_var('term', ''); // get "term" from url = ?term=brand-design = 'brand-design' (if empty, default is first term)
+//    // IF our category is set and not empty - include it in the query
+//    if ($term) {
+//      $query->set('tax_query',
+//        array(
+//          'post_type' => 'work',
+//          array(
+//            'taxonomy' => 'work',
+//            'field' => 'slug',
+//            'terms' => $term,
+//          )));
+//    }
+//
+//    printr($query);
+//  }
+//}
+//
+//add_action('pre_get_posts', 'theme_pgp');
 
 
 //add_action('mytheme_aboveblog', 'mytheme_online_user_message', 10, 2);

@@ -41,11 +41,6 @@ function get_term_url($i){
     return esc_url(add_query_arg(array('work-category' => $slug)));
 }
 
-
-//printr($term_index);
-//printr($term_id);
-//printr($cats);
-
 ?>
 
 <div id="wrap">

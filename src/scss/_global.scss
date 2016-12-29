@@ -367,7 +367,7 @@ img {
     font-weight: bold;
     position: relative;
     transition: .2s;
-    backface-visibility: initial;
+/*     backface-visibility: initial; */
     span {
         position: relative;
         display: inline-block;
@@ -700,48 +700,12 @@ div#ajaxsearchprores1_1.vertical {
 
     }
     .hovered & {
-        width: 150px;
+        width: 195px;
         &:before {
             display: block;
         }
         &:after {
             display: none;
-        }
-    }
-    &--branding-design {
-        color: #accf97;
-        &:before {
-            content: 'Branding-Design';
-        }
-        &:after {
-            content: 'BD';
-        }
-    }
-    &--experiential-digital {
-        color: #2e80bc;
-        &:before {
-            content: 'EXPERIENTIAL & DIGITAL';
-        }
-        &:after {
-            content: 'ED';
-        }
-    }
-    &--production {
-        color: #e39000;
-        &:before {
-            content: 'PRODUCTION';
-        }
-        &:after {
-            content: 'P';
-        }
-    }
-    &--post-production {
-        color: #cb0f0b;
-        &:before {
-            content: 'POST PRODUCTION';
-        }
-        &:after {
-            content: 'PP';
         }
     }
 }
