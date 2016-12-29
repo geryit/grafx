@@ -908,6 +908,13 @@
   &__item {
     width: 50%;
     position: relative;
+    .vjs-waiting {
+      visibility: hidden;
+      background: transparent;
+    }
+    .vjs-loading-spinner {
+      display: none !important;
+    }
   }
   &__img {
     display: block;

@@ -84,7 +84,7 @@ get_header(); ?>
 
 
     <div class="brands">
-        <h2 class="brands__title light">Brands We Work With</h2>
+        <h2 class="brands__title light"><?=get_field('brands_title')?></h2>
         <ul class="brands__list">
             <? if (get_field('brands'))
                 foreach (get_field('brands') as $v) { ?>

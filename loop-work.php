@@ -28,8 +28,7 @@ if (!$btn) $btn = 'View Work';
         <? } ?>
     </ul>
     <span class="works__inner__cornerTitle"
-          style="color: <?= get_field('corner_title_color'); ?>"><?= boldify(get_the_title()) ?>
-      -<?= get_the_ID() ?></span>
+          style="color: <?= get_field('corner_title_color'); ?>"><?= boldify(get_the_title()) ?></span>
     <div class="works__inner__items">
       <span class="works__inner__title"><?= boldify(get_the_title()) ?></span>
       <span

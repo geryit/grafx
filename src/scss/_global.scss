@@ -135,7 +135,21 @@ img {
 .container {
     max-width: 1220px;
     padding: 0 15px;
-    margin: auto;
+          margin: auto;
+}
+
+@mixin sticky {
+  position: fixed;
+  top: 0;
+  background-color: rgba(40, 40, 47, 0.9);
+  overflow: hidden;
+  z-index: 11;
+  .logo__img {
+    display: none;
+    &2 {
+      display: block;
+    }
+  }
 }
 
 .header {
@@ -153,19 +167,8 @@ img {
             flex: 1;
         }
     }
-    &.sticky {
-        position: fixed;
-        top: 0;
-        background-color: rgba(40, 40, 47, 0.9);
-        overflow: hidden;
-        z-index: 11;
-        .logo__img {
-            display: none;
-            &2 {
-                display: block;
-            }
-        }
-
+    &.sticky{
+      @include sticky;
     }
 }
 

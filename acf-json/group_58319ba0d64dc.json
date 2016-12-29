@@ -3,6 +3,25 @@
     "title": "Brands",
     "fields": [
         {
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "key": "field_586591dee988b",
+            "label": "Brands Title",
+            "name": "brands_title",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
             "sub_fields": [
                 {
                     "return_format": "url",
@@ -114,5 +133,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1480709281
+    "modified": 1483051502
 }
