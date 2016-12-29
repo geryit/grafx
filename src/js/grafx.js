@@ -250,6 +250,7 @@ angular.module('grafxApp', ['ui.select', 'ngSanitize', 'ngFileUpload', 'vcRecapt
           });
         },
         close(viaCloseBtn) {
+          videojs('vModal__video').pause();
           // because there is a timer, we need to use $apply
           if (viaCloseBtn) scope.vModal.on = false;
           else {
