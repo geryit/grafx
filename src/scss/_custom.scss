@@ -640,7 +640,6 @@
   border-top: 3px solid $yellow;
   color: #fff;
   margin-top: 80px;
-  min-height: 500px;
   &__video {
     position: absolute;
     top: 50%;
@@ -661,6 +660,7 @@
     margin: auto;
     height: 498px;
     align-items: center;
+    padding-bottom: 60px;
   }
   &__left {
     flex: 1;

@@ -1,4 +1,4 @@
-@media screen and (max-width: 1199px) {
+@media (max-width: 1199px) {
   .header {
     @include sticky;
   }
@@ -32,5 +32,82 @@
   .works {
     margin-top: 20px;
   }
+  .social__wrapper {
+      height: auto;
+  }
+  .sModal{
+    &__logo{
+      top: 0px;
+    }
+    &__close {
+      top: 20px;
+    }
+    &__inner {
+      padding-top: 80px;
+    }
+  }
+  div#ajaxsearchpro1_1 {
+      width: auto;
+  }
+
+  div#ajaxsearchprores1_1.vertical{
+    padding: 0 20px;
+    width: auto !important;
+    .results{
+      margin-top: 10px;
+    }
+  }
+  #seeAll .container{
+    padding: 0;
+  }
+  .hSlider--about{
+    margin-top: 0;
+  }
+  .headItems{
+    height: 200px;
+  }
+
+  .welcome{
+    padding: 40px 0;
+  }
+
+  .services__head__inner{
+    padding-top: 20px;
+  }
+
+  .pluses{
+    margin: 10px 0;
+  }
+
+  .servicesWrap--about .pluses1 {
+      margin-bottom: 0px;
+  }
+
+  .servicesWrap--about .pluses2{
+    padding-top: 0;
+    padding-bottom: 10px;
+  }
+
+
+  .servicesWrap--about .services__item{
+    box-shadow: none;
+  }
+
+  .stats__head__inner{
+    padding-top: 20px;
+  }
+
+  .stats__num{
+    font-size: 70px;
+  }
+
+  .stats .pluses1{
+    margin: 10px 0;
+  }
+
+  .stats__body{
+    width: 300px;
+  }
+
 
 }

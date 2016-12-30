@@ -76,7 +76,7 @@ if ($thisindex < $workCount - 1) $nextid = $ids[$thisindex + 1]; // $nextid = 27
         </li>
 
         <li class="workHead__item">
-          <span class="workHead__head">BRAND & TITLE</span>
+          <span class="workHead__head"><?=get_field('brand_title', 'option');?></span>
           <span class="workHead__link light active">
                     <?= boldify(get_the_title()) ?>
                     </span>

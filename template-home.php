@@ -110,7 +110,7 @@ get_header(); ?>
 
     <div class="social__video__overlay"></div>
 
-    <a href="#" class="social__pointer"></a>
+    <a href="javascript:void(0)" class="social__pointer"></a>
     <div class="social__map"></div>
     <div class="social__map social__map--hover"></div>
 
