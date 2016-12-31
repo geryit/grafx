@@ -1,4 +1,5 @@
 <?php
+$ver = 6;
 
 function scripts()
 {
@@ -6,8 +7,13 @@ function scripts()
 
 //        wp_dequeue_script('jquery');
     wp_deregister_script('wp-embed');
+
+    // REMOVE WP EMOJI
     remove_action('wp_head', 'print_emoji_detection_script', 7);
     remove_action('wp_print_styles', 'print_emoji_styles');
+
+    remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
+    remove_action( 'admin_print_styles', 'print_emoji_styles' );
 
     wp_enqueue_script('main', get_template_directory_uri() . '/dist/js/grafx.min.js', array('jquery'), null, true); // Enqueue it!
     $translation_array = array('templateUrl' => get_stylesheet_directory_uri());
@@ -197,6 +203,7 @@ function asp_number_results($results)
 
   return $results;
 }
+
 
 
 //add "se" as so "get_query_var('se', '')" will work.

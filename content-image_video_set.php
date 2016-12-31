@@ -1,3 +1,5 @@
+<? global $ver;?>
+
 <div class="imageVideoSet">
     <? if (have_rows('item')) {
         while (have_rows('item')) {
@@ -5,7 +7,7 @@
             if (get_row_layout() == 'image') {
                 ?>
                 <div class="imageVideoSet__item imageVideoSet__item--img r16-9">
-                    <img class="imageVideoSet__img r16-9__item" src="<?= get_sub_field('image') ?>" alt="">
+                    <img class="imageVideoSet__img r16-9__item" src="<?= get_sub_field('image') ?>?<?=$ver?>" alt="">
                 </div>
 
             <? } else if (get_row_layout() == 'video') { ?>

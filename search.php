@@ -44,7 +44,7 @@ function get_term_url($i){
 ?>
 
 <div id="wrap">
-    <div class="headItemsWrap" style="background-image: url(<?= $bg_image ? $bg_image : '' ?>)">
+    <div class="headItemsWrap" style="background-image: url(<?= $bg_image ? $bg_image : '' ?>?<?=$ver?>)">
         <div class="container">
 
             <ul class="headItems">

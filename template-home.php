@@ -11,10 +11,10 @@ get_header(); ?>
             ?>
             <div class="hSlider__item">
                 <video id="hSlider__video__<?= $i ?>" class="hSlider__video"
-                       poster="<?= $v['first_frame'] ?>">
+                       poster="<?= $v['first_frame'] ?>?<?=$ver?>">
                     <source src="<?= $v['video'] ?>" type="video/mp4">
                 </video>
-                <img src="<?= $v['first_frame'] ?>"
+                <img src="<?= $v['first_frame'] ?>?<?=$ver?>"
                      id="hSlider__poster__<?= $i ?>" class="hSlider__poster" alt="">
                 <img src="<?= get_template_directory_uri(); ?>/dist/img/1425x700.png"
                      class="hSlider__placeHolder" alt="">
@@ -89,7 +89,7 @@ get_header(); ?>
             <? if (get_field('brands'))
                 foreach (get_field('brands') as $v) { ?>
                     <li class="brands__item">
-                        <img class="brands__img" src="<?= $v["image"] ?>" alt="">
+                        <img class="brands__img" src="<?= $v["image"] ?>?<?=$ver?>" alt="">
                         <div class="brands__item__btnWrapper">
                             <a href="<?= get_permalink($v["link"]) ?>"
                                class="diagonalBtn brands__btn">

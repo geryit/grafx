@@ -88,7 +88,7 @@ module.exports = function (grunt) {
     },
     postcss: {
       options: {
-        map: true,
+        map: false,
         processors: [
           require('pixrem')(), // add fallbacks for rem units
           require('autoprefixer')({ browsers: 'last 10 versions' }), // add vendor prefixes

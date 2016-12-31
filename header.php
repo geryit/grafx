@@ -1,5 +1,5 @@
 <!doctype html>
-<html <?php language_attributes(); ?> class="no-js">
+<html <?php language_attributes(); ?> ng-controller="grafxCtrl">
 <head>
   <meta charset="<?php bloginfo('charset'); ?>">
   <title><?php wp_title(''); ?><?php if (wp_title('', false)) {
@@ -76,7 +76,7 @@
 
 
 </head>
-<body <?php body_class(); ?> ng-app="grafxApp" ng-controller="grafxCtrl"
+<body <?php body_class(); ?>
                              ng-class="{oyh:vModal.on||sModal.on}">
 
 

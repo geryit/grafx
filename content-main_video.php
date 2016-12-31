@@ -1,3 +1,4 @@
+<? global $ver;?>
 <style>
     .vjs-big-play-button{
         color: <?=hex2rgba(get_sub_field('play_button_color'), 0.7);?> !important;
@@ -10,7 +11,7 @@
     <video id="mainVideo__video__<?= rand() ?>"
            class="video-js vjs-default-skin vjs-big-play-centered vjs-16-9 grafx-skin mainVideo__video"
            width="100%" height="100%" controls preload="none" loop
-           poster="<?= get_sub_field('first_frame') ?>"
+           poster="<?= get_sub_field('first_frame') ?>?<?=$ver?>"
            data-setup='{}'>
         <source src="<?= get_sub_field('video') ?>" type='video/mp4'/>
     </video>

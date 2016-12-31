@@ -774,7 +774,7 @@
     font-size: 22px;
     border-bottom: 5px solid transparent;
     display: block;
-    padding-bottom: 38px; 
+    padding-bottom: 38px;
     margin: 0 55px;
     opacity: .3;
     transition: .2s;
@@ -908,13 +908,13 @@
   &__item {
     width: 50%;
     position: relative;
-    .vjs-waiting {
-      visibility: hidden;
-      background: transparent;
-    }
-    .vjs-loading-spinner {
-      display: none !important;
-    }
+    //.vjs-waiting {
+    //  visibility: hidden;
+    //  background: transparent;
+    //}
+    //.vjs-loading-spinner {
+    //  display: none !important;
+    //}
   }
   &__img {
     display: block;

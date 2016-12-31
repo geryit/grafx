@@ -20,7 +20,7 @@ if (get_query_var('orderby')) $orderby = get_query_var('orderby'); else $orderby
 ?>
 
 <div id="wrap">
-  <div class="headItemsWrap" style="background-image: url(<?= $bg_image ? $bg_image : '' ?>)">
+  <div class="headItemsWrap" style="background-image: url(<?= $bg_image ? $bg_image : '' ?>?<?=$ver?>)">
     <div class="container">
 
       <ul class="headItems">

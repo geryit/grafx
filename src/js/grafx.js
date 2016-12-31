@@ -405,7 +405,8 @@ angular.module('grafxApp', ['ui.select', 'ngSanitize', 'ngFileUpload', 'vcRecapt
         } else {
           console.log('false');
         }
-
-
       };
     }]);
+angular.element(() => {
+  angular.bootstrap(document, ['grafxApp']);
+});

@@ -1,4 +1,5 @@
 <?
+global $ver;
 if (get_query_var('orderby')) $orderby = get_query_var('orderby'); else $orderby = 'date';
 
 $current_object = get_queried_object();// can be page,tax/term, single
@@ -20,7 +21,7 @@ if (!$btn) $btn = 'View Work';
 ?>
 <div class="works__item <?= get_field('case_study') ? 'works__item--case' : ''; ?>">
   <div class="works__inner"
-       style="background-image: url(<?= get_field('main_image'); ?>)">
+       style="background-image: url(<?= get_field('main_image'); ?>?<?=$ver?>)">
     <ul class="awardsTags">
       <? if (get_field('awards'))
         foreach (get_field('awards') as $m) { ?>

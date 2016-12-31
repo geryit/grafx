@@ -1,4 +1,7 @@
 @media (max-width: 1199px) {
+  h4{
+    font-size: 14px;
+  }
   .header {
     @include sticky;
   }
@@ -109,5 +112,84 @@
     width: 300px;
   }
 
+  .headItems__link {
+    margin: 0 5px;
+    font-size: 16px;
+    padding-bottom: 20px;
+  }
 
+  .awardsTags__item {
+      font-size: 10px;
+      padding: 4px;
+  }
+
+  .works__inner__title{
+    font-size: 16px;
+  }
+  .works__inner__desc{
+    font-size: 14px;
+  }
+
+  .diagonalBtn{
+    padding: 10px;
+  }
+
+  .works--cats .works__item--case .works__inner{
+      box-shadow: 0 0 0 5px #efad17 inset;
+  }
+
+  .workHead__items{
+    height: 200px;
+  }
+
+  .fullWidthText,
+  .halfWidthText,
+  .halfWidthText__item,
+  .imageVideoSet,
+  .cSliderWrap,
+  .credits{
+    margin-top: 20px;
+  }
+
+  .credits{
+    margin-bottom: 20px;
+  }
+
+  .credits__cols{
+    padding-bottom: 20px;
+  }
+
+  .fullWidthText__body{
+    column-count: initial;
+  }
+
+  .credits__rows__title,
+  .credits__rows__body,
+  .contactFooter div{
+    font-size: 12px;
+  }
+
+  .application__inner{
+    padding-top: 20px;
+  }
+
+  .application__section{
+    padding: 20px 0;
+  }
+
+  .application__field{
+    margin-top: 10px;
+  }
+
+  .headItems__icon{
+    margin-bottom: 20px;
+  }
+
+
+}
+
+@media (max-width: 767px) {
+  .hSlider__dots{
+    display: none;
+  }
 }

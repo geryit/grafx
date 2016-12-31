@@ -3,7 +3,7 @@
 get_header(); ?>
 <div id="wrap">
     <div class="headItemsWrap"
-         style="background-image: url(<?= get_field('page_header_image') ?>)">
+         style="background-image: url(<?= get_field('page_header_image') ?>?<?=$ver?>)">
         <div class="container">
 
             <ul class="headItems headItems--about">
