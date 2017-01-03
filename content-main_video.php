@@ -11,8 +11,7 @@
     <video id="mainVideo__video__<?= rand() ?>"
            class="video-js vjs-default-skin vjs-big-play-centered vjs-16-9 grafx-skin mainVideo__video"
            width="100%" height="100%" controls preload="none" loop
-           poster="<?= get_sub_field('first_frame') ?>?<?=$ver?>"
-           data-setup='{}'>
+           poster="<?= get_sub_field('first_frame') ?>?<?=$ver?>">
         <source src="<?= get_sub_field('video') ?>" type='video/mp4'/>
     </video>
     <div class="awardsTagsWrap">

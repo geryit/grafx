@@ -15,8 +15,7 @@
                     <video
                         id="imageVideoSet__video__<?=rand()?>"
                         class="video-js vjs-default-skin vjs-big-play-centered vjs-16-9 grafx-skin bigger-play imageVideoSet__video"
-                        width="100%" height="100%" loop autoplay
-                        data-setup=''>
+                        width="100%" height="100%" loop autoplay>
                         <source src="<?= get_sub_field('video') ?>" type='video/mp4'/>
                     </video>
                 </div>

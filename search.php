@@ -95,7 +95,7 @@ function get_term_url($i){
                             <div class="works__head__inner container">
                                 <div class="works__head__left">
                                     <h5 class='works__head__keyword'>
-                                        <?php printf(__('Search results for: <b>"%s"</b>', 'shape'), '<span>' . get_search_query() . '</span>'); ?>
+                                        <?php printf(__('<span class="s1">Search results for:</span> <b>"%s"</b>', 'shape'), '<span>' . get_search_query() . '</span>'); ?>
                                     </h5>
                                 </div>
                                 <div class="works__head__right">

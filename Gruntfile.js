@@ -1,4 +1,4 @@
-module.exports = function (grunt) {
+module.exports = (grunt) => {
   require('load-grunt-tasks')(grunt); // npm install --save-dev load-grunt-tasks
   require('time-grunt')(grunt);
   const mozjpeg = require('imagemin-mozjpeg');
@@ -318,7 +318,7 @@ module.exports = function (grunt) {
       },
       export_and_remove_local_wpcontent: {
         options: {
-          maxBuffer: 400*1024,
+          maxBuffer: 400 * 1024,
         },
         command: 'cd <%= mysql.local.wpcontent_dir %> && tar -zxvf  ~/wpcontent-<%= timestamp %>.tar.gz && rm -rf ~/wpcontent-<%= timestamp %>.tar.gz',
       },

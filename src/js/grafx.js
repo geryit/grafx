@@ -1,11 +1,13 @@
 import angular from 'angular';
+
 import $ from 'jquery';
-import videojs from 'video.js';
+import videojs from 'video.js/dist/alt/video.novtt';
 import 'slick-carousel';
 import 'angular-sanitize';
 import 'ui-select';
 import 'ng-file-upload';
 import 'angular-recaptcha';
+import 'angular-touch';
 import countries from '../json/countries.json';
 import states from '../json/states.json';
 import sections from '../json/sections.json';
@@ -17,13 +19,12 @@ $(document).ready(() => {
   if ($('.hSlider').length) {
     const $pBar = $('.slider__progress__inner');
 
-    $('.hSlider').on('init', function () {
+    $('.hSlider').on('init', () => {
       const vidId = 0;
 
       // window.$pBarDots = $('.hSlider__dots');
-      $(`#hSlider__video__${vidId}`).addClass('on').each(function () {
-        const player = this;
-        player.play();
+      $(`#hSlider__video__${vidId}`).addClass('on').each((i, el) => {
+        el.play();
       });
       $pBar.addClass('on');
       // $pBarDots.addClass('on');
@@ -57,18 +58,21 @@ $(document).ready(() => {
         $(`#hSlider__body__${currentSlide}`).removeClass('on');
         $(`#hSlider__body__${nextSlide}`).addClass('on');
 
-        $(`#hSlider__video__${currentSlide}`).removeClass('on').each(function () {
-          this.pause();
-          this.currentTime = 0;
+        $(`#hSlider__video__${currentSlide}`).removeClass('on').each((i, el) => {
+          const e = el;
+          e.pause();
+          e.currentTime = 0;
         });
-        $(`#hSlider__video__${nextSlide}`).addClass('on').each(function () {
-          this.currentTime = 0;
-          this.play();
+        $(`#hSlider__video__${nextSlide}`).addClass('on').each((i, el) => {
+          const e = el;
+          e.currentTime = 0;
+          e.play();
         });
       }, 2000);
-    }).on('afterChange', () => {
-      $pBar.addClass('on');
-    });
+    })
+      .on('afterChange', () => {
+        $pBar.addClass('on');
+      });
   }
 
   const $header = $('.header');
@@ -109,6 +113,8 @@ $(document).ready(() => {
 
 
   $(window).scroll(() => {
+    // console.log(window.pageYOffset);
+    // $('.mMenu').css({ transform: `translateY(${window.pageYOffset}px)` });
     stickyNav();
     if (!window.playSocialVideo && sItem.length) {
       window.isScrollOverSocialVideo();
@@ -123,8 +129,9 @@ $(document).ready(() => {
 
     const load = (stickies) => {
       if (typeof stickies === 'object' && stickies.length > 0) {
-        $stickies = stickies.each(function () {
-          const $thisSticky = $(this).wrap('<div class="works__headWrap" />');
+        $stickies = stickies.each((i, el) => {
+          const e = el;
+          const $thisSticky = $(e).wrap('<div class="works__headWrap" />');
 
           $thisSticky
             .data('originalPosition', $thisSticky.offset().top)
@@ -140,8 +147,9 @@ $(document).ready(() => {
     };
 
     let _whenScrolling = () => {
-      $stickies.each(function (i) {
-        const $thisSticky = $(this);
+      $stickies.each((i, el) => {
+        const e = el;
+        const $thisSticky = $(e);
         const $stickyPosition = $thisSticky.data('originalPosition');
 
         if ($stickyPosition <= $window.scrollTop() + mainHeaderHeight) {
@@ -185,32 +193,31 @@ $(document).ready(() => {
   });
 
 
-  $('.video-js').each(function () {
-    let myPlayer;
+  $('.video-js').each((i, el) => {
+    const e = el;
+    let player;
     let whereYouAt;
     let minutes;
     let seconds;
     let x;
     let y;
-    if (this.id) {
-      videojs(this.id).ready(function () {
-        myPlayer = this;
-        // myPlayer.play();
+    if (e.id) {
+      player = videojs(e.id);
 
-        myPlayer.on('timeupdate', () => {
-          whereYouAt = myPlayer.currentTime();
-          minutes = Math.floor(whereYouAt / 60);
-          seconds = Math.floor(whereYouAt - minutes * 60);
-          x = minutes < 10 ? `0${minutes}` : minutes;
-          y = seconds < 10 ? `0${seconds}` : seconds;
+      player.on('timeupdate', () => {
+        whereYouAt = player.currentTime();
+        minutes = Math.floor(whereYouAt / 60);
+        seconds = Math.floor(whereYouAt - minutes * 60);
+        x = minutes < 10 ? `0${minutes}` : minutes;
+        y = seconds < 10 ? `0${seconds}` : seconds;
 
-          $('.vjs-remaining-time-display', myPlayer.el_).addClass('op1').html(`${x}:${y}`);
-        });
+        $('.vjs-remaining-time-display', player.el_).addClass('op1').html(`${x}:${y}`);
       });
     }
   });
 
-  if ($('body').hasClass('tax-work-category') || $('body').hasClass('search-results')) {
+  if ($('body').hasClass('tax-work-category') || $('body').hasClass('single-work')
+    || $('body').hasClass('search-results')) {
     $('.menu-item-object-work-category').addClass('current-menu-item');
   }
 
@@ -218,39 +225,45 @@ $(document).ready(() => {
 });
 
 
-angular.module('grafxApp', ['ui.select', 'ngSanitize', 'ngFileUpload', 'vcRecaptcha'])
+angular.module('grafxApp', ['ui.select', 'ngSanitize', 'ngFileUpload', 'vcRecaptcha', 'ngTouch'])
   .controller('grafxCtrl', ['$scope', '$http', '$timeout', 'Upload',
     ($scope, $http, $timeout, Upload) => {
       const scope = $scope;
       const http = $http;
+
       scope.vModal = {
         on: false,
         open(url, poster, index) {
           $('.hSlider').slick('slickPause');
-          $(`#hSlider__video__${index}`).each(function () {
-            this.pause();
+          $(`#hSlider__video__${index}`).each((i, e) => {
+            e.pause();
           });
           $('.slider__progress__inner').removeClass('on');
           scope.vModal.on = true;
 
           // $("#vModal__video").attr("src", url);
           // $("#vModal__video").load();
-          videojs('vModal__video').ready(function () {
-            const vid = this;
-            vid.src({ type: 'video/mp4', src: url });
-            vid.poster(poster);
-            vid.load();
-            vid.play();
 
-            vid.on('timeupdate', () => { // chrome fix
-              if (vid.currentTime() === vid.duration()) {
-                scope.vModal.close();
-              }
-            });
+          const newVidId = `vModal__video${index}`;
+          $('.vModal__video').attr('id', newVidId);
+          const vid = videojs(newVidId);
+          vid.src({ type: 'video/mp4', src: url });
+          vid.poster(poster);
+          vid.load();
+          vid.play();
+
+          vid.on('timeupdate', () => { // chrome fix
+            if (vid.currentTime() === vid.duration()) {
+              scope.vModal.close();
+            }
           });
         },
         close(viaCloseBtn) {
-          videojs('vModal__video').pause();
+          $('.vModal__video').each((i, el) => {
+            const player = videojs(el.id);
+            player.pause();
+          });
+
           // because there is a timer, we need to use $apply
           if (viaCloseBtn) scope.vModal.on = false;
           else {
@@ -277,9 +290,14 @@ angular.module('grafxApp', ['ui.select', 'ngSanitize', 'ngFileUpload', 'vcRecapt
         },
       };
 
+      scope.mMenu = {
+        on: false,
+      };
+
       $('.searchBtn__btn').on('click', () => {
         scope.$evalAsync(() => {
           scope.sModal.open();
+          scope.mMenu.on = false;
         });
       });
 

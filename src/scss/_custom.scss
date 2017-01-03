@@ -51,7 +51,7 @@
     &:before {
       content: '';
       position: absolute;
-      background: rgba(0, 0, 0, .2);
+      background: rgba(25,29,34,.75);
       top: -120em;
       left: -120em;
       bottom: -120em;
@@ -640,6 +640,14 @@
   border-top: 3px solid $yellow;
   color: #fff;
   margin-top: 80px;
+  background: #000;
+  a {
+    color: #fff;
+    text-decoration: underline;
+    &:hover {
+      color: $yellow;
+    }
+  }
   &__video {
     position: absolute;
     top: 50%;
@@ -836,6 +844,7 @@
     margin: 0 70px;
     opacity: .3;
     transition: .2s;
+    text-align: center;
     &.active, &:hover {
       opacity: 1;
     }

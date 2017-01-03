@@ -76,9 +76,12 @@
 
 
 </head>
-<body <?php body_class(); ?>
-                             ng-class="{oyh:vModal.on||sModal.on}">
+<body <?php body_class(); ?> ng-class="{oyh:vModal.on||sModal.on,mMenuOn:mMenu.on}"
+                             ng-swipe-left="mMenu.on = true" ng-swipe-right="mMenu.on = false">
 
+<div class="mMenu">
+  <? wp_nav_menu(array('theme_location' => 'header-menu')); ?>
+</div>
 
 <header class="header">
   <div class="container">
@@ -94,10 +97,15 @@
 
       <?php wp_nav_menu(array('theme_location' => 'header-menu')); ?>
 
+      <a href="javascript:void(0)" class="header__ham"
+         ng-click="mMenu.on = !mMenu.on">
+        <span class="icon-ham ng-cloak" ng-if="!mMenu.on"></span>
+        <span class="icon-close header__ham__close ng-cloak" ng-if="mMenu.on" ></span>
+      </a>
+
     </div>
   </div>
 </header>
-<? do_action('mytheme_aboveblog', 'got', 'amcik'); ?>
 
 
 
