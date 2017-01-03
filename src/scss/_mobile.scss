@@ -434,5 +434,43 @@
     margin-left: 130px;
   }
 
+  .contactFooter{
+    padding-top: 20px;
+  }
+
+  .contactFooter__cols{
+    display: block;
+  }
+
+  .contactFooter__col{
+    padding-rigth: 0;
+    padding-bottom: 20px;
+  }
+
+  .wpgmza_map{
+    height: 300px !important;
+  }
+
+  .wpgmza_markerbox{
+    width: auto !important;
+  }
+
+  .application__field{
+    width: 100%;
+    padding-bottom: 20px;
+  }
+
+  .opts{
+    column-count: inherit;
+  }
+
+  .mModal__inner{
+    width: 96%;
+    padding: 20px;
+  }
+
+  .mModal__footer{
+    margin-top: 20px;  
+  }
 
 }
