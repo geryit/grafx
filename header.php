@@ -77,7 +77,7 @@
 
 </head>
 <body <?php body_class(); ?> ng-class="{oyh:vModal.on||sModal.on,mMenuOn:mMenu.on}"
-                             ng-swipe-left="mMenu.on = true" ng-swipe-right="mMenu.on = false">
+                             ng-swipe-right="mMenu.on = false">
 
 <div class="mMenu">
   <? wp_nav_menu(array('theme_location' => 'header-menu')); ?>
