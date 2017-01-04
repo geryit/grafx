@@ -91,7 +91,7 @@ get_header(); ?>
           <li class="brands__item">
             <img class="brands__img" src="<?= $v["image"] ?>?<?= $ver ?>" alt="">
             <div class="brands__item__btnWrapper">
-              <a href="<?= get_permalink($v["link"]) ?>"
+              <a href="<?= $v['custom_link'] ? $v['custom_link'] : get_permalink($v["link"]) ?>"
                  class="diagonalBtn brands__btn">
                 <span><?= isset($v['button']->post_content) ? $v['button']->post_content : 'View Project' ?></span></a>
             </div>

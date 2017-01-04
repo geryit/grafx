@@ -52,8 +52,6 @@
                         "work"
                     ],
                     "taxonomy": [
-                        "work-category:branding-design",
-                        "work-category:experiential-digital",
                         "work-category:post-production",
                         "work-category:production"
                     ],
@@ -62,10 +60,29 @@
                     "return_format": "object",
                     "ui": 1,
                     "key": "field_583b6bc62625f",
-                    "label": "Link",
+                    "label": "Link to work",
                     "name": "link",
                     "type": "post_object",
                     "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    }
+                },
+                {
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "key": "field_586d4c37b1470",
+                    "label": "Custom link",
+                    "name": "custom_link",
+                    "type": "text",
+                    "instructions": "try something like \"?s=lahey\"",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -133,5 +150,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1483051502
+    "modified": 1483558020
 }
