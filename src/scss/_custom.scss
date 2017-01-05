@@ -493,6 +493,9 @@
     &:hover &__cornerTitle {
       opacity: 0;
     }
+    &:hover .awardsTags {
+      opacity: 1;
+    }
   }
   &__head {
     padding: 20px 0 10px;
@@ -740,6 +743,7 @@
   right: 20px;
   top: 0;
   z-index: 1;
+  opacity: 0;
   &Wrap {
     position: absolute;
     top: 0;
@@ -903,7 +907,6 @@
 .fullWidthText {
   margin-top: 80px;
   &__body {
-    column-count: 2;
     margin-top: 12px;
     color: #7f8385;
     line-height: 1.6;
@@ -936,12 +939,16 @@
 
 .halfWidthText {
   margin-top: 80px;
+  &__head{
+    min-height: 18px;
+  }
   &__item {
     margin-top: 40px;
     display: flex;
   }
   &__col {
     padding-left: 55px;
+    flex: 1;
     &:first-child {
       padding-left: 0;
     }

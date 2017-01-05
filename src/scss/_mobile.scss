@@ -20,6 +20,7 @@
     z-index: 13;
     display: block;
     transition: .2s all;
+    top: 0;
     /*   transform: translate3d(0px,0px,0px); */
 
     .menu-header-container {
@@ -37,6 +38,7 @@
     transition: .2s left;
     position: relative;
     left: 0;
+    padding-top: 70px;
     //translate3d breaks fixed child divs top pos
     //transform: translate3d(0,0,0);
     .header{
@@ -66,7 +68,6 @@
     display: none;
   }
   .hSlider {
-    padding-top: 70px;
     &__video {
       display: none;
     }
@@ -283,7 +284,6 @@
   }
 
   .brands__list{
-    display: block;
   }
 
   .social__video{
@@ -471,6 +471,15 @@
 
   .mModal__footer{
     margin-top: 20px;  
+  }
+  .awardsTags{
+    display: none;
+  }
+  .services__item__btnWrapper{
+    opacity: 0;
+  }
+  .brands__item__btnWrapper{
+    opacity: 0 !important;
   }
 
 }
