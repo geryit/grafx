@@ -3,6 +3,6 @@ get_header();
 ?>
 
 <div id="wrap" style="padding-top: 220px;text-align: center;">
-    index.php
+    something went wrong
 </div>
 <?php get_footer(); ?>

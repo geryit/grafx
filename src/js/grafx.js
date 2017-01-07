@@ -424,6 +424,10 @@ angular.module('grafxApp', ['ui.select', 'ngSanitize', 'ngFileUpload', 'vcRecapt
           console.log('false');
         }
       };
+
+      scope.go = (url) => {
+        window.location = url;
+      };
     }]);
 angular.element(() => {
   angular.bootstrap(document, ['grafxApp']);

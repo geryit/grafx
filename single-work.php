@@ -31,7 +31,7 @@ if ($term)
 
 
 $query = new WP_Query($args);
-if($s) relevanssi_do_query($query); // this works only there is search ('s' => $s,)
+if ($s) relevanssi_do_query($query); // this works only there is search ('s' => $s,)
 
 if ($query->have_posts()) {
   while ($query->have_posts()) {
@@ -63,7 +63,10 @@ if ($thisindex < $workCount - 1) $nextid = $ids[$thisindex + 1]; // $nextid = 27
 ?>
 
 <div id="wrap">
-  <div class="workHead">
+  <div class="workHead"
+       <? if (isset($nextid)) { ?>ng-swipe-left="go('<?= add_query_arg(array('term' => $term, 'se' => $s, 'orderby' => $orderby, 'order' => $order), get_permalink($nextid)) ?>')"<? } ?>
+       <? if (isset($previd)) { ?>ng-swipe-right="go('<?= add_query_arg(array('term' => $term, 'se' => $s, 'orderby' => $orderby, 'order' => $order), get_permalink($previd)) ?>')"<? } ?>
+  >
     <div class="container">
       <ul class="workHead__items">
 
@@ -76,7 +79,7 @@ if ($thisindex < $workCount - 1) $nextid = $ids[$thisindex + 1]; // $nextid = 27
         </li>
 
         <li class="workHead__item">
-          <span class="workHead__head"><?=get_field('brand_title', 'option');?></span>
+          <span class="workHead__head"><?= get_field('brand_title', 'option'); ?></span>
           <span class="workHead__link light active">
                     <?= boldify(get_the_title()) ?>
                     </span>

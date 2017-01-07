@@ -19,11 +19,20 @@ get_header(); ?>
         <img src="<?= get_template_directory_uri(); ?>/dist/img/1425x700.png"
              class="hSlider__placeHolder" alt="">
 
-
         <div id="hSlider__body__<?= $i ?>" class="hSlider__body"
-             ng-click="vModal.open('<?= $v['long_video'] ?>', '<?= $v['first_frame'] ?>', <?= $i ?>)">
+          <? if ($v['link']) { ?>
+            ng-click="go('<?=get_permalink($v["link"])?>')"
+          <? } else { ?>
+            ng-click="vModal.open('<?= $v['long_video'] ?>', '<?= $v['first_frame'] ?>', <?= $i ?>)"
+          <? } ?>
+
+        >
           <div class="hSlider__r1">
-            <span class="icon-play hSlider__play"></span>
+            <? if ($v['link']) { ?>
+              <span class="icon-r-arrow hSlider__play"></span>
+            <? } else { ?>
+              <span class="icon-play hSlider__play"></span>
+            <? } ?>
             <div class="hSlider__title light"><?= $v['title'] ?></div>
           </div>
           <div class="hSlider__date"><?= $v['date'] ?></div>
@@ -41,7 +50,7 @@ get_header(); ?>
     <? if (get_field('services'))
       foreach (get_field('services') as $i => $v) { ?>
 
-        <li class="services__item">
+        <li class="services__item" ng-click="go('<?= get_term_link($v['link']); ?>')">
           <span class="services__title"><?= $v['title'] ?></span>
           <span class="services__body light"><?= $v['body'] ?></span>
           <div class="services__item__btnWrapper">
@@ -88,7 +97,9 @@ get_header(); ?>
     <ul class="brands__list">
       <? if (get_field('brands'))
         foreach (get_field('brands') as $v) { ?>
-          <li class="brands__item">
+          <li class="brands__item"
+              ng-click="go('<?= $v['custom_link'] ? $v['custom_link'] : get_permalink($v["link"]) ?>')"
+          >
             <img class="brands__img" src="<?= $v["image"] ?>?<?= $ver ?>" alt="">
             <div class="brands__item__btnWrapper">
               <a href="<?= $v['custom_link'] ? $v['custom_link'] : get_permalink($v["link"]) ?>"
@@ -143,7 +154,7 @@ get_header(); ?>
   <video id="vModal__video"
          class="video-js vjs-default-skin vjs-big-play-centered grafx-skin vModal__video"
          width="100%" height="100%" controls preload="none"
-         >
+  >
     <source type='video/mp4'/>
   </video>
 

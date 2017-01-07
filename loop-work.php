@@ -19,7 +19,8 @@ if (!$btn) $btn = 'View Work';
 
 
 ?>
-<div class="works__item <?= get_field('case_study') ? 'works__item--case' : ''; ?>">
+<div class="works__item <?= get_field('case_study') ? 'works__item--case' : ''; ?>"
+  ng-click="go('<?= add_query_arg(array('term' => $post_term, 'se' => get_search_query(), 'orderby' => $orderby, 'order' => $order), get_permalink()) ?>')">
   <div class="works__inner"
        style="background-image: url(<?= get_field('main_image'); ?>?<?=$ver?>)">
     <ul class="awardsTags">

@@ -198,7 +198,8 @@
   }
 
   .workHead__items {
-    height: 200px;
+    height: auto;
+    padding-top: 20px;
   }
 
   .fullWidthText,
@@ -255,18 +256,34 @@
   }
 
   .hSlider__arrow {
-    display: none !important;
+    left: 15px;
+    bottom: 70px;
+    margin-left: 0 !important;
+    &__next{
+      left: auto;
+      right: 5px;
+    }
   }
   .hSlider__dots {
     display: none !important;
   }
   .hSlider__body {
     margin-top: 0;
+    transform: translate(0, -50%) !important; 
+    left: 40px;
+    right: 40px;
+  }
+  .hSlider__r1{
+    justify-content: center;
   }
   .hSlider__play,
   .hSlider__title {
     font-size: 26px;
+    white-space: normal;
   }
+   .hSlider__title{
+    
+   }
 
   .hSlider__date {
     display: none;
@@ -284,7 +301,18 @@
   }
 
   .brands__list{
+    
   }
+  .brands__item{
+    height: auto;
+    padding: 20px 10px;
+  }
+
+  .brands__img {
+      max-width: 110px;
+      max-height: 170px;
+  }
+
 
   .social__video{
     display: none;
@@ -323,15 +351,16 @@
   }
 
   .headItems{
-    height: 150px;
+    height: auto;
+    padding-top: 20px;
     &--cats{
       height: auto;
       flex-direction: column;
       align-items: flex-start;
-      padding-top: 80px;
+      padding-top: 30px;
       .headItems__link{
         padding-bottom: 2px;
-        margin-bottom: 10px;
+        margin-bottom: 20px;
         opacity: 1;
         border-bottom-width: 3px;
       }
@@ -353,11 +382,7 @@
     margin-bottom: 0;
   }
 
-  .works__inner:hover{
-    .awardsTags{
-      z-index: -2;
-    }
-  }
+
 
   .diagonalBtn{
     font-size: 12px;
@@ -386,9 +411,7 @@
     display: none;
   }
 
-  .headItems__item.fx{
-    display: none;
-  }
+
 
   .works__head__inner{
   }
@@ -402,10 +425,19 @@
   .workHead__link{
     font-size: 16px;
     padding-bottom: 10px;
+    margin: 0 10px;
+  }
+
+  .workHead__icon{
+    margin-bottom: 30px;
   }
 
   .halfWidthText__item{
     display: block;
+  }
+  .halfWidthText__col{
+    padding-left: 0;
+    margin-top: 20px;
   }
 
   .imageVideoSet__item{
@@ -470,16 +502,26 @@
   }
 
   .mModal__footer{
-    margin-top: 20px;  
+    margin-top: 20px;
   }
   .awardsTags{
     display: none;
   }
   .services__item__btnWrapper{
-    opacity: 0;
+    display: none;
   }
   .brands__item__btnWrapper{
-    opacity: 0 !important;
+    display: none;
+  }
+  .works__inner:before{
+    display: none;
+  }
+  .works__inner__items{
+    display: none;
+  }
+
+  .headItems--search .headItems__item.fx{
+    display: none;
   }
 
 }

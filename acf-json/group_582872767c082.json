@@ -58,7 +58,7 @@
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "3",
+                        "width": "2",
                         "class": "",
                         "id": ""
                     }
@@ -77,7 +77,7 @@
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "10",
+                        "width": "15",
                         "class": "",
                         "id": ""
                     }
@@ -132,14 +132,14 @@
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "",
+                        "width": "10",
                         "class": "",
                         "id": ""
                     }
                 },
                 {
                     "return_format": "url",
-                    "preview_size": "medium_large",
+                    "preview_size": "thumbnail",
                     "library": "all",
                     "min_width": "",
                     "min_height": "",
@@ -198,6 +198,28 @@
                         "class": "",
                         "id": ""
                     }
+                },
+                {
+                    "post_type": [
+                        "work"
+                    ],
+                    "taxonomy": [],
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "return_format": "object",
+                    "ui": 1,
+                    "key": "field_5871389f66eb1",
+                    "label": "Link",
+                    "name": "link",
+                    "type": "post_object",
+                    "instructions": "If want to link to work instead of video",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    }
                 }
             ],
             "min": 0,
@@ -243,5 +265,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1480887975
+    "modified": 1483815134
 }

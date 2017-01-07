@@ -2,6 +2,12 @@
   display: none !important;
 }
 
+[ng-click],
+[data-ng-click],
+[x-ng-click] {
+  cursor: pointer;
+}
+
 html {
   //height: 100%;
 }
@@ -269,7 +275,7 @@ img {
       &.current-menu-item,
       &.current-menu-parent {
         & ~ #menuOverlay div {
-          transform: translate(160px, -50%) rotate(-35deg);
+          transform: translate(150px, -50%) rotate(-35deg);
         }
       }
     }
@@ -277,7 +283,23 @@ img {
       &.current-menu-item,
       &.current-menu-parent {
         & ~ #menuOverlay div {
-          transform: translate(250px, -50%) rotate(-35deg);
+          transform: translate(240px, -50%) rotate(-35deg);
+        }
+      }
+    }
+    &:nth-child(4) {
+      &.current-menu-item,
+      &.current-menu-parent {
+        & ~ #menuOverlay div {
+          transform: translate(330px, -50%) rotate(-35deg);
+        }
+      }
+    }
+    &:nth-child(5) {
+      &.current-menu-item,
+      &.current-menu-parent {
+        & ~ #menuOverlay div {
+          transform: translate(420px, -50%) rotate(-35deg);
         }
       }
     }
@@ -288,17 +310,22 @@ img {
     }
     &:nth-child(2):hover {
       & ~ #menuOverlay div {
-        transform: translate(160px, -50%) rotate(-35deg);
+        transform: translate(150px, -50%) rotate(-35deg);
       }
     }
     &:nth-child(3):hover {
       & ~ #menuOverlay div {
-        transform: translate(250px, -50%) rotate(-35deg);
+        transform: translate(240px, -50%) rotate(-35deg);
       }
     }
     &:nth-child(4):hover {
       & ~ #menuOverlay div {
-        transform: translate(340px, -50%) rotate(-35deg);
+        transform: translate(330px, -50%) rotate(-35deg);
+      }
+    }
+    &:nth-child(5):hover {
+      & ~ #menuOverlay div {
+        transform: translate(420px, -50%) rotate(-35deg);
       }
     }
 

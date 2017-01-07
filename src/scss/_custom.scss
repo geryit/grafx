@@ -71,7 +71,7 @@
 
   &__item {
     position: relative;
-    opacity: 1 !important;
+    opacity: 1 !important; 
   }
 
   &__r1 {
@@ -732,7 +732,8 @@
     transition: .2s opacity;
     &--hover {
       opacity: 0;
-      background-image: url(../../dist/img/socialMapBgHover.png);
+      background-image: url(../../dist/img/socialMapBgHover.jpg);
+      left: 1px;
     }
   }
 }
@@ -1626,4 +1627,13 @@ body.mModalOn {
   }
 
 }
+
+.reels {
+    margin-top: 40px;
+    &__item {
+      margin-top: 80px;
+  }
+}
+
+
 

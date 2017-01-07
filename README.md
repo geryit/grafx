@@ -4,10 +4,7 @@ test
 ```sh
 
 grafx && git pull
-brew update && brew upgrade && brew cleanup && brew prune
-npm i -g
-ncu -a
-npm update
+brew update && brew upgrade && brew cleanup && brew prune && npm update -g && npm-check-updates -a && npm i
 
 #new tab
 =======

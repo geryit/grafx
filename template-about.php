@@ -62,7 +62,7 @@ get_header(); ?>
                 <? if (get_field('services'))
                     foreach (get_field('services') as $i => $v) { ?>
 
-                        <li class="services__item">
+                        <li class="services__item" ng-click="go('<?= get_term_link($v['link']); ?>')">
                             <span class="services__title"><?= $v['title'] ?></span>
                             <span class="services__body light"><?= $v['body'] ?></span>
                             <div class="services__item__btnWrapper">

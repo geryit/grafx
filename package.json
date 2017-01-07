@@ -1,15 +1,22 @@
 {
   "name": "grafx",
   "version": "1.0.0",
-  "description": "",
-  "main": "",
+  "private": true,
+  "description": "Grafx.co",
+  "main": "grafx.min.js",
+  "author": "geryit",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com:geryit/grafxwp.git"
+  },
   "dependencies": {
     "angular": "^1.6.1",
     "angular-recaptcha": "^3.2.0",
     "angular-sanitize": "^1.6.1",
     "angular-touch": "^1.6.1",
-    "imagemin-mozjpeg": "^6.0.0",
-    "imagemin-pngquant": "^5.0.0",
+    "imagemin-mozjpeg": "^5.1.0",
+    "imagemin-pngquant": "^4.2.2",
     "jquery": "^3.1.1",
     "ng-file-upload": "^12.2.13",
     "selectize": "^0.12.4",
@@ -23,7 +30,7 @@
     "babel-preset-stage-0": "^6.16.0",
     "babelify": "^7.3.0",
     "cssnano": "^3.10.0",
-    "eslint": "^3.12.2",
+    "eslint": "^3.13.0",
     "eslint-config-airbnb": "^13.0.0",
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^3.0.2",
@@ -46,12 +53,11 @@
     "grunt-sass-format": "0.0.8",
     "grunt-ssh": "^0.12.9",
     "load-grunt-tasks": "^3.5.2",
+    "npm-check-updates": "^2.8.9",
     "pixrem": "^3.0.2",
     "time-grunt": "^1.4.0"
   },
   "scripts": {
     "test": ""
-  },
-  "author": "",
-  "license": ""
+  }
 }

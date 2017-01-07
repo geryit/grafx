@@ -47,7 +47,7 @@ function get_term_url($i){
     <div class="headItemsWrap" style="background-image: url(<?= $bg_image ? $bg_image : '' ?>?<?=$ver?>)">
         <div class="container">
 
-            <ul class="headItems">
+            <ul class="headItems headItems--search">
                 <li class="headItems__nav headItems__nav--prev">
                     <a class="headItems__icon headItems__icon--prev icon-l-arrow2"
                        href="<?= get_term_url($term_prev_index) ?>"></a>
