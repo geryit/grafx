@@ -103,13 +103,29 @@ if (get_query_var('orderby')) $orderby = get_query_var('orderby'); else $orderby
       ?>
     </div>
 
-    <ul class="reelsItems">
-      <li class="reelsItems__item">
-        <a href="#" class="reelsItems__link">
-          
-        </a>
-      </li>
-    </ul>
+
+    <div class="reelsItems">
+      <h5 class="reelsItems__head">Reels</h5>
+      <ul class="reelsItems__list">
+
+        <? foreach (get_field('reels', 'option') as $i => $v) { ?>
+
+          <li class="reelsItems__item">
+            <a
+              ng-click="vModal.open('<?= $v['video'] ?>', '<?= $v['first_frame'] ?>', <?= $i ?>)"
+              class="reelsItems__link"
+              style="background-image: url(<?= $v['image'] ?>)"
+            >
+              <span class="reelsItems__inner">
+                <span class="icon-play reelsItems__play"></span>
+                <span class="reelsItems__title"><?= $v['title'] ?></span>
+              </span>
+
+            </a>
+          </li>
+        <? } ?>
+      </ul>
+    </div>
 
 
   </div>

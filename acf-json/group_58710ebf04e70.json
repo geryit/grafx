@@ -5,6 +5,49 @@
         {
             "sub_fields": [
                 {
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "key": "field_587222829cca5",
+                    "label": "Title",
+                    "name": "title",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    }
+                },
+                {
+                    "return_format": "url",
+                    "preview_size": "thumbnail",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": "",
+                    "key": "field_58715974c2fc4",
+                    "label": "Image",
+                    "name": "image",
+                    "type": "image",
+                    "instructions": "best: 580x326",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    }
+                },
+                {
                     "return_format": "url",
                     "preview_size": "thumbnail",
                     "library": "all",
@@ -19,7 +62,7 @@
                     "label": "First frame",
                     "name": "first_frame",
                     "type": "image",
-                    "instructions": "",
+                    "instructions": "720p",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -38,7 +81,7 @@
                     "label": "Video",
                     "name": "video",
                     "type": "file",
-                    "instructions": "",
+                    "instructions": "720p",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -84,5 +127,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1483823459
+    "modified": 1483875374
 }
