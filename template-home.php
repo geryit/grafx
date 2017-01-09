@@ -11,10 +11,10 @@ get_header(); ?>
       ?>
       <div class="hSlider__item">
         <video id="hSlider__video__<?= $i ?>" class="hSlider__video"
-               poster="<?= $v['first_frame'] ?>?<?= $ver ?>">
+               poster="<?= $v['first_frame'] ?>?<?= VER ?>">
           <source src="<?= $v['video'] ?>" type="video/mp4">
         </video>
-        <img src="<?= $v['first_frame'] ?>?<?= $ver ?>"
+        <img src="<?= $v['first_frame'] ?>?<?= VER ?>"
              id="hSlider__poster__<?= $i ?>" class="hSlider__poster" alt="">
         <img src="<?= get_template_directory_uri(); ?>/dist/img/1425x700.png"
              class="hSlider__placeHolder" alt="">
@@ -48,15 +48,18 @@ get_header(); ?>
 <div class="container">
   <ul class="services">
     <? if (get_field('services'))
-      foreach (get_field('services') as $i => $v) { ?>
+      foreach (get_field('services') as $i => $v) {
+      $link = $v['external_link'] ? $v['external_link'] : get_term_link($v['link']);
+      $button = $v['external_link_button'] ? $v['external_link_button'] : get_button('View Works');
+      ?>
 
-        <li class="services__item" ng-click="go('<?= get_term_link($v['link']); ?>')">
+        <li class="services__item" ng-click="go('<?=$link; ?>')">
           <span class="services__title"><?= $v['title'] ?></span>
           <span class="services__body light"><?= $v['body'] ?></span>
           <div class="services__item__btnWrapper">
-            <a href="<?= get_term_link($v['link']); ?>"
+            <a href="<?=$link; ?>"
                class="diagonalBtn services__item__btn">
-              <span><?= get_button('View Works') ?></span>
+              <span><?= $button ?></span>
             </a>
           </div>
         </li>
@@ -100,7 +103,7 @@ get_header(); ?>
           <li class="brands__item"
               ng-click="go('<?= $v['custom_link'] ? $v['custom_link'] : get_permalink($v["link"]) ?>')"
           >
-            <img class="brands__img" src="<?= $v["image"] ?>?<?= $ver ?>" alt="">
+            <img class="brands__img" src="<?= $v["image"] ?>?<?= VER ?>" alt="">
             <div class="brands__item__btnWrapper">
               <a href="<?= $v['custom_link'] ? $v['custom_link'] : get_permalink($v["link"]) ?>"
                  class="diagonalBtn brands__btn">

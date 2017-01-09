@@ -103,6 +103,12 @@ module.exports = (grunt) => {
           dest: 'dist/css/',
         }],
       },
+      ajaxsearchpro: {
+        files: {
+          '../../plugins/ajax-search-pro/css/style.basic.css': '../../plugins/ajax-search-pro/css/style.basic.css',
+          '../../uploads/asp_upload/style.instances.css': '../../uploads/asp_upload/style.instances.css',
+        },
+      },
     },
 
     browserify: {
@@ -342,6 +348,25 @@ module.exports = (grunt) => {
         from: '<%= mysql.local.site_url %>',
         to: '<%= mysql.remote.site_url %>',
       },
+      increase_version: {
+        options: {
+          force: true,
+        },
+        src: 'functions.php',
+        dest: 'functions2.php',
+        from: 'SVER',
+        to: 'SVER2',
+      },
+    },
+    cachebreaker: {
+      prod: {
+        options: {
+          match: ['grafx.css', 'grafx.min.js'],
+        },
+        files: {
+          src: ['functions.php'],
+        },
+      },
     },
   });
   grunt.registerTask('default', [
@@ -389,6 +414,7 @@ module.exports = (grunt) => {
     'newer:uglify',
     'newer:imagemin',
     'newer:copy',
+    'cachebreaker',
   ]);
   grunt.registerTask('deploy', [
     'build',

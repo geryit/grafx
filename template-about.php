@@ -3,7 +3,7 @@
 get_header(); ?>
 <div id="wrap">
     <div class="headItemsWrap"
-         style="background-image: url(<?= get_field('page_header_image') ?>?<?=$ver?>)">
+         style="background-image: url(<?= get_field('page_header_image') ?>?<?=VER?>)">
         <div class="container">
 
             <ul class="headItems headItems--about">
@@ -28,7 +28,7 @@ get_header(); ?>
                            poster="<?= $v['first_frame'] ?>">
                         <source src="<?= $v['video'] ?>" type="video/mp4">
                     </video>
-                    <img src="<?= $v['first_frame'] ?>?<?=$ver?>"
+                    <img src="<?= $v['first_frame'] ?>?<?=VER?>"
                          id="hSlider__poster__<?= $i ?>" class="hSlider__poster" alt="">
                     <img src="<?= get_template_directory_uri(); ?>/dist/img/1425x700.png"
                          class="hSlider__placeHolder" alt="">

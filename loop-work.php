@@ -1,5 +1,4 @@
 <?
-global $ver;
 if (get_query_var('orderby')) $orderby = get_query_var('orderby'); else $orderby = 'date';
 
 $current_object = get_queried_object();// can be page,tax/term, single
@@ -22,7 +21,7 @@ if (!$btn) $btn = 'View Work';
 <div class="works__item <?= get_field('case_study') ? 'works__item--case' : ''; ?>"
   ng-click="go('<?= add_query_arg(array('term' => $post_term, 'se' => get_search_query(), 'orderby' => $orderby, 'order' => $order), get_permalink()) ?>')">
   <div class="works__inner"
-       style="background-image: url(<?= get_field('main_image'); ?>?<?=$ver?>)">
+       style="background-image: url(<?= get_field('main_image'); ?>?<?=VER?>)">
     <ul class="awardsTags">
       <? if (get_field('awards'))
         foreach (get_field('awards') as $m) { ?>

@@ -686,7 +686,7 @@
     margin-top: 20px;
   }
   &__network {
-    margin-top: 6px;
+    margin-top: 10px;
   }
   &__link {
     color: #fff;
@@ -922,6 +922,9 @@
   &__item {
     width: 50%;
     position: relative;
+    &--imgGif{
+      display: none;
+    }
     //.vjs-waiting {
     //  visibility: hidden;
     //  background: transparent;
@@ -984,9 +987,8 @@
   &__arrow {
     position: absolute;
     z-index: 1;
-    left: 50%;
     top: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(0, -50%);
     background: none;
     border: 0;
     @extend .icomoon;
@@ -995,13 +997,14 @@
     outline: none;
     cursor: pointer;
     &__prev {
-      margin-left: -580px;
+      left: 40px;
       &:before {
         content: $icon-l-arrow2;
       }
     }
     &__next {
-      margin-left: 580px;
+      left: auto;
+      right: 40px;
       &:before {
         content: $icon-r-arrow2;
       }
@@ -1634,10 +1637,13 @@ body.mModalOn {
     &__item {
       margin-top: 80px;
   }
+  &__title{
+    margin-bottom: 20px;
+  }
 }
 
 .reelsItems{
-  margin-top: 30px;
+  margin: 30px 0;
   &__head{
     color: #848484;
     font-weight: normal;
@@ -1647,6 +1653,7 @@ body.mModalOn {
   &__list{
     display: flex;
     margin-top: 20px;
+    flex-wrap: wrap;
   }
   &__item {
     width: 50%;

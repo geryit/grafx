@@ -29,7 +29,7 @@ if (isset($_GET['appsent'])) { ?>
 <? } ?>
 <div id="wrap">
   <div class="headItemsWrap"
-       style="background-image: url(<?= get_field('page_header_image') ?>?<?=$ver?>)">
+       style="background-image: url(<?= get_field('page_header_image') ?>?<?=VER?>)">
     <div class="container">
 
       <ul class="headItems headItems--about">

@@ -1,5 +1,5 @@
 <?php
-$ver = 6;
+const VER = 7; // version for cdn files (*.jpg?7)
 
 function scripts()
 {
@@ -8,14 +8,7 @@ function scripts()
 //        wp_dequeue_script('jquery');
     wp_deregister_script('wp-embed');
 
-    // REMOVE WP EMOJI
-    remove_action('wp_head', 'print_emoji_detection_script', 7);
-    remove_action('wp_print_styles', 'print_emoji_styles');
-
-    remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
-    remove_action( 'admin_print_styles', 'print_emoji_styles' );
-
-    wp_enqueue_script('main', get_template_directory_uri() . '/dist/js/grafx.min.js', array('jquery'), null, true); // Enqueue it!
+    wp_enqueue_script('main', get_template_directory_uri() . '/dist/js/grafx.min.js?rel=1483921652624', array('jquery'), null, true); // Enqueue it!
     $translation_array = array('templateUrl' => get_stylesheet_directory_uri());
     wp_localize_script('main', 'theme_vars', $translation_array);
 
@@ -26,7 +19,7 @@ function scripts()
 function styles()
 {
 
-  wp_register_style('main', get_template_directory_uri() . '/dist/css/grafx.css', array(), null, 'all');
+  wp_register_style('main', get_template_directory_uri() . '/dist/css/grafx.css?rel=1483921652623', array(), null, 'all');
   wp_enqueue_style('main'); // Enqueue it!
 }
 

@@ -1,5 +1,3 @@
-<? global $ver;?>
-
 <div class="halfWidthText">
     <div class="container">
         <div class="halfWidthText__item">

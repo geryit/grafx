@@ -1,10 +1,9 @@
 <?php
 /* Template Name: Reels */
-get_header();
-global $ver; ?>
+get_header();?>
 <div id="wrap">
   <div class="headItemsWrap"
-       style="background-image: url(<?= get_field('page_header_image') ?>?<?= $ver ?>)">
+       style="background-image: url(<?= get_field('page_header_image') ?>?<?= VER ?>)">
     <div class="container">
 
       <ul class="headItems headItems--about">
@@ -17,27 +16,31 @@ global $ver; ?>
     </div>
 
   </div>
-  <div class="reels">
-    <div class="container">
-      <? foreach (get_field('reels', 'option') as $i => $v) { ?>
-        <div class="reels__item">
-          <video id="reels__video__<?= $i ?>"
-                 class="video-js vjs-default-skin vjs-big-play-centered vjs-16-9 grafx-skin reels__video"
-                 width="100%" height="100%" controls preload="none" loop
-                 poster="<?= $v['first_frame'] ?>?<?= $ver ?>">
-            <source src="<?= $v['video'] ?>" type='video/mp4'/>
-          </video>
-        </div>
+  <div class="container">
+    <div class="reelsItems">
+      <h5 class="reelsItems__head">Reels</h5>
+      <ul class="reelsItems__list">
 
+        <? foreach (get_field('reels', 'option') as $i => $v) { ?>
 
-      <? } ?>
-      <div class="pluses">
-        <div class="container">
-          <div class="pluses__inner"></div>
-        </div>
-      </div>
+          <li class="reelsItems__item">
+            <a
+              ng-click="vModal.open('<?= $v['video'] ?>', '<?= $v['first_frame'] ?>', <?= $i ?>)"
+              class="reelsItems__link"
+              style="background-image: url(<?= $v['image'] ?>)"
+            >
+              <span class="reelsItems__inner">
+                <span class="icon-play reelsItems__play"></span>
+                <span class="reelsItems__title"><?= $v['title'] ?></span>
+              </span>
+
+            </a>
+          </li>
+        <? } ?>
+      </ul>
     </div>
   </div>
+
 
 
 </div>

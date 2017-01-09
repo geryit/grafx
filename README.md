@@ -29,3 +29,6 @@ grunt deploy
 **logs**
 `tail -f /private/var/log/apache2/grafxwp.log`
 http://grafx.geryit.com
+
+**mod_pagespeed debug**
+https://grafx.geryit.com/?PageSpeedFilters=%20debug

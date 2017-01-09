@@ -348,7 +348,7 @@
                                 {
                                     "key": "582fb9bb7a22b",
                                     "name": "image",
-                                    "label": "Image",
+                                    "label": "Image(Jpg)",
                                     "display": "table",
                                     "sub_fields": [
                                         {
@@ -361,12 +361,46 @@
                                             "max_width": "",
                                             "max_height": "",
                                             "max_size": "",
-                                            "mime_types": "",
+                                            "mime_types": "jpg",
                                             "key": "field_582fb9ca16068",
-                                            "label": "Image",
+                                            "label": "Image (jpg)",
                                             "name": "image",
                                             "type": "image",
                                             "instructions": "1280x720",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            }
+                                        }
+                                    ],
+                                    "min": "",
+                                    "max": ""
+                                },
+                                {
+                                    "key": "5872ccbb73ab2",
+                                    "name": "image_gif",
+                                    "label": "Image(Gif for mobile)",
+                                    "display": "table",
+                                    "sub_fields": [
+                                        {
+                                            "return_format": "url",
+                                            "preview_size": "thumbnail",
+                                            "library": "all",
+                                            "min_width": "",
+                                            "min_height": "",
+                                            "min_size": "",
+                                            "max_width": "",
+                                            "max_height": "",
+                                            "max_size": "",
+                                            "mime_types": "gif",
+                                            "key": "field_5872ccbb73ab3",
+                                            "label": "Image (gif)",
+                                            "name": "image_gif",
+                                            "type": "image",
+                                            "instructions": "375x211 (for mobile)",
                                             "required": 0,
                                             "conditional_logic": 0,
                                             "wrapper": {
@@ -689,5 +723,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1480887074
+    "modified": 1483918868
 }

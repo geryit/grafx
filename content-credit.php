@@ -1,5 +1,3 @@
-<? global $ver;?>
-
 <div class="credits">
     <div class="container">
         <input type="checkbox" id="creditsToggle" class="credits__toggle dn">
