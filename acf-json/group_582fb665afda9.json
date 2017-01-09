@@ -713,6 +713,13 @@
                 "operator": "==",
                 "value": "work"
             }
+        ],
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "template-reels.php"
+            }
         ]
     ],
     "menu_order": 0,
@@ -723,5 +730,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1483918868
+    "modified": 1483994338
 }

@@ -19,15 +19,18 @@ if (!$btn) $btn = 'View Work';
 
 ?>
 <div class="works__item <?= get_field('case_study') ? 'works__item--case' : ''; ?>"
-  ng-click="go('<?= add_query_arg(array('term' => $post_term, 'se' => get_search_query(), 'orderby' => $orderby, 'order' => $order), get_permalink()) ?>')">
+     ng-click="go('<?= add_query_arg(array('term' => $post_term, 'se' => get_search_query(), 'orderby' => $orderby, 'order' => $order), get_permalink()) ?>')">
   <div class="works__inner"
-       style="background-image: url(<?= get_field('main_image'); ?>?<?=VER?>)">
-    <ul class="awardsTags">
-      <? if (get_field('awards'))
-        foreach (get_field('awards') as $m) { ?>
-          <li class="awardsTags__item"><?= $m ?></li>
-        <? } ?>
-    </ul>
+       style="background-image: url(<?= get_field('main_image'); ?>?<?= VER ?>)">
+    <?
+    if (get_field('awards')) {?>
+      <ul class="awardsTags">
+        <? if (get_field('awards'))
+          foreach (get_field('awards') as $m) { ?>
+            <li class="awardsTags__item"><?= $m ?></li>
+          <? } ?>
+      </ul>
+    <? } ?>
     <span class="works__inner__cornerTitle"
           style="color: <?= get_field('corner_title_color'); ?>"><?= boldify(get_the_title()) ?></span>
     <div class="works__inner__items">

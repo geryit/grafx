@@ -105,26 +105,32 @@ if (get_query_var('orderby')) $orderby = get_query_var('orderby'); else $orderby
 
 
     <div class="reelsItems">
-      <h5 class="reelsItems__head">Reels</h5>
-      <ul class="reelsItems__list">
+      <h5 class="reelsItems__head"><?= get_field('reel_category_page_title', REELPAGEID); ?></h5>
 
-        <? foreach (get_field('reels', 'option') as $i => $v) { ?>
 
-          <li class="reelsItems__item">
+      <div
+        class="works__item"
+        ng-click="go('<?=get_permalink(REELPAGEID)?>')">
+        <div class="works__inner"
+             style="background-image: url(<?= get_field('main_image', REELPAGEID); ?>?<?= VER ?>)">
+          <span class="works__inner__cornerTitle"
+                style="color: <?= get_field('corner_title_color', REELPAGEID); ?>"><?= get_field('reel_title', REELPAGEID); ?></span>
+          <div class="works__inner__items">
+            <span class="works__inner__title"><?= get_field('reel_title', REELPAGEID); ?></span>
+            <span
+              class="works__inner__desc light"><?= get_field('short_description', REELPAGEID); ?></span>
             <a
-              ng-click="vModal.open('<?= $v['video'] ?>', '<?= $v['first_frame'] ?>', <?= $i ?>)"
-              class="reelsItems__link"
-              style="background-image: url(<?= $v['image'] ?>)"
-            >
-              <span class="reelsItems__inner">
-                <span class="icon-play reelsItems__play"></span>
-                <span class="reelsItems__title"><?= $v['title'] ?></span>
-              </span>
-
+              href="<?=get_permalink(REELPAGEID)?>"
+              class="diagonalBtn works__inner__btn">
+              <span><?= get_field('button_label', REELPAGEID); ?></span>
             </a>
-          </li>
-        <? } ?>
-      </ul>
+          </div>
+
+        </div>
+
+      </div>
+
+
     </div>
 
 
