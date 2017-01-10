@@ -369,17 +369,21 @@
   }
 
   .stats__body{
-    position: relative;
+    position: static;
     top: 0;
-    opacity: 1;
+    opacity: 1 !important;
     left: auto !important;
     right: auto !important;
-    transform: inherit;
+    transform: inherit !important;
     margin: 20px 0 20px;
     width: auto;
     text-align: center !important;
     border-bottom: 1px solid #ccc;
     padding-bottom: 20px;
+  }
+
+  .stats__item:before{
+    display: none;
   }
 
   .headItems{
