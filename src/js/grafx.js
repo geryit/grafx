@@ -190,6 +190,15 @@ $(document).ready(() => {
   $('.cSlider').slick({
     prevArrow: '<button class="cSlider__arrow cSlider__arrow__prev"></button>',
     nextArrow: '<button class="cSlider__arrow cSlider__arrow__next"></button>',
+  }).on('beforeChange', () => {
+    $('.video-js').each((i, el) => {
+      const e = el;
+      let player;
+      if (e.id) {
+        player = videojs(e.id);
+        player.pause();
+      }
+    });
   });
 
 

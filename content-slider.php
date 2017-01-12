@@ -1,3 +1,8 @@
+<style>
+    .cSlider__arrow:before{
+        color: <?= get_field('slider_arrow_color') ? get_field('slider_arrow_color') : '#000' ?>;
+    }
+</style>
 <div class="cSliderWrap">
     <div class="cSlider">
 
