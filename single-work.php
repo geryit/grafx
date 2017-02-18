@@ -103,6 +103,7 @@ if ($thisindex < $workCount - 1) $nextid = $ids[$thisindex + 1]; // $nextid = 27
       // loop through the rows of data
       while (have_rows('content')) {
         the_row();
+//        echo '<div>'.get_row_layout().'</div>';
 
         if (get_row_layout() == 'main_video') {
 
@@ -131,6 +132,9 @@ if ($thisindex < $workCount - 1) $nextid = $ids[$thisindex + 1]; // $nextid = 27
 
         } elseif (get_row_layout() == 'credit') {
           get_template_part('content', 'credit');
+
+        }elseif (get_row_layout() == 'image_for_m') {
+          get_template_part('content', 'image_for_mobile');
 
         }
 

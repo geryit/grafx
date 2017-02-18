@@ -766,7 +766,7 @@
   display: flex;
   height: 315px;
   align-items: flex-end;
-  justify-content: space-between;
+  justify-content: space-around;
   &Wrap {
     position: relative;
     background-size: cover;
@@ -789,7 +789,6 @@
     border-bottom: 5px solid transparent;
     display: block;
     padding-bottom: 38px;
-    margin: 0 55px;
     opacity: .3;
     transition: .2s;
     text-align: center;
@@ -1692,6 +1691,10 @@ body.mModalOn {
   }
 }
 
+.imageForMobile{
+  display: none;
+  margin: 20px 0;
+}
 
 
 

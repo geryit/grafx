@@ -3,7 +3,7 @@ if (get_query_var('orderby')) $orderby = get_query_var('orderby'); else $orderby
 
 $current_object = get_queried_object();// can be page,tax/term, single
 
-$post_tax = get_post_taxonomies($post)[1];//['post_tag','work-category']
+//$post_tax = get_post_taxonomies($post)[1];//['post_tag','work-category']
 
 
 if (isset($current_object->slug)) { //page object doesnt have slug, so this page is tax/terms page

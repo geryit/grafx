@@ -1,7 +1,8 @@
 <?php
+/* Template Name: Works */
 get_header();
+
 $cats = get_field('categories', 'option');
-//printr($cats);
 
 $term_id = get_queried_object()->term_id;
 
@@ -13,24 +14,24 @@ foreach ($cats as $i => $v) {
   }
 }
 
-$bg_image = $cats[$term_index]['background_image'];
-
-
 if (get_query_var('orderby')) $orderby = get_query_var('orderby'); else $orderby = 'date';
+if (get_query_var('order')) $order = get_query_var('order'); else $order = 'DESC';
 
 ?>
 
+
+
+
 <div id="wrap">
   <div class="headItemsWrap"
-       style="background-image: url(<?= $bg_image ? $bg_image : '' ?>?<?= VER ?>)">
+       style="background-image: url(<?= get_field('page_header_image') ?>?<?=VER?>)">
     <div class="container">
 
       <ul class="headItems headItems--cats">
         <li class="headItems__item">
-          <a href="<?=get_permalink( get_page_by_path( 'works' ) )?>"
-             class="headItems__link light">
+          <span class="headItems__link light active">
             ALL
-          </a>
+          </span>
         </li>
         <?
         foreach ($cats as $cat) { ?>
@@ -55,13 +56,12 @@ if (get_query_var('orderby')) $orderby = get_query_var('orderby'); else $orderby
       <?
 
       $year_check = false;
-      //            if($orderby == 'title') query_posts($query_string . '&orderby=title&order=ASC');
-      if (have_posts()) {
-        while (have_posts()) {
-          the_post();
+      $loop = new WP_Query(array('post_type' => 'work', 'posts_per_page' => -1,'orderby' => $orderby, 'order'   => $order,));
+      if ($loop->have_posts()) {
+        while ($loop->have_posts()) {
+          $loop->the_post();
           $year = get_the_date('Y');
-//                    $year_check = false;
-          // If your year hasn't been echoed earlier in the loop, echo it now
+
           if ($year !== $year_check) { ?>
             <div class='works__head'>
               <div class="works__head__inner container">
@@ -147,4 +147,5 @@ if (get_query_var('orderby')) $orderby = get_query_var('orderby'); else $orderby
     </div>
   </div>
 </div>
-<?php get_footer(); ?>
+
+<? get_footer(); ?>
