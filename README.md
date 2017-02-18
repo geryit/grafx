@@ -32,3 +32,4 @@ http://grafx.geryit.com
 
 **mod_pagespeed debug**
 https://grafx.geryit.com/?PageSpeedFilters=%20debug
+https://grafx.geryit.com/?ModPagespeed=off
