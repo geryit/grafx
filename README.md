@@ -1,16 +1,13 @@
 # grafxwp
-test
+
 **do everytime you reboot**
 ```sh
-
-grafx && git pull
+git pull
 brew update && brew upgrade && brew cleanup && brew prune && npm update -g && npm-check-updates -a && npm i
 
 #new tab
 =======
-grafx-start
-or
-grafx && npm i && grunt && grunt watch
+npm i && grunt && grunt watch
 
 
 #download uploads and plugins and download dump (sync with remote)
@@ -22,6 +19,7 @@ grunt sync_local_db
 
 **deploy your changes**
 ```sh
+grunt full-import # import mysql dump & wp-content folder from remote server
 #new tab
 grunt deploy
 ```
