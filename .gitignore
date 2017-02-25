@@ -6,3 +6,4 @@ node_modules
 .tmp
 /.db/
 /composer.lock
+/mysql.json
