@@ -3,11 +3,14 @@
 **do everytime you reboot**
 ```sh
 git pull
-brew update && brew upgrade && brew cleanup && brew prune && npm update -g && npm-check-updates -a && npm i
-
-#new tab
-=======
-npm i && grunt && grunt watch
+brew update && brew upgrade && brew cleanup && brew prune
+node -v #node version should be > 6
+npm i -g npm grunt npm-check
+npm-check -u -g
+npm-check -u
+brew install wget
+mkdir .db #need this to store db dump in local
+grunt && grunt watch
 
 
 #download uploads and plugins and download dump (sync with remote)

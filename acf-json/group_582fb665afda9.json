@@ -222,6 +222,29 @@
                                         "id": ""
                                     },
                                     "default_value": "#000000"
+                                },
+                                {
+                                    "key": "field_58daa0f504c2f",
+                                    "label": "Top-bottom margins",
+                                    "name": "top-bottom_margins",
+                                    "type": "checkbox",
+                                    "instructions": "Add top-bottom margins",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "choices": {
+                                        "Yes": "Yes"
+                                    },
+                                    "allow_custom": 0,
+                                    "save_custom": 0,
+                                    "default_value": [],
+                                    "layout": "vertical",
+                                    "toggle": 0,
+                                    "return_format": "value"
                                 }
                             ]
                         }
@@ -800,5 +823,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1487441429
+    "modified": 1490723147
 }

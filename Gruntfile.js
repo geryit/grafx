@@ -299,7 +299,7 @@ module.exports = (grunt) => {
     },
     exec: {
       wget_remote_dump: {
-        command: 'cd <%= mysql.local.dump_dir %> && wget -nv <%= mysql.remote.save_url %>/remote-<%= timestamp %>.sql',
+        command: 'cd <%= mysql.local.dump_dir %> && wget -nv <%= mysql.remote.save_url %>/remote-<%= timestamp %>.sql <%= mysql.remote.wget_extra_params %>',
       },
       backup_remote_dump: {
         command: 'cd <%= mysql.local.dump_dir %> && cp remote-<%= timestamp %>.sql remote-backup-<%= timestamp %>.sql',
@@ -320,8 +320,9 @@ module.exports = (grunt) => {
         command: 'scp <%= mysql.local.dump_dir %>/local_migrated-<%= timestamp %>.sql <%= mysql.remote.username %>@<%= mysql.remote.host %>:<%= mysql.remote.save_path %>',
       },
       download_remote_wpcontent: {
-        command: 'echo \'Downloading...\'  && scp -r <%= mysql.remote.username %>@<%= mysql.remote.host %>:~/wpcontent-<%= timestamp %>.tar.gz ~',
+        command: 'echo "Downloading..."  && scp -r <%= mysql.remote.username %>@<%= mysql.remote.host %>:~/wpcontent-<%= timestamp %>.tar.gz ~',
       },
+
       export_and_remove_local_wpcontent: {
         options: {
           maxBuffer: 400 * 1024,
@@ -434,4 +435,3 @@ module.exports = (grunt) => {
     'sync_local_db',
   ]);
 };
-

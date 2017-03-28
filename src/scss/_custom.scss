@@ -907,7 +907,7 @@
 }
 
 .fullWidthText {
-  margin-top: 80px;
+  margin: 80px 0;
   &__body {
     margin-top: 12px;
     color: #7f8385;
@@ -943,7 +943,7 @@
 }
 
 .halfWidthText {
-  margin-top: 80px;
+  margin: 80px 0;
   &__head{
     min-height: 18px;
   }
@@ -989,13 +989,16 @@
     z-index: 1;
     top: 50%;
     transform: translate(0, -50%);
-    background: none;
     border: 0;
     @extend .icomoon;
     color: rgba(0, 0, 0, 0.4);
     font-size: 0;
     outline: none;
     cursor: pointer;
+    width: 60px;
+    height: 60px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
     &__prev {
       left: 40px;
       &:before {
