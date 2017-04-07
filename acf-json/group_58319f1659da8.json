@@ -3,14 +3,6 @@
     "title": "Services",
     "fields": [
         {
-            "post_type": [
-                "button"
-            ],
-            "taxonomy": [],
-            "allow_null": 0,
-            "multiple": 0,
-            "return_format": "object",
-            "ui": 1,
             "key": "field_5840788ed6943",
             "label": "Service Button",
             "name": "service_button",
@@ -22,114 +14,17 @@
                 "width": "",
                 "class": "",
                 "id": ""
-            }
+            },
+            "post_type": [
+                "button"
+            ],
+            "taxonomy": [],
+            "allow_null": 0,
+            "multiple": 0,
+            "return_format": "object",
+            "ui": 1
         },
         {
-            "sub_fields": [
-                {
-                    "default_value": "",
-                    "maxlength": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "key": "field_58319f3924314",
-                    "label": "Title",
-                    "name": "title",
-                    "type": "text",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    }
-                },
-                {
-                    "default_value": "",
-                    "new_lines": "wpautop",
-                    "maxlength": "",
-                    "placeholder": "",
-                    "rows": "",
-                    "key": "field_58319f4224315",
-                    "label": "Body",
-                    "name": "body",
-                    "type": "textarea",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    }
-                },
-                {
-                    "taxonomy": "work-category",
-                    "field_type": "radio",
-                    "multiple": 0,
-                    "allow_null": 1,
-                    "return_format": "object",
-                    "add_term": 0,
-                    "load_terms": 0,
-                    "save_terms": 0,
-                    "key": "field_58319f4f24316",
-                    "label": "Link",
-                    "name": "link",
-                    "type": "taxonomy",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    }
-                },
-                {
-                    "default_value": "",
-                    "maxlength": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "key": "field_5872744defcc4",
-                    "label": "External Link Button",
-                    "name": "external_link_button",
-                    "type": "text",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    }
-                },
-                {
-                    "default_value": "",
-                    "maxlength": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "key": "field_58727462efcc5",
-                    "label": "External Link",
-                    "name": "external_link",
-                    "type": "text",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    }
-                }
-            ],
-            "min": 0,
-            "max": 0,
-            "layout": "table",
-            "button_label": "Add Service",
-            "collapsed": "field_58319f3924314",
             "key": "field_58319f2524313",
             "label": "Services",
             "name": "services",
@@ -141,7 +36,112 @@
                 "width": "",
                 "class": "",
                 "id": ""
-            }
+            },
+            "collapsed": "field_58319f3924314",
+            "min": 0,
+            "max": 0,
+            "layout": "table",
+            "button_label": "Add Service",
+            "sub_fields": [
+                {
+                    "key": "field_58319f3924314",
+                    "label": "Title",
+                    "name": "title",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_58319f4224315",
+                    "label": "Body",
+                    "name": "body",
+                    "type": "textarea",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "maxlength": "",
+                    "rows": "",
+                    "new_lines": "wpautop"
+                },
+                {
+                    "key": "field_58319f4f24316",
+                    "label": "Link",
+                    "name": "link",
+                    "type": "taxonomy",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "taxonomy": "work-category",
+                    "field_type": "radio",
+                    "multiple": 0,
+                    "allow_null": 1,
+                    "return_format": "object",
+                    "add_term": 0,
+                    "load_terms": 0,
+                    "save_terms": 0
+                },
+                {
+                    "key": "field_5872744defcc4",
+                    "label": "External Link Button",
+                    "name": "external_link_button",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_58727462efcc5",
+                    "label": "External Link",
+                    "name": "external_link",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
+                }
+            ]
         }
     ],
     "location": [
@@ -158,6 +158,13 @@
                 "operator": "==",
                 "value": "template-about.php"
             }
+        ],
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "template-vr.php"
+            }
         ]
     ],
     "menu_order": 0,
@@ -168,5 +175,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1483895917
+    "modified": 1491501659
 }

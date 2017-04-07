@@ -261,9 +261,15 @@ img {
 .menu {
   display: flex;
   position: relative;
+  .menu-item-home{
+    display: none;
+  }
+  .mMenu & .menu-item-home{
+    display: block;
+  }
   &-item {
     padding-left: 45px;
-    &:nth-child(1) {
+    &:nth-child(2) {
       &.current-menu-item,
       &.current-menu-parent {
         & ~ #menuOverlay div {
@@ -271,7 +277,7 @@ img {
         }
       }
     }
-    &:nth-child(2) {
+    &:nth-child(3) {
       &.current-menu-item,
       &.current-menu-parent {
         & ~ #menuOverlay div {
@@ -279,7 +285,7 @@ img {
         }
       }
     }
-    &:nth-child(3) {
+    &:nth-child(4) {
       &.current-menu-item,
       &.current-menu-parent {
         & ~ #menuOverlay div {
@@ -295,7 +301,7 @@ img {
         }
       }
     }
-    &:nth-child(5) {
+    &:nth-child(6) {
       &.current-menu-item,
       &.current-menu-parent {
         & ~ #menuOverlay div {
@@ -303,27 +309,27 @@ img {
         }
       }
     }
-    &:nth-child(1):hover {
+    &:nth-child(2):hover {
       & ~ #menuOverlay div {
         transform: translate(60px, -50%) rotate(-35deg);
       }
     }
-    &:nth-child(2):hover {
+    &:nth-child(3):hover {
       & ~ #menuOverlay div {
         transform: translate(150px, -50%) rotate(-35deg);
       }
     }
-    &:nth-child(3):hover {
+    &:nth-child(4):hover {
       & ~ #menuOverlay div {
         transform: translate(240px, -50%) rotate(-35deg);
       }
     }
-    &:nth-child(4):hover {
+    &:nth-child(5):hover {
       & ~ #menuOverlay div {
         transform: translate(330px, -50%) rotate(-35deg);
       }
     }
-    &:nth-child(5):hover {
+    &:nth-child(6):hover {
       & ~ #menuOverlay div {
         transform: translate(420px, -50%) rotate(-35deg);
       }
@@ -647,6 +653,9 @@ div#ajaxsearchprores1_1.vertical {
         h3 {
           display: block;
           line-height: normal;
+          max-width: 1220px;
+          margin: auto;
+          padding: 0 15px;
           a {
             @extend .light;
             color: #fff;
@@ -698,6 +707,10 @@ div#ajaxsearchprores1_1.vertical {
         text-decoration: underline;
       }
     }
+    #seeAll__link {
+      max-width: 1220px;
+      padding: 0 15px;
+  }
   }
 
   span.highlighted {

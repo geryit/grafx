@@ -3,11 +3,6 @@
     "title": "Home Slider",
     "fields": [
         {
-            "default_value": 1,
-            "message": "",
-            "ui": 0,
-            "ui_on_text": "",
-            "ui_off_text": "",
             "key": "field_582882151accb",
             "label": "Home Slider autoplay",
             "name": "home_slider_autoplay",
@@ -19,16 +14,14 @@
                 "width": "",
                 "class": "",
                 "id": ""
-            }
+            },
+            "message": "",
+            "default_value": 1,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
         },
         {
-            "default_value": 8,
-            "min": "",
-            "max": "",
-            "step": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
             "key": "field_58287f959f1d8",
             "label": "Home Slider duration",
             "name": "home_slider_duration",
@@ -40,193 +33,16 @@
                 "width": "",
                 "class": "",
                 "id": ""
-            }
+            },
+            "default_value": 8,
+            "min": "",
+            "max": "",
+            "step": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         },
         {
-            "sub_fields": [
-                {
-                    "default_value": 1,
-                    "message": "",
-                    "ui": 0,
-                    "ui_on_text": "",
-                    "ui_off_text": "",
-                    "key": "field_582885fefa8dd",
-                    "label": "Show",
-                    "name": "show",
-                    "type": "true_false",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "2",
-                        "class": "",
-                        "id": ""
-                    }
-                },
-                {
-                    "default_value": "",
-                    "maxlength": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "key": "field_582872c327e2d",
-                    "label": "Title",
-                    "name": "title",
-                    "type": "text",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "15",
-                        "class": "",
-                        "id": ""
-                    }
-                },
-                {
-                    "display_format": "F, Y",
-                    "return_format": "F, Y",
-                    "first_day": 1,
-                    "key": "field_5828733827e2f",
-                    "label": "Date",
-                    "name": "date",
-                    "type": "date_picker",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "8",
-                        "class": "",
-                        "id": ""
-                    }
-                },
-                {
-                    "default_value": "",
-                    "maxlength": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "key": "field_5828737827e30",
-                    "label": "Description",
-                    "name": "description",
-                    "type": "text",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    }
-                },
-                {
-                    "default_value": "",
-                    "maxlength": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "key": "field_5828732f27e2e",
-                    "label": "Subtitle",
-                    "name": "subtitle",
-                    "type": "text",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "10",
-                        "class": "",
-                        "id": ""
-                    }
-                },
-                {
-                    "return_format": "url",
-                    "preview_size": "thumbnail",
-                    "library": "all",
-                    "min_width": "",
-                    "min_height": "",
-                    "min_size": "",
-                    "max_width": "",
-                    "max_height": "",
-                    "max_size": "",
-                    "mime_types": "",
-                    "key": "field_582cd8bf1d452",
-                    "label": "First Frame",
-                    "name": "first_frame",
-                    "type": "image",
-                    "instructions": "best: 1280x629 (1280x720, 1920x1080 are also fine)",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    }
-                },
-                {
-                    "return_format": "url",
-                    "library": "all",
-                    "min_size": "",
-                    "max_size": "",
-                    "mime_types": "mp4,mov",
-                    "key": "field_582873a827e31",
-                    "label": "Video",
-                    "name": "video",
-                    "type": "file",
-                    "instructions": "best: 1280x629 (1280x720, 1920x1080 are also fine)",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    }
-                },
-                {
-                    "return_format": "url",
-                    "library": "all",
-                    "min_size": "",
-                    "max_size": "",
-                    "mime_types": "mov,mp4",
-                    "key": "field_58290d54ec8e9",
-                    "label": "Long Video",
-                    "name": "long_video",
-                    "type": "file",
-                    "instructions": "1280x720 or 1920x1080",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    }
-                },
-                {
-                    "post_type": [
-                        "work"
-                    ],
-                    "taxonomy": [],
-                    "allow_null": 0,
-                    "multiple": 0,
-                    "return_format": "object",
-                    "ui": 1,
-                    "key": "field_5871389f66eb1",
-                    "label": "Link",
-                    "name": "link",
-                    "type": "post_object",
-                    "instructions": "If want to link to work instead of video",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    }
-                }
-            ],
-            "min": 0,
-            "max": 0,
-            "layout": "table",
-            "button_label": "Add Slide",
-            "collapsed": "",
             "key": "field_5828729727e2c",
             "label": "Home Slider",
             "name": "home_slider",
@@ -238,7 +54,210 @@
                 "width": "",
                 "class": "",
                 "id": ""
-            }
+            },
+            "collapsed": "",
+            "min": 0,
+            "max": 0,
+            "layout": "row",
+            "button_label": "Add Slide",
+            "sub_fields": [
+                {
+                    "key": "field_582885fefa8dd",
+                    "label": "Show",
+                    "name": "show",
+                    "type": "true_false",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "",
+                    "default_value": 1,
+                    "ui": 0,
+                    "ui_on_text": "",
+                    "ui_off_text": ""
+                },
+                {
+                    "key": "field_582872c327e2d",
+                    "label": "Title",
+                    "name": "title",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_5828733827e2f",
+                    "label": "Date",
+                    "name": "date",
+                    "type": "date_picker",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "display_format": "F, Y",
+                    "return_format": "F, Y",
+                    "first_day": 1
+                },
+                {
+                    "key": "field_58e662df1e2a8",
+                    "label": "Alternate subtitle",
+                    "name": "alternate_subtitle",
+                    "type": "text",
+                    "instructions": "Yellow background (Override date)",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_5828737827e30",
+                    "label": "Description",
+                    "name": "description",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_5828732f27e2e",
+                    "label": "Subtitle",
+                    "name": "subtitle",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_582cd8bf1d452",
+                    "label": "First Frame",
+                    "name": "first_frame",
+                    "type": "image",
+                    "instructions": "best: 1280x629 (1280x720, 1920x1080 are also fine)",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "url",
+                    "preview_size": "thumbnail",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": ""
+                },
+                {
+                    "key": "field_582873a827e31",
+                    "label": "Video",
+                    "name": "video",
+                    "type": "file",
+                    "instructions": "best: 1280x629 (1280x720, 1920x1080 are also fine)",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "url",
+                    "library": "all",
+                    "min_size": "",
+                    "max_size": "",
+                    "mime_types": "mp4,mov"
+                },
+                {
+                    "key": "field_58290d54ec8e9",
+                    "label": "Long Video",
+                    "name": "long_video",
+                    "type": "file",
+                    "instructions": "1280x720 or 1920x1080 (Will use short one if empty)",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "url",
+                    "library": "all",
+                    "min_size": "",
+                    "max_size": "",
+                    "mime_types": "mov,mp4"
+                },
+                {
+                    "key": "field_5871389f66eb1",
+                    "label": "Link",
+                    "name": "link",
+                    "type": "post_object",
+                    "instructions": "If want to link to work instead of video",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "post_type": [
+                        "work"
+                    ],
+                    "taxonomy": [],
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "return_format": "object",
+                    "ui": 1
+                }
+            ]
         }
     ],
     "location": [
@@ -255,6 +274,13 @@
                 "operator": "==",
                 "value": "template-about.php"
             }
+        ],
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "template-vr.php"
+            }
         ]
     ],
     "menu_order": 0,
@@ -265,5 +291,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1483815134
+    "modified": 1491555385
 }

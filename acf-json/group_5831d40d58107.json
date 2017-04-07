@@ -3,11 +3,6 @@
     "title": "Social",
     "fields": [
         {
-            "return_format": "url",
-            "library": "all",
-            "min_size": "",
-            "max_size": "",
-            "mime_types": "mp4,mov",
             "key": "field_5831f433ce3db",
             "label": "Social Video",
             "name": "social_video",
@@ -19,19 +14,14 @@
                 "width": "",
                 "class": "",
                 "id": ""
-            }
+            },
+            "return_format": "url",
+            "library": "all",
+            "min_size": "",
+            "max_size": "",
+            "mime_types": "mp4,mov"
         },
         {
-            "return_format": "url",
-            "preview_size": "thumbnail",
-            "library": "all",
-            "min_width": "",
-            "min_height": "",
-            "min_size": "",
-            "max_width": "",
-            "max_height": "",
-            "max_size": "",
-            "mime_types": "",
             "key": "field_5831f462ce3dc",
             "label": "Social Video First Frame",
             "name": "social_video_first_frame",
@@ -43,54 +33,19 @@
                 "width": "",
                 "class": "",
                 "id": ""
-            }
+            },
+            "return_format": "url",
+            "preview_size": "thumbnail",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
         },
         {
-            "sub_fields": [
-                {
-                    "default_value": "",
-                    "maxlength": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "key": "field_5831d424cb81b",
-                    "label": "Title",
-                    "name": "title",
-                    "type": "text",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    }
-                },
-                {
-                    "default_value": "",
-                    "maxlength": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "key": "field_5831d42fcb81c",
-                    "label": "Link",
-                    "name": "link",
-                    "type": "text",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    }
-                }
-            ],
-            "min": 0,
-            "max": 0,
-            "layout": "table",
-            "button_label": "Add Row",
-            "collapsed": "",
             "key": "field_5831d410cb81a",
             "label": "Social",
             "name": "social",
@@ -102,18 +57,58 @@
                 "width": "",
                 "class": "",
                 "id": ""
-            }
+            },
+            "collapsed": "",
+            "min": 0,
+            "max": 0,
+            "layout": "table",
+            "button_label": "Add Row",
+            "sub_fields": [
+                {
+                    "key": "field_5831d424cb81b",
+                    "label": "Title",
+                    "name": "title",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_5831d42fcb81c",
+                    "label": "Link",
+                    "name": "link",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                }
+            ]
         },
         {
-            "tabs": "text",
-            "toolbar": "basic",
-            "media_upload": 0,
-            "default_value": "139 Fulton St. Suite 709<br>\r\nNew York, NY 10038<br>\r\n<b>E:<\/b> <a class=\"social__link\" href=\"mailto:info@grafx.co\">info@grafx.co<\/a><br>\r\n<b>P:<\/b> 212.571.0100",
-            "delay": 0,
             "key": "field_5840a56439096",
             "label": "Address",
             "name": "address",
-            "type": "wysiwyg",
+            "type": "text",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -121,7 +116,12 @@
                 "width": "",
                 "class": "",
                 "id": ""
-            }
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         }
     ],
     "location": [
@@ -141,5 +141,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1480709969
+    "modified": 1491560523
 }

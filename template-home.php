@@ -23,7 +23,7 @@ get_header(); ?>
           <? if ($v['link']) { ?>
             ng-click="go('<?=get_permalink($v["link"])?>')"
           <? } else { ?>
-            ng-click="vModal.open('<?= $v['long_video'] ?>', '<?= $v['first_frame'] ?>', <?= $i ?>)"
+            ng-click="vModal.open('<?= $v['long_video'] ? $v['long_video'] : $v['video'] ?>', '<?= $v['first_frame'] ?>', <?= $i ?>)"
           <? } ?>
 
         >
@@ -35,7 +35,7 @@ get_header(); ?>
             <? } ?>
             <div class="hSlider__title light"><?= $v['title'] ?></div>
           </div>
-          <div class="hSlider__date"><?= $v['date'] ?></div>
+          <div class="hSlider__date"><?= $v['alternate_subtitle'] ? $v['alternate_subtitle'] : $v['date']?></div>
           <div class="hSlider__msg"><?= $v['description'] ?></div>
         </div>
       </div>

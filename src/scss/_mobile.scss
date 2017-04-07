@@ -1,4 +1,12 @@
 @media (max-width: 1199px) {
+  #wpadminbar{
+    display: none;
+  }
+  .admin-bar{
+     .header, .mMenu{
+       margin-top: 0;
+     }
+  }
   h4 {
     font-size: 14px;
   }
@@ -38,7 +46,7 @@
     transition: .2s left;
     position: relative;
     left: 0;
-    padding-top: 70px;
+    margin-top: 70px;
     //translate3d breaks fixed child divs top pos
     //transform: translate3d(0,0,0);
     .header{
@@ -262,7 +270,9 @@
     top: 20px;
   }
 
-  
+  #back-home{
+    display: none;
+  }
 
 }
 
@@ -290,7 +300,7 @@
   }
   .hSlider__body {
     margin-top: 0;
-    transform: translate(0, -50%) !important; 
+    transform: translate(0, -50%) !important;
     left: 40px;
     right: 40px;
   }
@@ -303,7 +313,7 @@
     white-space: normal;
   }
    .hSlider__title{
-    
+
    }
 
   .hSlider__date {
@@ -322,7 +332,7 @@
   }
 
   .brands__list{
-    
+
   }
   .brands__item{
     height: auto;
@@ -490,7 +500,7 @@
     padding-bottom: 20px;
   }
 
-  
+
 
 
   .contactFooter{

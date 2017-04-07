@@ -298,8 +298,8 @@ module.exports = (grunt) => {
       },
     },
     exec: {
-      wget_remote_dump: {
-        command: 'cd <%= mysql.local.dump_dir %> && wget -nv <%= mysql.remote.save_url %>/remote-<%= timestamp %>.sql <%= mysql.remote.wget_extra_params %>',
+      get_remote_dump: {
+        command: 'scp <%= mysql.remote.username %>@<%= mysql.remote.host %>:<%=mysql.remote.save_path%>/remote-<%= timestamp %>.sql <%= mysql.local.dump_dir %>',
       },
       backup_remote_dump: {
         command: 'cd <%= mysql.local.dump_dir %> && cp remote-<%= timestamp %>.sql remote-backup-<%= timestamp %>.sql',
@@ -377,7 +377,7 @@ module.exports = (grunt) => {
 
   grunt.registerTask('sync_local_db', [
     'sshexec:dump_remote_db',             // dump remote database
-    'exec:wget_remote_dump',              // download remote dump
+    'exec:get_remote_dump',              // download remote dump
     'exec:backup_remote_dump',
     'sshexec:cleanup_remote_dump',          // delete remote dump
     'peach:search_replace_remote_dump',   // search and replace URLs in database
@@ -387,7 +387,7 @@ module.exports = (grunt) => {
 
   grunt.registerTask('sync_remote_db', [
     'sshexec:dump_remote_db',             // dump remote database
-    'exec:wget_remote_dump',              // download remote dump
+    'exec:get_remote_dump',              // download remote dump
     'exec:backup_remote_dump',
     'sshexec:cleanup_remote_dump',          // delete remote dump
     'exec:cleanup_remotes',                 // delete local database dump files

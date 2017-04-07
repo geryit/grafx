@@ -3,11 +3,6 @@
     "title": "Brands",
     "fields": [
         {
-            "default_value": "",
-            "maxlength": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
             "key": "field_586591dee988b",
             "label": "Brands Title",
             "name": "brands_title",
@@ -19,106 +14,14 @@
                 "width": "",
                 "class": "",
                 "id": ""
-            }
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         },
         {
-            "sub_fields": [
-                {
-                    "return_format": "url",
-                    "preview_size": "full",
-                    "library": "all",
-                    "min_width": "",
-                    "min_height": "",
-                    "min_size": "",
-                    "max_width": "",
-                    "max_height": "",
-                    "max_size": "",
-                    "mime_types": "",
-                    "key": "field_58319bcdbb8b3",
-                    "label": "Image",
-                    "name": "image",
-                    "type": "image",
-                    "instructions": "Max width: 320px\r\nMax height: 190px",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    }
-                },
-                {
-                    "post_type": [
-                        "work"
-                    ],
-                    "taxonomy": [
-                        "work-category:post-production",
-                        "work-category:production"
-                    ],
-                    "allow_null": 0,
-                    "multiple": 0,
-                    "return_format": "object",
-                    "ui": 1,
-                    "key": "field_583b6bc62625f",
-                    "label": "Link to work",
-                    "name": "link",
-                    "type": "post_object",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    }
-                },
-                {
-                    "default_value": "",
-                    "maxlength": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "key": "field_586d4c37b1470",
-                    "label": "Custom link",
-                    "name": "custom_link",
-                    "type": "text",
-                    "instructions": "try something like \"?s=lahey\"",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    }
-                },
-                {
-                    "post_type": [
-                        "button"
-                    ],
-                    "taxonomy": [],
-                    "allow_null": 1,
-                    "multiple": 0,
-                    "return_format": "object",
-                    "ui": 1,
-                    "key": "field_5840a70477fd8",
-                    "label": "Button",
-                    "name": "button",
-                    "type": "post_object",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    }
-                }
-            ],
-            "min": 0,
-            "max": 0,
-            "layout": "table",
-            "button_label": "Add Row",
-            "collapsed": "field_58319bcdbb8b3",
             "key": "field_58319ba9bb8b2",
             "label": "Brands",
             "name": "brands",
@@ -130,7 +33,104 @@
                 "width": "",
                 "class": "",
                 "id": ""
-            }
+            },
+            "min": 0,
+            "max": 0,
+            "layout": "table",
+            "button_label": "Add Row",
+            "collapsed": "field_58319bcdbb8b3",
+            "sub_fields": [
+                {
+                    "key": "field_58319bcdbb8b3",
+                    "label": "Image",
+                    "name": "image",
+                    "type": "image",
+                    "instructions": "Max width: 320px\r\nMax height: 190px",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "url",
+                    "preview_size": "full",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": ""
+                },
+                {
+                    "key": "field_583b6bc62625f",
+                    "label": "Link to work",
+                    "name": "link",
+                    "type": "post_object",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "post_type": [
+                        "work"
+                    ],
+                    "taxonomy": [
+                        "work-category:post-production",
+                        "work-category:production"
+                    ],
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "return_format": "object",
+                    "ui": 1
+                },
+                {
+                    "key": "field_586d4c37b1470",
+                    "label": "Custom link",
+                    "name": "custom_link",
+                    "type": "text",
+                    "instructions": "try something like \"?s=lahey\"",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_5840a70477fd8",
+                    "label": "Button",
+                    "name": "button",
+                    "type": "post_object",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "post_type": [
+                        "button"
+                    ],
+                    "taxonomy": [],
+                    "allow_null": 1,
+                    "multiple": 0,
+                    "return_format": "object",
+                    "ui": 1
+                }
+            ]
         }
     ],
     "location": [
@@ -139,6 +139,13 @@
                 "param": "page_template",
                 "operator": "==",
                 "value": "template-home.php"
+            }
+        ],
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "template-vr.php"
             }
         ]
     ],
@@ -150,5 +157,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1483558020
+    "modified": 1491501689
 }

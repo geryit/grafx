@@ -1015,8 +1015,11 @@
     &:before {
       font-size: 40px;
     }
-    &:hover:before {
-      color: $yellow;
+    &:hover{
+      background-color: rgba(0,0,0,.7);
+      &:before {
+        color: $yellow;
+      }
     }
   }
 
@@ -1699,6 +1702,20 @@ body.mModalOn {
   margin: 20px 0;
 }
 
+.admin-bar{
+  .header,.mMenu{
+    margin-top: 32px;
+  }
+}
+
+
+#back-home{
+  color: #fff;
+  font-weight: bold;
+  &:hover{
+    color: $yellow;
+  }
+}
 
 
 

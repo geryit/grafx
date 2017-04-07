@@ -42,7 +42,7 @@
             "name": "main_image",
             "type": "image",
             "instructions": "min : 1180x664 (1280x720 is fine)",
-            "required": 1,
+            "required": 0,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "33.33",
@@ -66,7 +66,7 @@
             "name": "short_description",
             "type": "text",
             "instructions": "",
-            "required": 1,
+            "required": 0,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "66.66",
@@ -813,6 +813,13 @@
                 "operator": "==",
                 "value": "template-reels.php"
             }
+        ],
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "template-vr.php"
+            }
         ]
     ],
     "menu_order": 0,
@@ -823,5 +830,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1490723147
+    "modified": 1491556654
 }

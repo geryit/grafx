@@ -243,6 +243,8 @@ angular.module('grafxApp', ['ui.select', 'ngSanitize', 'ngFileUpload', 'vcRecapt
       scope.vModal = {
         on: false,
         open(url, poster, index) {
+          console.log(url,poster,index)
+
           $('.hSlider').slick('slickPause');
           $(`#hSlider__video__${index}`).each((i, e) => {
             e.pause();
@@ -261,11 +263,11 @@ angular.module('grafxApp', ['ui.select', 'ngSanitize', 'ngFileUpload', 'vcRecapt
           vid.load();
           vid.play();
 
-          vid.on('timeupdate', () => { // chrome fix
-            if (vid.currentTime() === vid.duration()) {
-              scope.vModal.close();
-            }
-          });
+          // vid.on('timeupdate', () => { // chrome fix
+          //   if (vid.currentTime() === vid.duration()) {
+          //     scope.vModal.close();
+          //   }
+          // });
         },
         close(viaCloseBtn) {
           $('.vModal__video').each((i, el) => {
