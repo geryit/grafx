@@ -3,6 +3,8 @@
 **do everytime you reboot**
 ```sh
 git pull
+npm i
+
 brew update && brew upgrade && brew cleanup && brew prune
 node -v #node version should be > 6
 npm i -g npm grunt npm-check
