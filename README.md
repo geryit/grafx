@@ -4,7 +4,9 @@
 ```sh
 git pull
 npm i
+grunt && grunt watch
 
+#these are optional
 brew update && brew upgrade && brew cleanup && brew prune
 node -v #node version should be > 6
 npm i -g npm grunt npm-check
@@ -12,7 +14,6 @@ npm-check -u -g
 npm-check -u
 brew install wget
 mkdir .db #need this to store db dump in local
-grunt && grunt watch
 
 
 #download uploads and plugins and download dump (sync with remote)
