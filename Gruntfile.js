@@ -4,7 +4,7 @@ module.exports = (grunt) => {
   const mozjpeg = require('imagemin-mozjpeg');
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
-    mysql: grunt.file.readJSON('mysql.json'),
+    mysql: grunt.file.readJSON('.mysql.json'),
     timestamp: grunt.template.today('mm-dd-yyyy_HH-MM-ss'),
 
 
