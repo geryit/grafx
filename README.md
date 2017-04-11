@@ -14,6 +14,7 @@ npm-check -u -g
 npm-check -u
 brew install wget
 mkdir .db #need this to store db dump in local
+create .mysql file
 
 
 #download uploads and plugins and download dump (sync with remote)
