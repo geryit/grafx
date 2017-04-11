@@ -4,7 +4,9 @@
 ```sh
 git pull
 npm i
+grunt full-import
 grunt ; grunt watch
+
 
 #these are optional
 brew update && brew upgrade && brew cleanup && brew prune
