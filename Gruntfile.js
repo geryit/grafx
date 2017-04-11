@@ -200,7 +200,7 @@ module.exports = (grunt) => {
         delete: true,
         exclude: ['.git*', '*.scss', 'node_modules', 'bower_components', '.idea', '*.iml', '.DS_Store',
           '.editorconfig', '.gitignore', '*.md', 'bower.json', 'package.json', 'npm-debug.log', 'Gruntfile.js',
-          '.sass-cache', '/src', '.tmp', '*.map', '.db', 'mysql.json'],
+          '.sass-cache', '/src', '.tmp', '*.map', '.db', '.mysql.json'],
         recursive: true,
       },
       // stage: {
