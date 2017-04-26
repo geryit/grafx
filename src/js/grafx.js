@@ -243,7 +243,6 @@ angular.module('grafxApp', ['ui.select', 'ngSanitize', 'ngFileUpload', 'vcRecapt
       scope.vModal = {
         on: false,
         open(url, poster, index) {
-          console.log(url,poster,index)
 
           $('.hSlider').slick('slickPause');
           $(`#hSlider__video__${index}`).each((i, e) => {
@@ -414,25 +413,43 @@ angular.module('grafxApp', ['ui.select', 'ngSanitize', 'ngFileUpload', 'vcRecapt
         });
 
 
-        // console.log(sections);
-
-
         data.g_recaptcha_response = scope.captcha.response;
-        // console.log(data);
 
         const url = `${window.location.href}?appsent=1`;
 
         if (scope.application__form.$valid) {
           http.post(`${templateUrl}/sendmail.php`, data).then(
             (response) => {
-              console.log(response);
               if (response.data === 'success') window.location.href = url;
             },
             () => {
               window.location.href = url;
             });
         } else {
-          console.log('false');
+        }
+      };
+
+
+      scope.submitContact = () => {
+        data.g_recaptcha_response = scope.captcha.response;
+
+        const url = `${window.location.href}?contactSent=1`;
+
+        data.first_name = scope.first_name || '';
+        data.last_name = scope.last_name || '';
+        data.email = scope.email || '';
+        data.msg = scope.msg || '';
+
+        if (scope.contactForm__form.$valid) {
+          http.post(`${templateUrl}/sendcontactemail.php`, data).then(
+            (response) => {
+              if (response.data === 'success') window.location.href = url;
+            },
+            () => {
+              window.location.href = url;
+            });
+        } else {
+          console.log('invalid');
         }
       };
 

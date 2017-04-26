@@ -31,7 +31,7 @@ if ($recaptcha_response) {
     $tools = $request->tools;
     $interested = $request->interested;
 
-    $to = 'geryit@gmail.com, cagan@grafx.co';
+    $to = 'cagan@grafx.co';
 
 // Subject
     $subject = 'Job Application from grafx.co';
