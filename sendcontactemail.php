@@ -31,16 +31,16 @@ if ($recaptcha_response) {
 <body>
   <table rules="all" style="border-color: #666;" cellpadding="10">
     <tr style="background: #eee;">
-      <td><b>First name :</b></td>' . strip_tags($first_name) . '</td>
+      <td><b>First name :</b></td><td>' . strip_tags($first_name) . '</td>
     </tr>
     <tr>
-      <td><b>Last name :</b></td>' . strip_tags($last_name) . '</td>
+      <td><b>Last name :</b></td><td>' . strip_tags($last_name) . '</td>
+    </tr>
+    <tr style="background: #eee;">
+      <td><b>Email :</b></td><td>' . strip_tags($email) . '</td>
     </tr>
     <tr>
-      <td><b>Email :</b></td>' . strip_tags($email) . '</td>
-    </tr>
-    <tr>
-      <td><b>Message :</b></td>' . htmlentities($msg) . '</td>
+      <td><b>Message :</b></td><td>' . htmlentities($msg) . '</td>
     </tr>
   </table>
 </body>
