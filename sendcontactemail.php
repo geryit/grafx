@@ -20,7 +20,7 @@ if ($recaptcha_response) {
     $email = $request->email;
     $msg = $request->msg;
 
-    $to = 'cagan@grafx.co';
+    $to = 'info@grafx.co';
 
 // Subject
     $subject = 'Contact form from grafx.co';
@@ -28,23 +28,19 @@ if ($recaptcha_response) {
 // Message
     $message = '
 <html>
-<head>
-  <title>Contact form from grafx.co</title>
-</head>
 <body>
-  <p>Contact form from grafx.co</p>
-  <table>
-    <tr>
-      <td><b>First name :</b></td>' . $first_name . '</td>
+  <table rules="all" style="border-color: #666;" cellpadding="10">
+    <tr style="background: #eee;">
+      <td><b>First name :</b></td>' . strip_tags($first_name) . '</td>
     </tr>
     <tr>
-      <td><b>Last name :</b></td>' . $last_name . '</td>
+      <td><b>Last name :</b></td>' . strip_tags($last_name) . '</td>
     </tr>
     <tr>
-      <td><b>Email :</b></td>' . $email . '</td>
+      <td><b>Email :</b></td>' . strip_tags($email) . '</td>
     </tr>
     <tr>
-      <td><b>Message :</b></td>' . $msg . '</td>
+      <td><b>Message :</b></td>' . htmlentities($msg) . '</td>
     </tr>
   </table>
 </body>
@@ -53,7 +49,8 @@ if ($recaptcha_response) {
 
 // To send HTML mail, the Content-type header must be set
     $headers[] = 'MIME-Version: 1.0';
-    $headers[] = 'Content-type: text/html; charset=iso-8859-1';
+    $headers[] = 'Content-type: text/html; charset=UTF-8';
+    $headers[] = 'From: info@grafx.co<info@grafx.co>';
 
 
 // Mail it
