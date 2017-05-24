@@ -2,6 +2,7 @@
 
 **do everytime you reboot**
 ```sh
+grafx
 git pull
 npm i
 grunt full-import
