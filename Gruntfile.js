@@ -305,7 +305,7 @@ module.exports = (grunt) => {
         command: 'cd <%= mysql.local.dump_dir %> && cp remote-<%= timestamp %>.sql remote-backup-<%= timestamp %>.sql',
       },
       import_migrated_remote_dump: {
-        command: 'mysql -u <%= mysql.local.dbuser %> <%= mysql.local.dbname %> -p < <%= mysql.local.dump_dir %>/remote_migrated-<%= timestamp %>.sql',
+        command: 'mysql -u <%= mysql.local.dbuser %> <%= mysql.local.dbname %> < <%= mysql.local.dump_dir %>/remote_migrated-<%= timestamp %>.sql',
       },
       cleanup_local: {
         command: 'cd <%= mysql.local.dump_dir %> &&  rm -rf local-<%= timestamp %>.sql local_migrated-<%= timestamp %>.sql',
@@ -314,7 +314,7 @@ module.exports = (grunt) => {
         command: 'cd <%= mysql.local.dump_dir %> && rm -rf remote-<%= timestamp %>.sql remote_migrated-<%= timestamp %>.sql',
       },
       dump_local_db: {
-        command: 'mysqldump -u <%= mysql.local.dbuser %> <%= mysql.local.dbname %> -p<%= mysql.local.dbpass %> > <%= mysql.local.dump_dir %>/local-<%= timestamp %>.sql',
+        command: 'mysqldump -u <%= mysql.local.dbuser %> <%= mysql.local.dbname %> > <%= mysql.local.dump_dir %>/local-<%= timestamp %>.sql',
       },
       scp_local_dump: {
         command: 'scp <%= mysql.local.dump_dir %>/local_migrated-<%= timestamp %>.sql <%= mysql.remote.username %>@<%= mysql.remote.host %>:<%= mysql.remote.save_path %>',
