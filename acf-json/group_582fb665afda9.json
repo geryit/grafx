@@ -590,11 +590,8 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "min": "",
-                            "max": "",
-                            "button_label": "Add Slider Item",
-                            "layouts": [
-                                {
+                            "layouts": {
+                                "583034f956aa5": {
                                     "key": "583034f956aa5",
                                     "name": "video",
                                     "label": "Video",
@@ -647,7 +644,7 @@
                                     "min": "",
                                     "max": ""
                                 },
-                                {
+                                "5830356204042": {
                                     "key": "5830356204042",
                                     "name": "image",
                                     "label": "Image",
@@ -680,8 +677,59 @@
                                     ],
                                     "min": "",
                                     "max": ""
+                                },
+                                "592df777187cb": {
+                                    "key": "592df777187cb",
+                                    "name": "kuula",
+                                    "label": "Kuula",
+                                    "display": "table",
+                                    "sub_fields": [
+                                        {
+                                            "key": "field_592df777187cc",
+                                            "label": "Url",
+                                            "name": "url",
+                                            "type": "text",
+                                            "instructions": "eg: https:\/\/kuula.co\/share\/7frwW?logo=0",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "default_value": "",
+                                            "placeholder": "",
+                                            "prepend": "",
+                                            "append": "",
+                                            "maxlength": ""
+                                        },
+                                        {
+                                            "key": "field_592dfcb02072a",
+                                            "label": "Height",
+                                            "name": "height",
+                                            "type": "text",
+                                            "instructions": "eg: 640",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "default_value": 640,
+                                            "placeholder": "",
+                                            "prepend": "",
+                                            "append": "",
+                                            "maxlength": ""
+                                        }
+                                    ],
+                                    "min": "",
+                                    "max": ""
                                 }
-                            ]
+                            },
+                            "button_label": "Add Slider Item",
+                            "min": "",
+                            "max": ""
                         }
                     ],
                     "min": "",
@@ -830,5 +878,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1491556654
+    "modified": 1496186062
 }
