@@ -1010,6 +1010,7 @@
       left: 40px;
       &:before {
         content: $icon-l-arrow2;
+  margin-left: -5px;
       }
     }
     &__next {
@@ -1017,6 +1018,7 @@
       right: 40px;
       &:before {
         content: $icon-r-arrow2;
+        margin-left: 5px;
       }
     }
     &:before {
