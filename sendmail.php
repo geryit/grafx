@@ -44,51 +44,51 @@ if ($recaptcha_response) {
 </head>
 <body>
   <p>Job Application from grafx.co</p>
-  <table>
+  <table cellpadding="5">
     <tr>
-      <td><b>First name :</b></td>' . $first_name . '</td>
+      <td><b>First name :</b> ' . $first_name . '</td>
     </tr>
     <tr>
-      <td><b>Last name :</b></td>' . $last_name . '</td>
+      <td><b>Last name :</b> ' . $last_name . '</td>
     </tr>
     <tr>
-      <td><b>Email :</b></td>' . $email . '</td>
+      <td><b>Email :</b> ' . $email . '</td>
     </tr>
     <tr>
-      <td><b>Phone :</b></td>' . $phone . '</td>
+      <td><b>Phone :</b> ' . $phone . '</td>
     </tr>
     <tr>
-      <td><b>Address1 :</b></td>' . $address1 . '</td>
+      <td><b>Address1 :</b> ' . $address1 . '</td>
     </tr>
     <tr>
-      <td><b>Address2  :</b></td>' . $address2 . '</td>
+      <td><b>Address2  :</b> ' . $address2 . '</td>
     </tr>
     <tr>
-      <td><b>City  :</b></td>' . $city . '</td>
+      <td><b>City  :</b> ' . $city . '</td>
     </tr>
     <tr>
-      <td><b>State  :</b></td>' . $state . '</td>
+      <td><b>State  :</b> ' . $state . '</td>
     </tr>
     <tr>
-      <td><b>Zip  :</b></td>' . $zip . '</td>
+      <td><b>Zip  :</b> ' . $zip . '</td>
     </tr>
     <tr>
-      <td><b>Country :</b></td>' . $country . '</td>
+      <td><b>Country :</b> ' . $country . '</td>
     </tr>
     <tr>
-      <td><b>Portfolio :</b></td>' . $portfolio . '</td>
+      <td><b>Portfolio :</b> ' . $portfolio . '</td>
     </tr>
     <tr>
-      <td><b>Resume :</b></td><a href="' . $resume . '">' . $resume . '</a></td>
+      <td><b>Resume :</b> <a href="' . $resume . '">' . $resume . '</a></td>
     </tr>
     <tr>
-      <td><b>Capabilities :</b></td>' . $caps . '</td>
+      <td><b>Capabilities :</b> ' . $caps . '</td>
     </tr>
     <tr>
-      <td><b>Tools :</b></td>' . $tools . '</td>
+      <td><b>Tools :</b> ' . $tools . '</td>
     </tr>
     <tr>
-      <td><b>Interested In :</b></td>' . $interested . '</td>
+      <td><b>Interested In :</b> ' . $interested . '</td>
     </tr>
     
   </table>
