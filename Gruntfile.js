@@ -91,8 +91,8 @@ module.exports = (grunt) => {
         map: false,
         processors: [
           require('pixrem')(), // add fallbacks for rem units
-          require('autoprefixer')({ browsers: 'last 10 versions' }), // add vendor prefixes
-          require('cssnano')({ discardComments: { removeAll: true } }), // minify the result
+          require('autoprefixer')({browsers: 'last 10 versions'}), // add vendor prefixes
+          require('cssnano')({discardComments: {removeAll: true}}), // minify the result
         ],
       },
       dist: {
@@ -155,7 +155,7 @@ module.exports = (grunt) => {
         options: {                       // Target options
           optimizationLevel: 3,
           progressive: true,
-          svgoPlugins: [{ removeViewBox: false }],
+          svgoPlugins: [{removeViewBox: false}],
           use: [require('imagemin-pngquant')()],
         }, // Another target
         files: [{
@@ -200,7 +200,8 @@ module.exports = (grunt) => {
         delete: true,
         exclude: ['.git*', '*.scss', 'node_modules', 'bower_components', '.idea', '*.iml', '.DS_Store',
           '.editorconfig', '.gitignore', '*.md', 'bower.json', 'package.json', 'npm-debug.log', 'Gruntfile.js',
-          '.sass-cache', '/src', '.tmp', '*.map', '.db', '.mysql.json'],
+          '.sass-cache', 'src', '.tmp', '*.map', '.db', '.mysql.json', 'yarn.lock', 'package-lock.json', '.babelrc',
+          '.eslintrc'],
         recursive: true,
       },
       // stage: {

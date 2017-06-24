@@ -289,15 +289,15 @@ img {
       &.current-menu-item,
       &.current-menu-parent {
         & ~ #menuOverlay div {
-          transform: translate(240px, -50%) rotate(-35deg);
+          transform: translate(260px, -50%) rotate(-35deg);
         }
       }
     }
-    &:nth-child(4) {
+    &:nth-child(5) {
       &.current-menu-item,
       &.current-menu-parent {
         & ~ #menuOverlay div {
-          transform: translate(330px, -50%) rotate(-35deg);
+          transform: translate(360px, -50%) rotate(-35deg);
         }
       }
     }
@@ -305,7 +305,15 @@ img {
       &.current-menu-item,
       &.current-menu-parent {
         & ~ #menuOverlay div {
-          transform: translate(420px, -50%) rotate(-35deg);
+          transform: translate(450px, -50%) rotate(-35deg);
+        }
+      }
+    }
+    &:nth-child(7) {
+      &.current-menu-item,
+      &.current-menu-parent {
+        & ~ #menuOverlay div {
+          transform: translate(540px, -50%) rotate(-35deg);
         }
       }
     }
@@ -321,17 +329,22 @@ img {
     }
     &:nth-child(4):hover {
       & ~ #menuOverlay div {
-        transform: translate(240px, -50%) rotate(-35deg);
+        transform: translate(260px, -50%) rotate(-35deg);
       }
     }
     &:nth-child(5):hover {
       & ~ #menuOverlay div {
-        transform: translate(330px, -50%) rotate(-35deg);
+        transform: translate(360px, -50%) rotate(-35deg);
       }
     }
     &:nth-child(6):hover {
       & ~ #menuOverlay div {
-        transform: translate(420px, -50%) rotate(-35deg);
+        transform: translate(450px, -50%) rotate(-35deg);
+      }
+    }
+    &:nth-child(7):hover {
+      & ~ #menuOverlay div {
+        transform: translate(540px, -50%) rotate(-35deg);
       }
     }
 

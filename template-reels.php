@@ -9,7 +9,7 @@ get_header(); ?>
       <ul class="headItems headItems--about">
 
         <li class="headItems__item">
-          <span class="headItems__link light active">Reels</span>
+          <span class="headItems__link light active"><? the_title();?></span>
         </li>
       </ul>
 
