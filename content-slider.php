@@ -13,7 +13,15 @@
                     <? if (get_row_layout() == 'image') {
                         ?>
                         <div class="cSlider__item cSlider__item--img">
-                            <img class="cSlider__item__img" src="<?= get_sub_field('image') ?>?<?= VER ?>" alt="">
+
+                            <? if(get_sub_field('image')['caption']){ ?>
+                                <div class="cSlider__caption">
+                                    <?=get_sub_field('image')['caption']?>
+                                </div>
+                            <? }?>
+
+                            <img class="cSlider__item__img" src="<?= get_sub_field('image')['url']
+                                    ?>?<?= VER ?>" alt="">
                         </div>
 
                     <? } else if (get_row_layout() == 'video') { ?>

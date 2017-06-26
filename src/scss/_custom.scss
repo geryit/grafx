@@ -51,7 +51,7 @@
     &:before {
       content: '';
       position: absolute;
-      background: rgba(25,29,34,.75);
+      background: rgba(25, 29, 34, .75);
       top: -120em;
       left: -120em;
       bottom: -120em;
@@ -922,7 +922,7 @@
   &__item {
     width: 50%;
     position: relative;
-    &--imgGif{
+    &--imgGif {
       display: none;
     }
     //.vjs-waiting {
@@ -944,7 +944,7 @@
 
 .halfWidthText {
   margin: 80px 0;
-  &__head{
+  &__head {
     min-height: 18px;
   }
   &__item {
@@ -980,16 +980,23 @@
       height: 100%;
       box-shadow: 0 -6px 15px rgba(0, 0, 0, 0.25) inset;
     }
-    &.no-before:before{
+    &.no-before:before {
       display: none;
     }
   }
   &__item__img {
     width: 100%;
   }
-  &__item--kuula iframe {
-    width: 100%;
-    height: 640px;
+  &__item--kuula {
+    position: relative;
+    padding-bottom: 56.25%;
+    iframe {
+      width: 100%;
+      height: 100% !important;
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
   }
   &__arrow {
     position: absolute;
@@ -1010,7 +1017,7 @@
       left: 40px;
       &:before {
         content: $icon-l-arrow2;
-  margin-left: -5px;
+        margin-left: -5px;
       }
     }
     &__next {
@@ -1024,12 +1031,21 @@
     &:before {
       font-size: 40px;
     }
-    &:hover{
-      background-color: rgba(0,0,0,.7);
+    &:hover {
+      background-color: rgba(0, 0, 0, .7);
       &:before {
         color: $yellow;
       }
     }
+  }
+  &__caption{
+    position: absolute;
+    background: rgba(0, 0, 0, 0.8);
+    width: 100%;
+    bottom: 0;
+    padding: 30px;
+    color: #fff;
+    font-size: 22px;
   }
 
 }
@@ -1637,7 +1653,7 @@ body.mModalOn {
     top: -100px;
     transform: translateX(-50%);
     text-align: left;
-    &.pluses2{
+    &.pluses2 {
       top: auto;
       bottom: -170px;
     }
@@ -1649,24 +1665,24 @@ body.mModalOn {
 }
 
 .reels {
-    margin-top: 40px;
-    &__item {
-      margin-top: 80px;
+  margin-top: 40px;
+  &__item {
+    margin-top: 80px;
   }
-  &__title{
+  &__title {
     margin-bottom: 20px;
   }
 }
 
-.reelsItems{
+.reelsItems {
   margin: 30px 0;
-  &__head{
+  &__head {
     color: #848484;
     font-weight: normal;
     font-size: 18px;
     padding: 0 10px;
   }
-  &__list{
+  &__list {
     display: flex;
     margin-top: 20px;
     flex-wrap: wrap;
@@ -1693,12 +1709,12 @@ body.mModalOn {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
     color: #fff;
     font-size: 24px;
     display: flex;
     align-items: center;
-    &:hover{
+    &:hover {
       color: $yellow;
     }
   }
@@ -1707,43 +1723,41 @@ body.mModalOn {
   }
 }
 
-.imageForMobile{
+.imageForMobile {
   display: none;
   margin: 20px 0;
 }
 
-.admin-bar{
-  .header,.mMenu{
+.admin-bar {
+  .header, .mMenu {
     margin-top: 32px;
   }
 }
 
-
-#back-home{
+#back-home {
   color: #fff;
   font-weight: bold;
-  &:hover{
+  &:hover {
     color: $yellow;
   }
 }
 
-
-.contactForm{
+.contactForm {
   padding: 60px 0;
   &__note {
     @extend .light;
     color: #7f8385;
     margin-top: 8px;
   }
-  &__form{
+  &__form {
     margin-top: 60px;
     display: flex;
   }
-  &__left{
+  &__left {
     flex: 1;
     padding-right: 20px;
   }
-  &__right{
+  &__right {
     flex: 1;
     padding-left: 20px;
   }
@@ -1768,7 +1782,7 @@ body.mModalOn {
       border-color: $yellow;
     }
   }
-  &__textarea{
+  &__textarea {
     height: 215px;
     border: 1px solid #b0b0b0;
     margin-top: 20px;
