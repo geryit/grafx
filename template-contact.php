@@ -17,7 +17,8 @@ get_header(); ?>
 
     </div>
 
-    <?= do_shortcode('[wpgmza id="2"]'); ?>
+    <div class="desktop-only"><?= do_shortcode('[wpgmza id="2"]'); ?></div>
+    <div class="mobile-only"><?= do_shortcode('[wpgmza id="3"]'); ?></div>
 
     <div class="contactForm">
         <div class="container">

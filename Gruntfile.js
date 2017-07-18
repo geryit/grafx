@@ -373,8 +373,8 @@ module.exports = (grunt) => {
   });
   grunt.registerTask('default', [
     'sass:dev',
-    'newer:browserify:dev',
-    'newer:imagemin', 'newer:copy']);
+    'browserify:dev',
+    'imagemin', 'copy']);
 
   grunt.registerTask('sync_local_db', [
     'sshexec:dump_remote_db',             // dump remote database
@@ -411,11 +411,11 @@ module.exports = (grunt) => {
   grunt.registerTask('build', [
     // 'clean',
     'sass:dist',
-    'newer:postcss',
-    'newer:browserify:dist',
-    'newer:uglify',
-    'newer:imagemin',
-    'newer:copy',
+    'postcss',
+    'browserify:dist',
+    'uglify',
+    'imagemin',
+    'copy',
     'cachebreaker',
   ]);
   grunt.registerTask('deploy', [

@@ -3,11 +3,6 @@
     "title": "Reel",
     "fields": [
         {
-            "default_value": "",
-            "maxlength": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
             "key": "field_58740797e8a33",
             "label": "Reel Category page title",
             "name": "reel_category_page_title",
@@ -19,37 +14,18 @@
                 "width": "",
                 "class": "",
                 "id": ""
-            }
-        },
-        {
+            },
             "default_value": "",
             "maxlength": "",
             "placeholder": "",
             "prepend": "",
-            "append": "",
-            "key": "field_5874072326ccc",
-            "label": "Reel Title",
-            "name": "reel_title",
-            "type": "text",
-            "instructions": "Title in thumbnail",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            }
+            "append": ""
         },
         {
-            "default_value": "",
-            "maxlength": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "key": "field_587408508d8ac",
-            "label": "Button Label",
-            "name": "button_label",
-            "type": "text",
+            "key": "field_596d552ff2002",
+            "label": "Reels",
+            "name": "reels",
+            "type": "repeater",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -57,15 +33,44 @@
                 "width": "",
                 "class": "",
                 "id": ""
-            }
+            },
+            "collapsed": "",
+            "min": 0,
+            "max": 0,
+            "layout": "table",
+            "button_label": "",
+            "sub_fields": [
+                {
+                    "key": "field_596d55d5a54c7",
+                    "label": "Page",
+                    "name": "page",
+                    "type": "post_object",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "post_type": [
+                        "page"
+                    ],
+                    "taxonomy": [],
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "return_format": "object",
+                    "ui": 1
+                }
+            ]
         }
     ],
     "location": [
         [
             {
-                "param": "page_template",
+                "param": "options_page",
                 "operator": "==",
-                "value": "template-reels.php"
+                "value": "acf-options"
             }
         ]
     ],
@@ -77,5 +82,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1483999318
+    "modified": 1500337648
 }

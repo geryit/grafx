@@ -51,34 +51,7 @@ if (get_query_var('order')) $order = get_query_var('order'); else $order = 'DESC
 
     <div class="container">
 
-        <div class="reelsItems">
-            <h5 class="reelsItems__head"><?= get_field('reel_category_page_title', REELPAGEID); ?></h5>
-
-
-            <div
-                    class="works__item"
-                    ng-click="go('<?= get_permalink(REELPAGEID) ?>')">
-                <div class="works__inner"
-                     style="background-image: url(<?= get_field('main_image', REELPAGEID); ?>?<?= VER ?>)">
-          <span class="works__inner__cornerTitle"
-                style="color: <?= get_field('corner_title_color', REELPAGEID); ?>"><?= get_field('reel_title', REELPAGEID); ?></span>
-                    <div class="works__inner__items">
-                        <span class="works__inner__title"><?= get_field('reel_title', REELPAGEID); ?></span>
-                        <span
-                                class="works__inner__desc light"><?= get_field('short_description', REELPAGEID); ?></span>
-                        <a
-                                href="<?= get_permalink(REELPAGEID) ?>"
-                                class="diagonalBtn works__inner__btn">
-                            <span><?= get_field('button_label', REELPAGEID); ?></span>
-                        </a>
-                    </div>
-
-                </div>
-
-            </div>
-
-
-        </div>
+        <? get_template_part('part', 'reels');?>
 
         <div class="works works--orderBy-<?= $orderby ?> works--cats">
             <?

@@ -184,6 +184,26 @@ $(document).ready(() => {
   }))();
 
   $('.menu').append('<div id="menuOverlay"><div/></div>');
+  const currentEl = $('#menu-header-1 .current-menu-item');
+  const overlay = $('#menuOverlay div');
+
+  const moveOverlay = (el) => {
+    const ow = el.outerWidth();
+    const w = el.width();
+
+    overlay.css('transform', `translate(${(el.position().left + ow) - (w / 2) - 10}px, -50%) rotate(-35deg)`);
+  };
+
+  if (currentEl.length) moveOverlay(currentEl);
+
+  $('#menu-header-1 li').each((i, el) => {
+    $(el).hover(
+      () => {
+        if ($(el).length) moveOverlay($(el));
+      }, () => {
+      if (currentEl.length) moveOverlay(currentEl);
+    });
+  });
 
   stickyHeaders.load($('.works__head'));
 
@@ -243,7 +263,6 @@ angular.module('grafxApp', ['ui.select', 'ngSanitize', 'ngFileUpload', 'vcRecapt
       scope.vModal = {
         on: false,
         open(url, poster, index) {
-
           $('.hSlider').slick('slickPause');
           $(`#hSlider__video__${index}`).each((i, e) => {
             e.pause();
@@ -425,7 +444,6 @@ angular.module('grafxApp', ['ui.select', 'ngSanitize', 'ngFileUpload', 'vcRecapt
             () => {
               window.location.href = url;
             });
-        } else {
         }
       };
 

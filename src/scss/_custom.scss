@@ -1674,52 +1674,20 @@ body.mModalOn {
   }
 }
 
-.reelsItems {
+.reelsContainer {
   margin: 30px 0;
+  position: relative;
+  z-index: 10;
   &__head {
     color: #848484;
     font-weight: normal;
     font-size: 18px;
     padding: 0 10px;
   }
-  &__list {
+  &__list{
     display: flex;
     margin-top: 20px;
     flex-wrap: wrap;
-  }
-  &__item {
-    width: 50%;
-    padding: 10px;
-  }
-  &__link {
-    display: block;
-    background-size: cover;
-    background-position: center;
-    padding-bottom: 56.25%;
-    position: relative;
-    &:before {
-      content: '';
-      position: absolute;
-      background: rgba(0, 0, 0, 0.6);
-      width: 100%;
-      height: 100%;
-    }
-  }
-  &__inner {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: #fff;
-    font-size: 24px;
-    display: flex;
-    align-items: center;
-    &:hover {
-      color: $yellow;
-    }
-  }
-  &__title {
-    margin-left: 10px;
   }
 }
 

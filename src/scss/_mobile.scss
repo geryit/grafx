@@ -1,3 +1,14 @@
+@media (max-width: 992px) {
+  .desktop-only{
+    display: none;
+  }
+}
+@media (min-width: 991px) {
+  .mobile-only{
+    display: none;
+  }
+}
+
 @media (max-width: 1199px) {
   #wpadminbar{
     display: none;
@@ -254,11 +265,13 @@
     margin-bottom: 20px;
   }
   .imageVideoSet__item{
+    
+    &--video,
+    &--img{
+      display: none;
+    }
     &--imgGif {
       display: block;
-    }
-    &--video{
-      display: none;
     }
   }
   .cSliderWrap{
