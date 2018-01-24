@@ -122,66 +122,66 @@ $(document).ready(() => {
   });
 
 
-  const stickyHeaders = ((() => {
-    const $window = $(window);
-    let $stickies;
-    const mainHeaderHeight = $('.header').outerHeight();
-
-    const load = (stickies) => {
-      if (typeof stickies === 'object' && stickies.length > 0) {
-        $stickies = stickies.each((i, el) => {
-          const e = el;
-          const $thisSticky = $(e).wrap('<div class="works__headWrap" />');
-
-          $thisSticky
-            .data('originalPosition', $thisSticky.offset().top)
-            .data('originalHeight', $thisSticky.outerHeight())
-            .parent()
-            .height($thisSticky.outerHeight());
-        });
-
-        $window.off('scroll.stickies').on('scroll.stickies', () => {
-          _whenScrolling();
-        });
-      }
-    };
-
-    let _whenScrolling = () => {
-      $stickies.each((i, el) => {
-        const e = el;
-        const $thisSticky = $(e);
-        const $stickyPosition = $thisSticky.data('originalPosition');
-
-        if ($stickyPosition <= $window.scrollTop() + mainHeaderHeight) {
-          const $nextSticky = $stickies.eq(i + 1);
-          const $nextStickyPosition = $nextSticky.data('originalPosition') - $thisSticky.data('originalHeight');
-
-          $thisSticky.addClass('fixed');
-          $('.works--cats').addClass('pos-s');
-
-
-          if ($nextSticky.length > 0 && $thisSticky.offset().top >= $nextStickyPosition) {
-            $thisSticky.addClass('absolute').css('top', $nextStickyPosition);
-            // console.log(1)
-          }
-        } else {
-          const $prevSticky = $stickies.eq(i - 1);
-
-          $thisSticky.removeClass('fixed');
-
-
-          if ($prevSticky.length > 0 && $window.scrollTop() + mainHeaderHeight <= $thisSticky.data('originalPosition') - $thisSticky.data('originalHeight')) {
-            $prevSticky.removeClass('absolute').removeAttr('style');
-            // console.log(2)
-          }
-        }
-      });
-    };
-
-    return {
-      load,
-    };
-  }))();
+  // const stickyHeaders = ((() => {
+  //   const $window = $(window);
+  //   let $stickies;
+  //   const mainHeaderHeight = $('.header').outerHeight();
+  //
+  //   const load = (stickies) => {
+  //     if (typeof stickies === 'object' && stickies.length > 0) {
+  //       $stickies = stickies.each((i, el) => {
+  //         const e = el;
+  //         const $thisSticky = $(e).wrap('<div class="works__headWrap" />');
+  //
+  //         $thisSticky
+  //           .data('originalPosition', $thisSticky.offset().top)
+  //           .data('originalHeight', $thisSticky.outerHeight())
+  //           .parent()
+  //           .height($thisSticky.outerHeight());
+  //       });
+  //
+  //       $window.off('scroll.stickies').on('scroll.stickies', () => {
+  //         _whenScrolling();
+  //       });
+  //     }
+  //   };
+  //
+  //   let _whenScrolling = () => {
+  //     $stickies.each((i, el) => {
+  //       const e = el;
+  //       const $thisSticky = $(e);
+  //       const $stickyPosition = $thisSticky.data('originalPosition');
+  //
+  //       if ($stickyPosition <= $window.scrollTop() + mainHeaderHeight) {
+  //         const $nextSticky = $stickies.eq(i + 1);
+  //         const $nextStickyPosition = $nextSticky.data('originalPosition') - $thisSticky.data('originalHeight');
+  //
+  //         $thisSticky.addClass('fixed');
+  //         $('.works--cats').addClass('pos-s');
+  //
+  //
+  //         if ($nextSticky.length > 0 && $thisSticky.offset().top >= $nextStickyPosition) {
+  //           $thisSticky.addClass('absolute').css('top', $nextStickyPosition);
+  //           // console.log(1)
+  //         }
+  //       } else {
+  //         const $prevSticky = $stickies.eq(i - 1);
+  //
+  //         $thisSticky.removeClass('fixed');
+  //
+  //
+  //         if ($prevSticky.length > 0 && $window.scrollTop() + mainHeaderHeight <= $thisSticky.data('originalPosition') - $thisSticky.data('originalHeight')) {
+  //           $prevSticky.removeClass('absolute').removeAttr('style');
+  //           // console.log(2)
+  //         }
+  //       }
+  //     });
+  //   };
+  //
+  //   return {
+  //     load,
+  //   };
+  // }))();
 
   $('.menu').append('<div id="menuOverlay"><div/></div>');
   const currentEl = $('#menu-header-1 .current-menu-item');
@@ -205,7 +205,7 @@ $(document).ready(() => {
     });
   });
 
-  stickyHeaders.load($('.works__head'));
+  // stickyHeaders.load($('.works__head'));
 
   $('.cSlider').slick({
     prevArrow: '<button class="cSlider__arrow cSlider__arrow__prev"></button>',

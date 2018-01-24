@@ -1,5 +1,71 @@
 # grafxwp
 
+**Put this to your `.bash_profile` and restart terminal**
+```
+ssh-add -l | grep "The agent has no identities" > /dev/null
+ if [ $status -eq 0 ]
+     ssh-add
+ end
+```
+
+download wordpress and rename as `grafxwp` and clone theme from github into `/themes` folder
+
+download and put `wp-config.php` to root : https://gist.github.com/geryit/ff9dd3f6037f6be49d7c0723fb65e085
+
+add this to `httpd-vhosts.conf`:
+```apache
+<Directory "/Users/goksel/Sites/grafxwp">
+Allow From All
+AllowOverride All
+Options +Indexes
+Require all granted
+</Directory>
+
+<VirtualHost *:80>
+    ServerName "grafxwp"
+    ServerAlias "grafxwp.*.*.*.*.xip.io"
+    DocumentRoot "/Users/goksel/Sites/grafxwp"
+</VirtualHost>
+
+```
+
+`hosts` file should have: `127.0.0.1	localhost grafxwp`
+
+install node-sass : `npm install -g node-gyp`
+
+
+
+**create db `grafx` on local**
+
+**create `.mysql.json` with this content (change with your settings):**
+```
+{
+  "remote": {
+    "site_url": "grafx.co",
+    "dbname": "grafx",
+    "dbuser": "root",
+    "dbpass": "tmlxvqv5",
+    "dbhost": "127.0.0.1",
+    "host": "54.80.56.240",
+    "username": "ubuntu",
+    "save_path": "/home/ubuntu/grafxwp/wp-content/themes/grafx/.db",
+    "save_url": "https://grafx.co/wp-content/themes/grafx/.db"
+  },
+  "local": {
+    "site_url": "grafxwp",
+    "dbname": "grafx",
+    "dbuser": "root",
+    "dbpass": "",
+    "dbhost": "127.0.0.1",
+    "wpcontent_dir": "~/Sites/grafxwp/wp-content/",
+    "dump_dir": "./.db"
+  }
+}
+```
+
+go http://grafxwp/?pasam99=1 > settings > permalinks > select plain > save > select post name > save
+
+
 **do everytime you reboot**
 ```sh
 grafx

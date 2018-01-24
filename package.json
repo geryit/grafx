@@ -22,7 +22,7 @@
     "selectize": "^0.12.4",
     "slick-carousel": "^1.6.0",
     "ui-select": "^0.19.6",
-    "video.js": "^5.20.1"
+    "video.js": "^5.20.2"
   },
   "devDependencies": {
     "autoprefixer": "^6.7.7",

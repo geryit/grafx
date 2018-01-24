@@ -81,7 +81,13 @@ function get_term_url($i){
 
 
     <div class="container">
-        <div class="works works--orderBy-<?= $orderby ?> works--cats">
+      <h5 class="reelsContainer__head mt20">
+        <?php printf(__('<span class="s1">Search results for:</span> <b>"%s"</b>', 'shape'), '<span>' . get_search_query() . '</span>'); ?>
+      </h5>
+
+
+
+      <div class="works works--orderBy-<?= $orderby ?> works--cats">
             <?
 
             $i = 0;
@@ -89,44 +95,7 @@ function get_term_url($i){
                 while (have_posts()) {
                     the_post();
 
-                    if (!$i) {
-                        ?>
-                        <div class='works__head'>
-                            <div class="works__head__inner container">
-                                <div class="works__head__left">
-                                    <h5 class='works__head__keyword'>
-                                        <?php printf(__('<span class="s1">Search results for:</span> <b>"%s"</b>', 'shape'), '<span>' . get_search_query() . '</span>'); ?>
-                                    </h5>
-                                </div>
-                                <div class="works__head__right">
-                                    <h5 class='works__head__sortBy'>Sort by</h5>
-                                    <? if ($orderby == 'title') { ?>
-                                        <span class='works__head__sortBtn on'>A-Z</span>
-                                        <?
-                                    } else { ?>
-                                        <a href="<?= esc_url(add_query_arg(array('orderby' => 'title', 'order' => 'ASC'))) ?>"
-                                           class='works__head__sortBtn'>A-Z</a>
-                                        <?
-                                    } ?>
-
-                                    <? if ($orderby == 'date') { ?>
-                                        <span class='works__head__sortBtn on'>DATE</span>
-                                        <?
-                                    } else { ?>
-                                        <a href="<?= esc_url(add_query_arg(array('orderby' => 'date', 'order' => 'DESC'))) ?>"
-                                           class='works__head__sortBtn'>DATE</a>
-                                        <?
-                                    } ?>
-
-
-                                </div>
-                            </div>
-
-                        </div>
-                        <?
-                    }
                     get_template_part('loop', 'work');
-                    $i++;
                 }
             } else {
                 ?>

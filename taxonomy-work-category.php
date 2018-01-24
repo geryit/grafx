@@ -54,6 +54,9 @@ if (get_query_var('orderby')) $orderby = get_query_var('orderby'); else $orderby
 
       <? get_template_part('part', 'reels');?>
 
+
+    <h5 class="reelsContainer__head ">Works</h5>
+
     <div class="works works--orderBy-<?= $orderby ?> works--cats">
       <?
 
@@ -62,46 +65,6 @@ if (get_query_var('orderby')) $orderby = get_query_var('orderby'); else $orderby
       if (have_posts()) {
         while (have_posts()) {
           the_post();
-          $year = get_the_date('Y');
-//                    $year_check = false;
-          // If your year hasn't been echoed earlier in the loop, echo it now
-          if ($year !== $year_check) { ?>
-            <div class='works__head'>
-              <div class="works__head__inner container">
-                <div class="works__head__left">
-                  <h5 class='works__head__year'><?= $year ?></h5>
-                </div>
-                <div class="works__head__right">
-                  <h5 class='works__head__sortBy'>Sort by</h5>
-                  <? if ($orderby == 'title') { ?>
-                    <span class='works__head__sortBtn on'>A-Z</span>
-                    <?
-                  } else { ?>
-                    <a
-                      href="<?= esc_url(add_query_arg(array('orderby' => 'title', 'order' => 'ASC'))) ?>"
-                      class='works__head__sortBtn'>A-Z</a>
-                    <?
-                  } ?>
-
-                  <? if ($orderby == 'date') { ?>
-                    <span class='works__head__sortBtn on'>DATE</span>
-                    <?
-                  } else { ?>
-                    <a
-                      href="<?= esc_url(add_query_arg(array('orderby' => 'date', 'order' => 'DESC'))) ?>"
-                      class='works__head__sortBtn'>DATE</a>
-                    <?
-                  } ?>
-
-
-                </div>
-              </div>
-
-            </div>
-          <? }
-
-          // Now that your year has been printed, assign it to the $year_check variable
-          $year_check = $year;
 
 
           get_template_part('loop', 'work');

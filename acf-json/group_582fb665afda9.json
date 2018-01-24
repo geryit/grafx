@@ -61,6 +61,25 @@
             "mime_types": ""
         },
         {
+            "key": "field_5a67d37f0adce",
+            "label": "Reel Title",
+            "name": "reel_title",
+            "type": "text",
+            "instructions": "Leave empty if just a work content",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
             "key": "field_582fb7d2cc364",
             "label": "Short Description",
             "name": "short_description",
@@ -663,7 +682,7 @@
                                                 "class": "",
                                                 "id": ""
                                             },
-                                            "return_format": "url",
+                                            "return_format": "array",
                                             "preview_size": "medium_large",
                                             "library": "all",
                                             "min_width": "",
@@ -878,5 +897,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1496186062
+    "modified": 1516753915
 }
