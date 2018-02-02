@@ -68,6 +68,7 @@ go http://grafxwp/?pasam99=1 > settings > permalinks > select plain > save > sel
 
 **do everytime you reboot**
 ```sh
+brew services start mysql
 grafx
 git pull
 npm i
