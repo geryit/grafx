@@ -363,7 +363,7 @@
     line-height: 20px;
   }
   &Wrap {
-    background: #efad17;
+    background: $yellow;
   }
   &Wrap--about {
     .pluses1 {
@@ -752,7 +752,7 @@
     width: 100%;
   }
   &__item {
-    background: #efad17;
+    background: $yellow;
     font-size: 12px;
     margin-left: 10px;
     padding: 8px 6px;
@@ -1184,7 +1184,7 @@
       position: absolute;
       width: 1px;
       height: 100%;
-      background: #efad17;
+      background: $yellow;
       transform: scaleY(4) skewX(70deg) translate(-50%, -50%);
       left: 50%;
       top: 50%;
@@ -1588,8 +1588,8 @@
   margin-top: 40px;
   text-align: center;
   &__btn {
-    color: #efad17;
-    border: 1px solid #efad17;
+    color: $yellow;
+    border: 1px solid $yellow;
     background: #fff;
     font-size: 16px;
     padding: 15px 50px;
@@ -1765,8 +1765,8 @@ body.mModalOn {
     justify-content: flex-end;
   }
   &__submitBtn {
-    color: #efad17;
-    border: 1px solid #efad17;
+    color: $yellow;
+    border: 1px solid $yellow;
     background: #fff;
     font-size: 16px;
     padding: 15px 50px;

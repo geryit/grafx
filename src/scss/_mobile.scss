@@ -214,7 +214,7 @@
   }
 
   .works--cats .works__item--case .works__inner {
-    box-shadow: 0 0 0 5px #efad17 inset;
+    box-shadow: 0 0 0 5px $yellow inset;
   }
 
   .workHead__items {
@@ -265,7 +265,7 @@
     margin-bottom: 20px;
   }
   .imageVideoSet__item{
-    
+
     &--video,
     &--img{
       display: none;
