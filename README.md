@@ -31,7 +31,14 @@ Require all granted
 
 `hosts` file should have: `127.0.0.1	localhost grafxwp`
 
-install node-sass : `npm install -g node-gyp`
+install nvm:
+```
+brew install nvm
+nvm install 9
+nvm use 9
+nvm alias default 9
+```
+install node-sass : `yarn global add node-gyp`
 
 
 
@@ -71,9 +78,10 @@ go http://grafxwp/?pasam99=1 > settings > permalinks > select plain > save > sel
 brew services start mysql
 grafx
 git pull
-npm i
-grunt full-import
-grunt ; grunt watch
+nvm use 9
+yarn
+yarn grunt full-import
+yarn grunt ; yarn grunt watch
 
 
 #these are optional
@@ -90,15 +98,15 @@ create .mysql file
 #download uploads and plugins and download dump (sync with remote)
 #check mysql.json file before
 #BE CAREFUL, YOU WILL LOSE EVERYTHING ON YOUR LOCAL (except theme)
-grunt download_wpcontent
-grunt sync_local_db
+yarn grunt download_wpcontent
+yarn grunt sync_local_db
 ```
 
 **deploy your changes**
 ```sh
-grunt full-import # import mysql dump & wp-content folder from remote server
+yarn grunt full-import # import mysql dump & wp-content folder from remote server
 #new tab
-grunt deploy
+yarn grunt deploy
 ```
 
 **logs**
