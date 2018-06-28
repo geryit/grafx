@@ -1793,4 +1793,145 @@ body.mModalOn {
 
 
 
+/**
+Bulent
+ */
+
+.insights {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -5px;
+  margin-right: -5px;
+  z-index: 10;
+
+  color: #7f8385;
+  line-height: 1.6;
+  font-size: 16px;
+  letter-spacing: -0.1px;
+
+  position: relative;
+
+  .nav-insights{
+    font-weight: bold;
+    font-size:14px;
+  }
+  .apss-theme-2 .apss-icon-block {
+    font-size: 12px;
+    position: relative;
+    min-width:auto;
+  }
+  .apss-theme-2 .apss-single-icon a {
+    position: relative;
+    display: block;
+    float: none;
+    margin: 0 0 10px 2px;
+    color: #fff;
+  }
+
+  &--container {
+    width: 100%;
+    margin: 10px 0;
+    #nav-posts{
+      height: 30px;
+      line-height: 30px;
+      .prev{
+        float: left;
+      }
+      .next{
+        float: right;
+      }
+      .prev a:hover, .next a:hover{
+          color:$yellow;
+      }
+
+    }
+  }
+
+  &--categories{
+    .active{
+      color:$yellow;
+    }
+  }
+
+  &--archives{
+    .active{
+      color:$yellow;
+    }
+  }
+
+  &--divider{
+    border: none;
+    height: 1px;
+    color: #b0b0b0;
+    background-color: #b0b0b0;
+
+    margin:30px 0;
+  }
+
+  &--side{
+    display: flex;
+    flex-wrap: wrap;
+    &--left{
+      flex: 80%;
+      //float: left;
+      //background-color: #ff0000;
+    }
+    &--right{
+      flex: 20%;
+      //float: right;
+      padding-left: 40px;
+      //background-color: #e74c3c;
+      h5{
+        color: #333;
+        font-size: 16px;
+        line-height: 1.8;
+      }
+    }
+  }
+
+  &--item{
+    flex: 1;
+    &--featured--image{
+      width: 100%;
+      /*
+      margin: 10px 0;
+      */
+    }
+    &--date{
+      font-size: 12px;
+      color: grey;
+    }
+    &--title{
+      display: block;
+      margin-top: 30px;
+      a{
+        font-size: 18px;
+        font-weight: bold;
+        color: #37393a;
+      }
+      a:hover{
+        color:$yellow;
+      }
+    }
+    &--content{
+      width: 100%;
+      /*margin: 10px 0;
+      margin-top: 75px;*/
+    }
+    &--foot{
+      width: 100%;
+      p{
+        margin: 10px 0;
+      }
+    }
+    &--tag{
+      a:hover{
+       color:$yellow;
+      }
+    }
+  }
+
+
+
+}
 

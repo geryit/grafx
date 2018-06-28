@@ -10,7 +10,7 @@ function scripts()
 //        wp_dequeue_script('jquery');
     wp_deregister_script('wp-embed');
 
-    wp_enqueue_script('main', get_template_directory_uri() . '/dist/js/grafx.min.js?rel=1516756139183', array('jquery'), null, true); // Enqueue it!
+    wp_enqueue_script('main', get_template_directory_uri() . '/dist/js/grafx.min.js?rel=1529495915118', array('jquery'), null, true); // Enqueue it!
     $translation_array = array('templateUrl' => get_stylesheet_directory_uri());
     wp_localize_script('main', 'theme_vars', $translation_array);
 
@@ -21,7 +21,7 @@ function scripts()
 function styles()
 {
 
-  wp_register_style('main', get_template_directory_uri() . '/dist/css/grafx.css?rel=1516756139183', array(), null, 'all');
+  wp_register_style('main', get_template_directory_uri() . '/dist/css/grafx.css?rel=1529495915118', array(), null, 'all');
   wp_enqueue_style('main'); // Enqueue it!
 }
 
@@ -210,6 +210,82 @@ function add_query_vars_filter($vars)
 }
 
 add_filter('query_vars', 'add_query_vars_filter');
+
+
+
+
+/**
+ * Bulent
+ */
+
+function insights_category_nav($term_id = null){
+    $categories = get_terms([
+        'taxonomy' => 'insights-category',
+        'hide_empty' => false,
+    ]);
+
+    $html_data = '<ul class="insights--categories">';
+
+
+    foreach ($categories as $k => $v) {
+        $category_link = get_category_link( $v->term_id );
+
+        $html_data .= '<li>';
+        $html_data .= '<a href="'.esc_url( $category_link ).'" title="'.$v->name.'" class="'.(($term_id == $v->term_id) ? 'active' : '').'">';
+        $html_data .= $v->name;
+        $html_data .= '</a>';
+        $html_data .= ' (' . $v->count.')';
+        $html_data .= '</li>';
+
+    }
+    $html_data .= '</ul>';
+
+    return $html_data;
+}
+
+function insights_archive_nav(){
+    $args = array(
+        'type'            => 'monthly',
+        'limit'           => 100,
+        'format'          => 'html',
+        'before'          => '',
+        'after'           => '',
+        'show_post_count' => true,
+        'echo'            => 1,
+        'order'           => 'DESC',
+        'post_type'     => 'insights'
+    );
+    echo '<ul class="insights--archives">';
+
+//    get_archives_link(wp_get_archives( $args ));
+    $link_html = wp_get_archives( $args );
+
+    if (  get_post_type() == 'insights' &&  (isset($_GET['post_type']) &&  $_GET['post_type'] == 'insights')) {
+        $current_month = get_the_date("F Y");
+
+        if ( preg_match('/'.$current_month.'/i', $link_html ) ){
+            $link_html = preg_replace('/<a/i', '<a class="active" ', $link_html );
+        }
+    }
+
+    echo $link_html;
+
+    echo '</ul>';
+}
+
+
+
+
+
+function wpdocs_excerpt_more( $more ) {
+    return '... <div class="fltng fullWidth db" style="height: 60px;"><a href="'.get_the_permalink().'" class="diagonalBtn" style="float: right;" rel="nofollow"> <span>Read More</span></a></div>';
+}
+add_filter( 'excerpt_more', 'wpdocs_excerpt_more' );
+add_theme_support( 'post-thumbnails' );
+
+
+
+
 
 
 //function theme_pgp($query)
