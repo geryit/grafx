@@ -82,6 +82,43 @@ get_header(); ?>
         </div>
     </div>
 
+    <div class="partners">
+        <div class="container">
+            <h2 class="partners__head light">
+                <span class="partners__head__inner">Our Partners</span>
+            </h2>
+            <div class="pluses pluses1">
+                <div class="container">
+                    <div class="pluses__inner"></div>
+                </div>
+            </div>
+            <ul class="partners__list">
+                <? if (get_field('partners'))
+                    foreach (get_field('partners') as $i => $v) { ?>
+                        <li class="partners__item">
+                            <div class="partners__main">
+                                <span class="partners__img"><img src="<?= $v['image'] ?>" /></span>
+<!--                                <span class="stats__title">--><?//= $v['title'] ?><!--</span>-->
+                            </div>
+
+                            <div class="partners__body">
+                                <?= $v['body'] ?>
+                            </div>
+
+
+                        </li>
+                    <? } ?>
+            </ul>
+            <div class="pluses pluses2">
+                <div class="container">
+                    <div class="pluses__inner"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
     <div class="stats">
         <div class="container">
             <h2 class="stats__head light">

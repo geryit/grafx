@@ -191,6 +191,26 @@
     width: 300px;
   }
 
+
+
+  .partners__head__inner {
+    padding-top: 20px;
+  }
+
+  .partners__img {
+    font-size: 70px;
+  }
+
+  .partners .pluses1 {
+    margin: 10px 0;
+  }
+
+  .partners__body {
+    width: 300px;
+  }
+
+
+
   .headItems__link {
     margin: 0 5px;
     font-size: 16px;
@@ -412,6 +432,39 @@
   .stats__item:before{
     display: none;
   }
+
+
+
+  .partners__list{
+    display: block;
+  }
+
+  .partners__item{
+    margin-bottom: 20px;
+    &:after{
+      display: none;
+    }
+  }
+
+  .partners__body{
+    position: static;
+    top: 0;
+    opacity: 1 !important;
+    left: auto !important;
+    right: auto !important;
+    transform: inherit !important;
+    margin: 20px 0 20px;
+    width: auto;
+    text-align: center !important;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 20px;
+  }
+
+  .partners__item:before{
+    display: none;
+  }
+
+
 
   .headItems{
     height: auto;
