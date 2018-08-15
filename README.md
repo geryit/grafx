@@ -10,7 +10,7 @@ ssh-add -l | grep "The agent has no identities" > /dev/null
 
 download wordpress and rename as `grafxwp` and clone theme from github into `/themes` folder
 
-download and put `wp-config.php` to root : https://gist.github.com/geryit/ff9dd3f6037f6be49d7c0723fb65e085
+download and put `wp-config.php` to root : https://docs.google.com/document/d/1edPNPgUdQ29FvidVPfqduC2tdQ1k9bN60YNfcmqBtVg/edit
 
 add this to `httpd-vhosts.conf`:
 ```apache
@@ -45,30 +45,8 @@ install node-sass : `yarn global add node-gyp`
 **create db `grafx` on local**
 
 **create `.mysql.json` with this content (change with your settings):**
-```
-{
-  "remote": {
-    "site_url": "grafx.co",
-    "dbname": "grafx",
-    "dbuser": "root",
-    "dbpass": "tmlxvqv5",
-    "dbhost": "127.0.0.1",
-    "host": "54.80.56.240",
-    "username": "ubuntu",
-    "save_path": "/home/ubuntu/grafxwp/wp-content/themes/grafx/.db",
-    "save_url": "https://grafx.co/wp-content/themes/grafx/.db"
-  },
-  "local": {
-    "site_url": "grafxwp",
-    "dbname": "grafx",
-    "dbuser": "root",
-    "dbpass": "",
-    "dbhost": "127.0.0.1",
-    "wpcontent_dir": "~/Sites/grafxwp/wp-content/",
-    "dump_dir": "./.db"
-  }
-}
-```
+get from https://docs.google.com/document/d/1Tj_PlnNeTqbhlyiQ93JJdl2-ZamkOrVp6YqUK9Y-aWI/edit
+
 
 go http://grafxwp/?pasam99=1 > settings > permalinks > select plain > save > select post name > save
 
