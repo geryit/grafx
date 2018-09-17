@@ -97,7 +97,11 @@ get_header(); ?>
                     foreach (get_field('partners') as $i => $v) { ?>
                         <li class="partners__item">
                             <div class="partners__main">
-                                <span class="partners__img"><img src="<?= $v['image'] ?>" /></span>
+                                <span class="partners__img">
+                                    <a href="<? echo !empty($v['link']) ? $v['link'] : '#' ; ?>" target="<? echo !empty($v['link']) ? '_blank' : '_self' ; ?>" title="<? echo !empty($v['title']) ? $v['title'] : '#' ; ?>">
+                                        <img src="<?= $v['image'] ?>" />
+                                    </a>
+                                </span>
 <!--                                <span class="stats__title">--><?//= $v['title'] ?><!--</span>-->
                             </div>
 
