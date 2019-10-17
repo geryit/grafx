@@ -38,7 +38,7 @@ nvm install 9
 nvm use 9
 nvm alias default 9
 ```
-install node-sass : `yarn global add node-gyp`
+install node-sass : `yarn add --force node-sass; rm -rf ./node_modules; yarn`
 
 
 
