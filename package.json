@@ -30,7 +30,7 @@
     "babel-preset-stage-0": "^6.22.0",
     "babelify": "^7.3.0",
     "cssnano": "^3.10.0",
-    "eslint": "^3.18.0",
+    "eslint": "^4.18.2",
     "eslint-config-airbnb": "^14.1.0",
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^4.0.0",
