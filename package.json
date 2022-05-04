@@ -11,7 +11,7 @@
     "url": "git://github.com:geryit/grafxwp.git"
   },
   "dependencies": {
-    "angular": "^1.6.3",
+    "angular": "^1.8.3",
     "angular-recaptcha": "^4.0.4",
     "angular-sanitize": "^1.6.3",
     "angular-touch": "^1.6.3",
