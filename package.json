@@ -35,7 +35,7 @@
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^4.0.0",
     "eslint-plugin-react": "^6.10.3",
-    "grunt": "^1.0.1",
+    "grunt": "^1.5.3",
     "grunt-babel": "^6.0.0",
     "grunt-browserify": "^5.0.0",
     "grunt-cache-breaker": "^2.0.1",
